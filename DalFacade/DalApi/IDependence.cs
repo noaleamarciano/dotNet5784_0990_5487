@@ -2,6 +2,7 @@
 namespace DalApi;
 using DO;
 
+
 public interface IDependence
 {
     int Create(Dependence item); //Creates new entity object in DAL
