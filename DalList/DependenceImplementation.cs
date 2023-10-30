@@ -3,13 +3,19 @@
 namespace Dal;
 using DalApi;
 using DO;
-using System.Collections.Generic;
+using System.Data.Common;
+
+//using System.Collections.Generic;
 
 public class DependenceImplementation : IDependence
 {
+    //public class T
     public int Create(Dependence item)
     {
-        throw new NotImplementedException();
+        int newId = DataSource.Config.NextDependenceId;
+        Dependence copyItem =item with { dependenceId= newId };
+        DataSource.Dependences.Add(copyItem);
+        return newId;
     }
 
     public void Delete(int id)
@@ -19,7 +25,8 @@ public class DependenceImplementation : IDependence
 
     public Dependence? Read(int id)
     {
-        throw new NotImplementedException();
+        return DataSource.Dependences.Find(dep => dep.dependenceId == id);
+      
     }
 
     public List<Dependence> ReadAll()

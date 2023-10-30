@@ -9,6 +9,7 @@ namespace DO;
 /// <param name="costPerHour">cost per hour for the engineer</param>
 public record Engineer
 {
+    public
     int engineerId;
     string? engineerName;
     string? engineerEmail;

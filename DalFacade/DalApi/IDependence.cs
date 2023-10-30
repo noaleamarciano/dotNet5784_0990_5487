@@ -10,4 +10,5 @@ public interface IDependence
     List<Dependence> ReadAll(); //stage 1 only, Reads all entity objects
     void Update(Dependence item); //Updates entity object
     void Delete(int id); //Deletes an object by its Id
+    int Create(T item);
 }
