@@ -15,19 +15,19 @@ namespace DO;
 /// <param name="remarks">remarks about the task</param>
 /// <param name="engineerId">personal unique id for the  engineer</param>
 public record Task
-{
-    public
-    int taskId;
-    string? taskDescription;
-    string? alias;
-    bool? milestone;
-    DateTime? productionDate;
-    DateTime startDate;
-    DateTime estimComplete;
-    DateTime finalDate;
-    DateTime complete;
-    string product;
-    string remarks;
-    int engineerId;
+(
+
+    int taskId,
+    string? taskDescription,
+    string? alias,
+    bool? milestone,
+    DateTime? productionDate,
+    DateTime startDate,
+    DateTime estimComplete,
+    DateTime finalDate,
+    DateTime complete,
+    string product,
+    string remarks,
+    int engineerId
     //תכונה נוספת עם ENUMS - complexityLevel;
-}
+);

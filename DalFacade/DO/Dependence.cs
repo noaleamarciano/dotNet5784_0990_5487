@@ -7,10 +7,8 @@ namespace DO;
 /// <param name="pendingTaskId">Personal unique id for a pending task.</param>
 /// <param name="previousTaskId">Personal unique id for aprevious task.</param>
 public record Dependence
-{
-    public 
-    int dependenceId;
-    
-    int pendingTaskId;
-    int previousTaskId;
-}
+(
+    int dependenceId,
+    int pendingTaskId,
+    int previousTaskId
+);
