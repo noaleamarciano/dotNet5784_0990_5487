@@ -22,12 +22,12 @@ public record Task
     string? alias,
     bool? milestone,
     DateTime? productionDate,
-    DateTime startDate,
-    DateTime estimComplete,
-    DateTime finalDate,
-    DateTime complete,
+    DateTime? startDate,
+    DateTime ?estimComplete,
+    DateTime ?finalDate,
+    DateTime ?complete,
     string product,
     string remarks,
-    int engineerId
-    //תכונה נוספת עם ENUMS - complexityLevel;
+    int engineerId,
+    EngineerExperience experience
 );

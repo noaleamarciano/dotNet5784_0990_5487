@@ -1,5 +1,5 @@
 ﻿
-namespace DO;
+namespace DO; 
 /// <summary>
 /// Engineer entity represents an engineer with all its propreties.
 /// </summary>
@@ -12,6 +12,6 @@ public record Engineer
     int engineerId,
     string? engineerName,
     string? engineerEmail,
-    int? costPerHour
-    //? תכונה נוספת עם ENUMS
+    int? costPerHour,
+    EngineerExperience experience
 );
