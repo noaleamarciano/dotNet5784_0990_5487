@@ -121,22 +121,22 @@ public static class Initialization
         }
     }
 
-       public static void Do()
-       {
-          IEngineer? dalEngineer;
-          ITask? dalTask;
-          IDependence? dalDependence;
-          dalEngineer = s_dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-          dalTask = s_dalTask ?? throw new NullReferenceException("DAL can not be null!");
-          dalDependence = s_dalDependence ?? throw new NullReferenceException("DAL can not be null!");
-          createDependences();
-          createTasks();
-          createEngineers();
-       }
+    public static void Do(IEngineer s_dalEngineer, ITask s_dalTask, IDependence s_dalDependence)
+    {
+       IEngineer? dalEngineer;
+       ITask? dalTask;
+       IDependence? dalDependence;
+       dalEngineer = s_dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
+       dalTask = s_dalTask ?? throw new NullReferenceException("DAL can not be null!");
+       dalDependence = s_dalDependence ?? throw new NullReferenceException("DAL can not be null!");
+       createDependences();
+       createTasks();
+       createEngineers();
+    }
      
 }
 
-
+ 
 
 
 
