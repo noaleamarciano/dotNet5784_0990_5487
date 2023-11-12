@@ -8,7 +8,7 @@ public class EngineerImplementation : IEngineer
 {
     public int Create(Engineer item)
     {
-        if(DataSource.Engineers.Find(eng => eng.engineerId == item.engineerId)!=null)
+        if(DataSource.Engineers.Find(eng => eng.engineerId == item.engineerId) == null)
         {
             DataSource.Engineers.Add(item);
             return item.engineerId;
@@ -21,7 +21,7 @@ public class EngineerImplementation : IEngineer
 
     public void Delete(int id)
     {
-        if(DataSource.Tasks.Find(ta => ta.engineerId == id)!=null)
+        if(DataSource.Tasks.Find(ta => ta.engineerId == id)==null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }

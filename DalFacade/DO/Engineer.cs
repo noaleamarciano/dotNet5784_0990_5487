@@ -8,10 +8,10 @@ namespace DO;
 /// <param name="engineerEmail">the email of the engineer</param>
 /// <param name="costPerHour">cost per hour for the engineer</param>
 public record Engineer
-{
-    int engineerId;
-    string? engineerName;
-    string? engineerEmail;
-    int? costPerHour;
-    //? תכונה נוספת עם ENUMS
-}
+(
+    int engineerId,
+    string? engineerName,
+    string? engineerEmail,
+    int? costPerHour,
+    EngineerExperience exp
+);
