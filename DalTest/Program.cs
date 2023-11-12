@@ -108,7 +108,6 @@ namespace DalTest
                                     break;
                                 case 1:
                                     Console.WriteLine("Enter all task details");
-                                    int taskId = int.Parse(Console.ReadLine());
                                     string description = (Console.ReadLine());
                                     string alias = (Console.ReadLine());
                                     bool milestone = bool.Parse(Console.ReadLine());
@@ -121,7 +120,7 @@ namespace DalTest
                                     string remarks = (Console.ReadLine());
                                     int engineerId = int.Parse(Console.ReadLine());
                                     EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
-                                    DO.Task tas = new(taskId, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
+                                    DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
                                     s_dalTask.Create(tas);
                                     break;
                                 case 2:
@@ -143,7 +142,6 @@ namespace DalTest
                                     int id3 = int.Parse(Console.ReadLine());
                                     Console.WriteLine(s_dalDependence.Read(id3));
                                     Console.WriteLine("Enter details to update");
-                                    int taskId1 = int.Parse(Console.ReadLine());
                                     string description1 = (Console.ReadLine());
                                     string alias1 = (Console.ReadLine());
                                     bool milestone1 = bool.Parse(Console.ReadLine());
@@ -156,7 +154,7 @@ namespace DalTest
                                     string remarks1 = (Console.ReadLine());
                                     int engineerId1 = int.Parse(Console.ReadLine());
                                     EngineerExperience exp1 = (EngineerExperience)int.Parse(Console.ReadLine());
-                                    DO.Task tas2 = new(taskId1, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1);
+                                    DO.Task tas2 = new(id3, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1);
                                     s_dalTask.Update(tas2);
                                     Console.WriteLine(s_dalTask.Read(id3));
                                     break;
@@ -185,13 +183,12 @@ namespace DalTest
                                     break;
                                 case 1:
                                     Console.WriteLine("Enter all engineer details");
-                                    int id = int.Parse(Console.ReadLine());
                                     int pendingTaskId = int.Parse(Console.ReadLine());
                                     int previousTaskId = int.Parse(Console.ReadLine());
-                                    Dependence dep = new(id, pendingTaskId, previousTaskId);
+                                    Dependence dep = new(0, pendingTaskId, previousTaskId);
                                     s_dalDependence.Create(dep);
                                     break;
-                                case 2:
+                                case 2: 
                                     Console.WriteLine("Enter an ID number");
                                     int id2 = int.Parse(Console.ReadLine());
                                     Dependence? dep1 = s_dalDependence.Read(id2);
@@ -210,10 +207,9 @@ namespace DalTest
                                     int id3 = int.Parse(Console.ReadLine());
                                     Console.WriteLine(s_dalDependence.Read(id3));
                                     Console.WriteLine("Enter details to update");
-                                    int id1 = int.Parse(Console.ReadLine());
                                     int pendingTaskId1 = int.Parse(Console.ReadLine());
                                     int previousTaskId1 = int.Parse(Console.ReadLine());
-                                    Dependence dep2 = new(id1, pendingTaskId1, previousTaskId1);
+                                    Dependence dep2 = new(0, pendingTaskId1, previousTaskId1);
                                     s_dalDependence.Update(dep2);
                                     Console.WriteLine(s_dalDependence.Read(id3));
                                     break;
