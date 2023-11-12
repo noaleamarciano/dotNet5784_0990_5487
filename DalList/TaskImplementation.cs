@@ -16,7 +16,7 @@ public class TaskImplementation : ITask
 
     public void Delete(int id)
     {
-        if (DataSource.Dependences.Find(dep => dep.previousTaskId == id)!=null)
+        if (DataSource.Dependences.Find(dep => dep.pendingTaskId == id) == null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }
@@ -33,7 +33,7 @@ public class TaskImplementation : ITask
             {
                 throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");//to check
             }
-           
+
         }
     }
 

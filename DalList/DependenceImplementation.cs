@@ -13,29 +13,23 @@ public class DependenceImplementation : IDependence
     public int Create(Dependence item)
     {
         int newId = DataSource.Config.NextDependenceId;
-        Dependence copyItem =item with { dependenceId= newId };
+        Dependence copyItem = item with { dependenceId = newId };
         DataSource.Dependences.Add(copyItem);
         return newId;
     }
 
     public void Delete(int id)
     {
-        if (DataSource.Tasks.Find(ta => ta.engineerId == id) != null)
+        if (DataSource.Dependences.Find(dep => dep.dependenceId == id) == null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }
         else
         {
-            Engineer? copyEng = DataSource.Engineers.Find(eng => eng.engineerId == id);
-            if (copyEng != null)
-            {
-                DataSource.Engineers.Remove(copyEng);
-            }
-            else
-            {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");//to check
-            }
+            Dependence? newDep = DataSource.Dependences.Find(dep => dep.dependenceId == id);
+            DataSource.Dependences.Remove(newDep);
         }
+
     }
 
     public Dependence? Read(int id)
@@ -45,7 +39,7 @@ public class DependenceImplementation : IDependence
 
     public List<Dependence> ReadAll()
     {
-        List<Dependence>copyDependences = DataSource.Dependences;
+        List<Dependence> copyDependences = DataSource.Dependences;
         return copyDependences;
     }
 

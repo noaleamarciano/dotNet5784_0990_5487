@@ -36,12 +36,12 @@ public static class Initialization
         {
             int _id;
             do
-               _id = s_rand.Next(MIN_ID, MAX_ID);
+                _id = s_rand.Next(MIN_ID, MAX_ID);
             while (s_dalEngineer!.Read(_id) != null);
             string _mail = _id + "@gmail.com";
             Random rand = new Random();
             int x = rand.Next(0, 3);
-            int _costPerHour=0;
+            int _costPerHour = 0;
             EngineerExperience _experience = (EngineerExperience)x;
             switch (_experience)
             {
@@ -55,7 +55,8 @@ public static class Initialization
                     _costPerHour = 101;
                     break;
             }
-           
+            Engineer newEng = new(_id, _name, _mail, _costPerHour, _experience);
+            s_dalEngineer!.Create(newEng);
         }
     }
 
@@ -100,42 +101,40 @@ public static class Initialization
                     _experience
                     );
                 s_dalTask!.Create(newTask);
-                
+
             }
-            
+
         }
 
     }
     private static void createDependences()
     {
-        List <Task> newList = s_dalTask!.ReadAll();
+        List<Task> newList = s_dalTask!.ReadAll();
         for (int i = 1; i < newList.Count; i++)
         {
             Dependence newDep = new(
                 0,
                 newList[i].taskId,
-                newList[i-1].taskId
+                newList[i - 1].taskId
                 );
-            s_dalDependence!.Create (newDep);
+            s_dalDependence!.Create(newDep);
         }
     }
 
     public static void Do(IEngineer dalEngineer, ITask dalTask, IDependence dalDependence)
     {
-       IEngineer? dalEngineer;
-       ITask? dalTask;
-       IDependence? dalDependence;
-       dalEngineer = s_dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-       dalTask = s_dalTask ?? throw new NullReferenceException("DAL can not be null!");
-       dalDependence = s_dalDependence ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalDependence = dalDependence ?? throw new NullReferenceException("DAL can not be null!");
         createEngineers();
-       createTasks();
+        createTasks();
         createDependences();
+
     }
-     
+
 }
 
- 
+
 
 
 
