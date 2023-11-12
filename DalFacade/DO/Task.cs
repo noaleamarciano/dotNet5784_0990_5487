@@ -16,7 +16,6 @@ namespace DO;
 /// <param name="engineerId">personal unique id for the  engineer</param>
 public record Task
 {
-    public
     int taskId;
     string? taskDescription;
     string? alias;
