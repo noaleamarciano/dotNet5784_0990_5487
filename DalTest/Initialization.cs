@@ -36,7 +36,7 @@ public static class Initialization
         {
             int _id;
             do
-                _id = s_rand.Next(MIN_ID, MAX_ID);
+               _id = s_rand.Next(MIN_ID, MAX_ID);
             while (s_dalEngineer!.Read(_id) != null);
             string _mail = _id + "@gmail.com";
             Random rand = new Random();
@@ -46,7 +46,7 @@ public static class Initialization
             switch (_experience)
             {
                 case EngineerExperience.expert:
-                    _costPerHour=400;
+                    _costPerHour = 400;
                     break;
                 case EngineerExperience.junior:
                     _costPerHour = 230;
@@ -109,18 +109,18 @@ public static class Initialization
     private static void createDependences()
     {
         List <Task> newList = s_dalTask!.ReadAll();
-        for (int i = 1; i <= newList.Count; i++)
+        for (int i = 1; i < newList.Count; i++)
         {
             Dependence newDep = new(
                 0,
                 newList[i].taskId,
                 newList[i-1].taskId
                 );
-            s_dalDependence!.Create(newDep);
+            s_dalDependence!.Create (newDep);
         }
     }
 
-    public static void Do(IEngineer s_dalEngineer, ITask s_dalTask, IDependence s_dalDependence)
+    public static void Do(IEngineer dalEngineer, ITask dalTask, IDependence dalDependence)
     {
        IEngineer? dalEngineer;
        ITask? dalTask;
