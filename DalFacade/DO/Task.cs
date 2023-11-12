@@ -16,18 +16,17 @@ namespace DO;
 /// <param name="engineerId">personal unique id for the  engineer</param>
 public record Task
 (
-
     int taskId,
     string? taskDescription,
     string? alias,
     bool? milestone,
     DateTime? productionDate,
     DateTime? startDate,
-    DateTime ?estimComplete,
-    DateTime ?finalDate,
-    DateTime ?complete,
+    DateTime? estimComplete,
+    DateTime? finalDate,
+    DateTime? complete,
     string product,
     string remarks,
     int engineerId,
-    EngineerExperience experience
+    EngineerExperience exp
 );

@@ -74,8 +74,12 @@ namespace DalTest
                                 string name2 = (Console.ReadLine());
                                 string email2 = (Console.ReadLine());
                                 int cost2 = int.Parse(Console.ReadLine());
-                                EngineerExperience exp2 = (EngineerExperience)int.Parse(Console.ReadLine());
-
+                                s_dalEngineer.Update(eng2);
+                                break;
+                            case 5:
+                                Console.WriteLine("הכנס מספר מזהה");
+                                int id5 = int.Parse(Console.ReadLine());
+                                s_dalEngineer.Delete(id5);
                                 break;
                         }
                         break;
@@ -101,7 +105,7 @@ namespace DalTest
             catch (Exception)
             {
 
-                throw;
+                throw new NullReferenceException("DAL can not be null!");
             }
         }
     }  

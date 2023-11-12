@@ -55,8 +55,7 @@ public static class Initialization
                     _costPerHour = 101;
                     break;
             }
-            Engineer newEng = new(_id, _name, _mail, _costPerHour, _experience);
-            s_dalEngineer!.Create(newEng);
+           
         }
     }
 
@@ -129,9 +128,9 @@ public static class Initialization
        dalEngineer = s_dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
        dalTask = s_dalTask ?? throw new NullReferenceException("DAL can not be null!");
        dalDependence = s_dalDependence ?? throw new NullReferenceException("DAL can not be null!");
-       createDependences();
+        createEngineers();
        createTasks();
-       createEngineers();
+        createDependences();
     }
      
 }
