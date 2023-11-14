@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class EngineerImplementation : IEngineer
 {
-    public int Create(Engineer item)
+    public int Create(Engineer item) //A function that create a new Engineer.
     {
         if (DataSource.Engineers.Find(eng => eng.engineerId == item.engineerId) == null)
         {
@@ -15,11 +15,11 @@ public class EngineerImplementation : IEngineer
         }
         else
         {
-            throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");//to check
+            throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
         }
     }
 
-    public void Delete(int id)
+    public void Delete(int id) //A function that delete an exist Engineer.
     {
         if (DataSource.Tasks.Find(ta => ta.engineerId == id) == null)
         {
@@ -34,25 +34,25 @@ public class EngineerImplementation : IEngineer
             }
             else
             {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");//to check
+                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
             }
         }
     }
 
-    public Engineer? Read(int id)
+    public Engineer? Read(int id) //A function that  display an exist Engineer with an id
     {
         return DataSource.Engineers.Find(eng => eng.engineerId == id);
     }
 
-    public List<Engineer> ReadAll()
+    public List<Engineer> ReadAll() //A function that display all the Engineers
     {
         List<Engineer> copyEngineer = DataSource.Engineers;
         return copyEngineer;
     }
 
-    public void Update(Engineer item)
+    public void Update(Engineer item) //A function that update an exist Engineer with an id
     {
-        Engineer? copyEng = DataSource.Engineers.Find(eng => eng.engineerId == item.engineerId);//לברר!!!!!!!!!!!
+        Engineer? copyEng = DataSource.Engineers.Find(eng => eng.engineerId == item.engineerId);
         if (copyEng != null)
         {
             DataSource.Engineers.Remove(copyEng);

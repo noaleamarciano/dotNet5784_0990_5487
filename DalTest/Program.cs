@@ -16,226 +16,249 @@ namespace DalTest
         private static IDependence? s_dalDependence = new DependenceImplementation();
         static void Main(string[] args)
         {
-            try
+            Initialization.Do(s_dalEngineer, s_dalTask, s_dalDependence);
+            Console.WriteLine("Exit main menu 0");
+            Console.WriteLine("entity 1");
+            Console.WriteLine("entity 2");
+            Console.WriteLine("entity 3");
+            int choose = int.Parse(Console.ReadLine());
+
+            switch (choose)
             {
-                Initialization.Do(s_dalEngineer, s_dalTask, s_dalDependence);
-                Console.WriteLine("Exit main menu 0");
-                Console.WriteLine("entity 1");
-                Console.WriteLine("entity 2");
-                Console.WriteLine("entity 3");
-                int choose = int.Parse(Console.ReadLine());
+                case 0:
 
-                switch (choose)
-                {
-                    case 0:
-
-                        break;
-                    case 1:
-                        Console.WriteLine("0 Exit main menu");
-                        Console.WriteLine("Add 1");
-                        Console.WriteLine("Display 2");
-                        Console.WriteLine("View the full list 3");
-                        Console.WriteLine("Update 4");
-                        Console.WriteLine("Delete 5");
-                        int choose1 = 1;
-                        while (choose1 != 0)
+                    break;
+                case 1:// The engineer entity.
+                    Console.WriteLine("0 Exit main menu");
+                    Console.WriteLine("Add 1");
+                    Console.WriteLine("Display 2");
+                    Console.WriteLine("View the full list 3");
+                    Console.WriteLine("Update 4");
+                    Console.WriteLine("Delete 5");
+                    int choose1 = int.Parse(Console.ReadLine());
+                    while (choose1 != 0)
+                    {
+                        switch (choose1)
                         {
-                            choose1 = int.Parse(Console.ReadLine());
-                            switch (choose1)
-                            {
-                                case 0:
-                                    break;
-                                case 1:
-                                    Console.WriteLine("Enter all engineer details");
-                                    int id = int.Parse(Console.ReadLine());
-                                    string name = (Console.ReadLine());
-                                    string email = (Console.ReadLine());
-                                    int cost = int.Parse(Console.ReadLine());
-                                    EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
+                            case 0:
+                                break;
+                            case 1://Add a new engineer
+                                Console.WriteLine("Enter all engineer details");
+                                int id = int.Parse(Console.ReadLine());
+                                string name = (Console.ReadLine());
+                                string email = (Console.ReadLine());
+                                int cost = int.Parse(Console.ReadLine());
+                                EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
+                                try
+                                {
                                     Engineer gth = new(id, name, email, cost, exp);
                                     s_dalEngineer.Create(gth);
-                                    Console.WriteLine(s_dalEngineer.Read(id));
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id2 = int.Parse(Console.ReadLine());
-                                    Engineer? eng = s_dalEngineer.Read(id2);
-                                    Console.WriteLine(eng);
-                                    //Console.WriteLine(eng.engineerName);
-                                    //Console.WriteLine(eng.engineerEmail);
-                                    //Console.WriteLine(eng.costPerHour);
-                                    //Console.WriteLine(eng.experience);
-                                    break;
-                                case 3:
-                                    List<Engineer> copyEngineer = s_dalEngineer.ReadAll();
-                                    copyEngineer.ForEach(s => Console.WriteLine(s));
-                                    break;
-                                case 4:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id3 = int.Parse(Console.ReadLine());
-                                    Console.WriteLine(s_dalEngineer.Read(id3));
-                                    Console.WriteLine("Enter details to update");
-                                    string name2 = (Console.ReadLine());
-                                    string email2 = (Console.ReadLine());
-                                    int cost2 = int.Parse(Console.ReadLine());
-                                    EngineerExperience exp2 = (EngineerExperience)int.Parse(Console.ReadLine());
-                                    Engineer eng2 = new(id3, name2, email2, cost2, exp2);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                break;
+                            case 2://Display an engineer
+                                Console.WriteLine("Enter an ID number");
+                                int id2 = int.Parse(Console.ReadLine());
+                                Engineer? eng = s_dalEngineer.Read(id2);
+                                Console.WriteLine(eng);
+                                break;
+                            case 3://Display all the list engineers
+                                List<Engineer> copyEngineer = s_dalEngineer.ReadAll();
+                                copyEngineer.ForEach(s => Console.WriteLine(s));
+                                break;
+                            case 4://Update an exist engineer
+                                Console.WriteLine("Enter an ID number");
+                                int id3 = int.Parse(Console.ReadLine());
+                                Console.WriteLine(s_dalEngineer.Read(id3));
+                                Console.WriteLine("Enter details to update");
+                                string name2 = (Console.ReadLine());
+                                string email2 = (Console.ReadLine());
+                                int cost2 = int.Parse(Console.ReadLine());
+                                EngineerExperience exp2 = (EngineerExperience)int.Parse(Console.ReadLine());
+                                Engineer eng2 = new(id3, name2, email2, cost2, exp2);
+                                try
+                                {
                                     s_dalEngineer.Update(eng2);
-                                    Console.WriteLine(s_dalEngineer.Read(id3));
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id5 = int.Parse(Console.ReadLine());
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                Console.WriteLine(s_dalEngineer.Read(id3));
+                                break;
+                            case 5://Delete an exist engineer
+                                Console.WriteLine("Enter an ID number");
+                                int id5 = int.Parse(Console.ReadLine());
+                                try
+                                {
                                     s_dalEngineer.Delete(id5);
                                     List<Engineer> copyEngineer1 = s_dalEngineer.ReadAll();
                                     copyEngineer1.ForEach(s => Console.WriteLine(s));
-                                    break;
-                            }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                break;
+                            
                         }
-                        break;
-                    case 2:
-                        Console.WriteLine("0 Exit main menu");
-                        Console.WriteLine("Add 1");
-                        Console.WriteLine("Display 2");
-                        Console.WriteLine("View the full list 3");
-                        Console.WriteLine("Update 4");
-                        Console.WriteLine("Delete 5");
-                        int choose2 = 1;
-                        while (choose2 != 0)
+                       
+                    }
+                    break;
+                case 2://Task entity
+                    Console.WriteLine("0 Exit main menu");
+                    Console.WriteLine("Add 1");
+                    Console.WriteLine("Display 2");
+                    Console.WriteLine("View the full list 3");
+                    Console.WriteLine("Update 4");
+                    Console.WriteLine("Delete 5");
+                    int choose2 = int.Parse(Console.ReadLine());
+                    while (choose2 != 0)
+                    {
+                        switch (choose2)
                         {
-                            choose2 = int.Parse(Console.ReadLine());
-                            switch (choose2)
-                            {
-
-                                case 0:
-                                    break;
-                                case 1:
-                                    Console.WriteLine("Enter all task details");
-                                    string description = (Console.ReadLine());
-                                    string alias = (Console.ReadLine());
-                                    bool milestone = bool.Parse(Console.ReadLine());
-                                    DateTime? productionDate = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? startDate = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? estimComplete = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? finalDate = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? complete = Convert.ToDateTime(Console.ReadLine());
-                                    string product = (Console.ReadLine());
-                                    string remarks = (Console.ReadLine());
-                                    int engineerId = int.Parse(Console.ReadLine());
-                                    EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
-                                    DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
-                                    s_dalTask.Create(tas);
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id2 = int.Parse(Console.ReadLine());
-                                    DO.Task? tas1 = s_dalTask.Read(id2);
-                                    Console.WriteLine(tas1);
-                                    // Console.WriteLine(eng.engineerName);
-                                    //Console.WriteLine(eng.engineerEmail);
-                                    //Console.WriteLine(eng.costPerHour);
-                                    //Console.WriteLine(eng.experience);
-                                    break;
-                                case 3:
-                                    List<DO.Task> copyTask = s_dalTask.ReadAll();
-                                    copyTask.ForEach(s => Console.WriteLine(s));
-                                    break;
-                                case 4:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id3 = int.Parse(Console.ReadLine());
-                                    Console.WriteLine(s_dalDependence.Read(id3));
-                                    Console.WriteLine("Enter details to update");
-                                    string description1 = (Console.ReadLine());
-                                    string alias1 = (Console.ReadLine());
-                                    bool milestone1 = bool.Parse(Console.ReadLine());
-                                    DateTime? productionDate1 = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? startDate1 = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? estimComplete1 = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? finalDate1 = Convert.ToDateTime(Console.ReadLine());
-                                    DateTime? complete1 = Convert.ToDateTime(Console.ReadLine());
-                                    string product1 = (Console.ReadLine());
-                                    string remarks1 = (Console.ReadLine());
-                                    int engineerId1 = int.Parse(Console.ReadLine());
-                                    EngineerExperience exp1 = (EngineerExperience)int.Parse(Console.ReadLine());
+                            case 0:
+                                break;
+                            case 1://Add a new task
+                                Console.WriteLine("Enter all task details");
+                                string description = (Console.ReadLine());
+                                string alias = (Console.ReadLine());
+                                bool milestone = bool.Parse(Console.ReadLine());
+                                DateTime? productionDate = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? startDate = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? estimComplete = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? finalDate = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? complete = Convert.ToDateTime(Console.ReadLine());
+                                string product = (Console.ReadLine());
+                                string remarks = (Console.ReadLine());
+                                int engineerId = int.Parse(Console.ReadLine());
+                                EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
+                                DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
+                                s_dalTask.Create(tas);
+                                break;
+                            case 2://Display an exist task
+                                Console.WriteLine("Enter an ID number");
+                                int id2 = int.Parse(Console.ReadLine());
+                                DO.Task? tas1 = s_dalTask.Read(id2);
+                                Console.WriteLine(tas1);
+                                break;
+                            case 3://Display all the tasks
+                                List<DO.Task> copyTask = s_dalTask.ReadAll();
+                                copyTask.ForEach(s => Console.WriteLine(s));
+                                break;
+                            case 4://Update a task
+                                Console.WriteLine("Enter an ID number");
+                                int id3 = int.Parse(Console.ReadLine());
+                                Console.WriteLine(s_dalDependence.Read(id3));
+                                Console.WriteLine("Enter details to update");
+                                string description1 = (Console.ReadLine());
+                                string alias1 = (Console.ReadLine());
+                                bool milestone1 = bool.Parse(Console.ReadLine());
+                                DateTime? productionDate1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? startDate1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? estimComplete1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? finalDate1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? complete1 = Convert.ToDateTime(Console.ReadLine());
+                                string product1 = (Console.ReadLine());
+                                string remarks1 = (Console.ReadLine());
+                                int engineerId1 = int.Parse(Console.ReadLine());
+                                EngineerExperience exp1 = (EngineerExperience)int.Parse(Console.ReadLine());
+                                try
+                                {
                                     DO.Task tas2 = new(id3, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1);
                                     s_dalTask.Update(tas2);
-                                    Console.WriteLine(s_dalTask.Read(id3));
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter an ID number");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                Console.WriteLine(s_dalTask.Read(id3));
+                                break;
+                            case 5://Delete a task
+                                Console.WriteLine("Enter an ID number");
+
+                                try
+                                {
                                     int id5 = int.Parse(Console.ReadLine());
                                     s_dalTask.Delete(id5);
-                                    break;
-                            }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                break;
                         }
-                        break;
-
-                    case 3:
-                        Console.WriteLine("0 Exit main menu");
-                        Console.WriteLine("Add 1");
-                        Console.WriteLine("Display 2");
-                        Console.WriteLine("View the full list 3");
-                        Console.WriteLine("Update 4");
-                        Console.WriteLine("Delete 5");
-                        int choose3 = 1;
-                        while (choose3 != 0)
+                        
+                    }
+                    break;
+                case 3://Dependence entity
+                    Console.WriteLine("0 יציאה מתפריט ראשי");
+                    Console.WriteLine("הוספה 1");
+                    Console.WriteLine("תצוגה 2");
+                    Console.WriteLine("תצוגת הרשימה המלאה 3");
+                    Console.WriteLine("עדכון 3");
+                    Console.WriteLine("מחיקה 4");
+                    int choose3 = int.Parse(Console.ReadLine());
+                    while (choose3 != 0)
+                    {
+                        switch (choose3)
                         {
-                            choose3 = int.Parse(Console.ReadLine());
-                            switch (choose3)
-                            {
-                                case 0:
-                                    break;
-                                case 1:
-                                    Console.WriteLine("Enter all engineer details");
-                                    int pendingTaskId = int.Parse(Console.ReadLine());
-                                    int previousTaskId = int.Parse(Console.ReadLine());
-                                    Dependence dep = new(0, pendingTaskId, previousTaskId);
-                                    s_dalDependence.Create(dep);
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id2 = int.Parse(Console.ReadLine());
-                                    Dependence? dep1 = s_dalDependence.Read(id2);
-                                    Console.WriteLine(dep1);
-                                    // Console.WriteLine(eng.engineerName);
-                                    //Console.WriteLine(eng.engineerEmail);
-                                    //Console.WriteLine(eng.costPerHour);
-                                    //Console.WriteLine(eng.experience);
-                                    break;
-                                case 3:
-                                    List<Dependence> copyDependence = s_dalDependence.ReadAll();
-                                    copyDependence.ForEach(s => Console.WriteLine(s));
-                                    break;
-                                case 4:
-                                    Console.WriteLine("Enter an ID number");
-                                    int id3 = int.Parse(Console.ReadLine());
-                                    Console.WriteLine(s_dalDependence.Read(id3));
-                                    Console.WriteLine("Enter details to update");
-                                    int pendingTaskId1 = int.Parse(Console.ReadLine());
-                                    int previousTaskId1 = int.Parse(Console.ReadLine());
-                                    Dependence dep2 = new(id3, pendingTaskId1, previousTaskId1);
+                            case 0:
+                                break;
+                            case 1://Add a new dependence
+                                Console.WriteLine("Enter all engineer details");
+                                int pendingTaskId = int.Parse(Console.ReadLine());
+                                int previousTaskId = int.Parse(Console.ReadLine());
+                                Dependence dep = new(0, pendingTaskId, previousTaskId);
+                                s_dalDependence.Create(dep);
+                                break;
+                            case 2: //Display a dependence
+                                Console.WriteLine("Enter an ID number");
+                                int id2 = int.Parse(Console.ReadLine());
+                                Dependence? dep1 = s_dalDependence.Read(id2);
+                                Console.WriteLine(dep1);
+                                break;
+                            case 3://Display all the dependences
+                                List<Dependence> copyDependence = s_dalDependence.ReadAll();
+                                copyDependence.ForEach(s => Console.WriteLine(s));
+                                break;
+                            case 4://Update a dependence
+                                Console.WriteLine("Enter an ID number");
+                                int id3 = int.Parse(Console.ReadLine());
+                                Console.WriteLine(s_dalDependence.Read(id3));
+                                Console.WriteLine("Enter details to update");
+                                int pendingTaskId1 = int.Parse(Console.ReadLine());
+                                int previousTaskId1 = int.Parse(Console.ReadLine());
+                                try
+                                {
+                                    Dependence dep2 = new(0, pendingTaskId1, previousTaskId1);
                                     s_dalDependence.Update(dep2);
-                                    Console.WriteLine(s_dalDependence.Read(id3));
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter an ID number");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                Console.WriteLine(s_dalDependence.Read(id3));
+                                break;
+                            case 5://Delete a dependence
+                                Console.WriteLine("Enter an ID number");
+                                try
+                                {
                                     int id5 = int.Parse(Console.ReadLine());
                                     s_dalDependence.Delete(id5);
-                                    List<Dependence> copyDependence1 = s_dalDependence.ReadAll();
-                                    copyDependence1.ForEach(s => Console.WriteLine(s));
-                                    break;
-                            }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                                break;
                         }
-                        break;
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
+                    }
+                break;
             }
         }
-
     }
 }

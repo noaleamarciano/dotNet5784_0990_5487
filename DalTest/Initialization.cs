@@ -14,7 +14,7 @@ public static class Initialization
     private static ITask? s_dalTask;
     private static IEngineer? s_dalEngineer;
     private static readonly Random s_rand = new();
-    private static void createEngineers()
+    private static void createEngineers() //A function that initialize the engineers list with 10 engineers.
     {
         string[] engineerNames =
              {"Efrat Yshai",
@@ -60,7 +60,7 @@ public static class Initialization
         }
     }
 
-    private static void createTasks()
+    private static void createTasks() //A function that initialize the tasks list with 10 tasks.
     {
         string[] tasksNames =
         {
@@ -78,7 +78,6 @@ public static class Initialization
 
         foreach (var _task in tasksNames)
         {
-
             List<Engineer> newList = s_dalEngineer!.ReadAll();
             for (int i = 0; i < tasksNames.Length; i++)
             {
@@ -101,13 +100,10 @@ public static class Initialization
                     _experience
                     );
                 s_dalTask!.Create(newTask);
-
             }
-
         }
-
     }
-    private static void createDependences()
+    private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.
     {
         List<Task> newList = s_dalTask!.ReadAll();
         for (int i = 1; i < newList.Count; i++)
@@ -129,9 +125,7 @@ public static class Initialization
         createEngineers();
         createTasks();
         createDependences();
-
     }
-
 }
 
 

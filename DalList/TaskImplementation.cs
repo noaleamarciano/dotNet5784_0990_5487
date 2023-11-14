@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class TaskImplementation : ITask
 {
-    public int Create(Task item)
+    public int Create(Task item)  //A function that create a new Task.
     {
         int newId = DataSource.Config.NextDependenceId;
         Task copyItem = item with { taskId = newId };
@@ -14,9 +14,9 @@ public class TaskImplementation : ITask
         return newId;
     }
 
-    public void Delete(int id)
+    public void Delete(int id) //A function that delete an exist Task.
     {
-        if (DataSource.Dependences.Find(dep => dep.pendingTaskId == id) == null)
+        if (DataSource.Dependences.Find(dep => dep.previousTaskId == id) != null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }
@@ -31,24 +31,24 @@ public class TaskImplementation : ITask
             }
             else
             {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");//to check
+                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
             }
 
         }
     }
 
-    public Task? Read(int id)
+    public Task? Read(int id) //A function that  display an exist Task with an id
     {
         return DataSource.Tasks.Find(dep => dep.taskId == id);
     }
 
-    public List<Task> ReadAll()
+    public List<Task> ReadAll() //A function that display all the Tasks
     {
         List<Task> copyTasks = DataSource.Tasks;
         return copyTasks;
     }
 
-    public void Update(Task item)
+    public void Update(Task item) //A function that update an exist Task with an id
     {
         Task? copyTa = DataSource.Tasks.Find(ta => ta.taskId == item.taskId);//לברר!!!!!!!!!!!
         if (copyTa != null)
