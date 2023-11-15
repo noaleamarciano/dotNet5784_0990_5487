@@ -1,8 +1,8 @@
-﻿
-namespace DalTest;
+﻿namespace DalTest;
 using DalApi;
 using DO;
 using System;
+using Dal;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -10,10 +10,9 @@ using System.Xml.Linq;
 
 public static class Initialization
 {
-    private static IDependence? s_dalDependence;
-    private static ITask? s_dalTask;
-    private static IEngineer? s_dalEngineer;
+    private static IDal? s_dal;
     private static readonly Random s_rand = new();
+    
     private static void createEngineers() //A function that initialize the engineers list with 10 engineers.
     {
         string[] engineerNames =
@@ -37,7 +36,7 @@ public static class Initialization
             int _id;
             do
                 _id = s_rand.Next(MIN_ID, MAX_ID);
-            while (s_dalEngineer!.Read(_id) != null);
+            while (s_dal!.Engineer.Read(_id) != null);
             string _mail = _id + "@gmail.com";
             Random rand = new Random();
             int x = rand.Next(0, 3);
@@ -56,7 +55,7 @@ public static class Initialization
                     break;
             }
             Engineer newEng = new(_id, _name, _mail, _costPerHour, _experience);
-            s_dalEngineer!.Create(newEng);
+            s_dal!.Engineer.Create(newEng);
         }
     }
 
@@ -78,7 +77,7 @@ public static class Initialization
 
         foreach (var _task in tasksNames)
         {
-            List<Engineer> newList = s_dalEngineer!.ReadAll();
+            List<Engineer> newList = s_dal!.Engineer.ReadAll();
             for (int i = 0; i < tasksNames.Length; i++)
             {
                 Random rand = new Random();
@@ -99,13 +98,13 @@ public static class Initialization
                     newList[0].engineerId,
                     _experience
                     );
-                s_dalTask!.Create(newTask);
+                s_dal!.Task.Create(newTask);
             }
         }
     }
     private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.
     {
-        List<Task> newList = s_dalTask!.ReadAll();
+        List<Task> newList = s_dal!.Task.ReadAll();
         for (int i = 1; i < newList.Count; i++)
         {
             Dependence newDep = new(
@@ -113,15 +112,14 @@ public static class Initialization
                 newList[i].taskId,
                 newList[i - 1].taskId
                 );
-            s_dalDependence!.Create(newDep);
+            s_dal!.Dependence.Create(newDep);
         }
     }
 
-    public static void Do(IEngineer dalEngineer, ITask dalTask, IDependence dalDependence)
+    public static void Do(IDal dal) //stage 2
     {
-        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalDependence = dalDependence ?? throw new NullReferenceException("DAL can not be null!");
+        s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!");
+       
         createEngineers();
         createTasks();
         createDependences();

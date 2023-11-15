@@ -5,7 +5,7 @@ using DalApi;
 using DO;
 using System.Data.Common;
 
-public class DependenceImplementation : IDependence
+internal class DependenceImplementation : IDependence
 {
     public int Create(Dependence item) //A function that create a new dependence.
     {

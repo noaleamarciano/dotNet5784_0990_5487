@@ -1,23 +1,24 @@
 ﻿using Dal;
 using DalApi;
-using DalTest;
 using DO;
-using System.Diagnostics.Metrics;
-using System.Globalization;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Numerics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Reflection.Emit;
+using System.Xml.Linq;
 
 namespace DalTest
 {
     internal class Program
     {
-        private static IEngineer? s_dalEngineer = new EngineerImplementation();
-        private static ITask? s_dalTask = new TaskImplementation();
-        private static IDependence? s_dalDependence = new DependenceImplementation();
+        static readonly IDal s_dal = new DalList();
         static void Main(string[] args)
         {
-            Initialization.Do(s_dalEngineer, s_dalTask, s_dalDependence);
-            Console.WriteLine("Exit main menu 0");
+            
+                
+                Initialization.Do(s_dal);
+                Console.WriteLine("Exit main menu 0");
             Console.WriteLine("entity 1");
             Console.WriteLine("entity 2");
             Console.WriteLine("entity 3");
@@ -52,7 +53,7 @@ namespace DalTest
                                 try
                                 {
                                     Engineer gth = new(id, name, email, cost, exp);
-                                    s_dalEngineer.Create(gth);
+                                    s_dal.Engineer.Create(gth);
                                 }
                                 catch (Exception ex)
                                 {
@@ -62,17 +63,17 @@ namespace DalTest
                             case 2://Display an engineer
                                 Console.WriteLine("Enter an ID number");
                                 int id2 = int.Parse(Console.ReadLine());
-                                Engineer? eng = s_dalEngineer.Read(id2);
+                                Engineer? eng = s_dal.Engineer.Read(id2);
                                 Console.WriteLine(eng);
                                 break;
                             case 3://Display all the list engineers
-                                List<Engineer> copyEngineer = s_dalEngineer.ReadAll();
+                                List<Engineer> copyEngineer = s_dal.Engineer.ReadAll();
                                 copyEngineer.ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update an exist engineer
                                 Console.WriteLine("Enter an ID number");
                                 int id3 = int.Parse(Console.ReadLine());
-                                Console.WriteLine(s_dalEngineer.Read(id3));
+                                Console.WriteLine(s_dal.Engineer.Read(id3));
                                 Console.WriteLine("Enter details to update");
                                 string name2 = (Console.ReadLine());
                                 string email2 = (Console.ReadLine());
@@ -81,21 +82,21 @@ namespace DalTest
                                 Engineer eng2 = new(id3, name2, email2, cost2, exp2);
                                 try
                                 {
-                                    s_dalEngineer.Update(eng2);
+                                    s_dal.Engineer.Update(eng2);
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
-                                Console.WriteLine(s_dalEngineer.Read(id3));
+                                Console.WriteLine(s_dal.Engineer.Read(id3));
                                 break;
                             case 5://Delete an exist engineer
                                 Console.WriteLine("Enter an ID number");
                                 int id5 = int.Parse(Console.ReadLine());
                                 try
                                 {
-                                    s_dalEngineer.Delete(id5);
-                                    List<Engineer> copyEngineer1 = s_dalEngineer.ReadAll();
+                                    s_dal.Engineer.Delete(id5);
+                                    List<Engineer> copyEngineer1 = s_dal.Engineer.ReadAll();
                                     copyEngineer1.ForEach(s => Console.WriteLine(s));
                                 }
                                 catch (Exception ex)
@@ -137,22 +138,22 @@ namespace DalTest
                                 int engineerId = int.Parse(Console.ReadLine());
                                 EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine());
                                 DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
-                                s_dalTask.Create(tas);
+                                s_dal.Task.Create(tas);
                                 break;
                             case 2://Display an exist task
                                 Console.WriteLine("Enter an ID number");
                                 int id2 = int.Parse(Console.ReadLine());
-                                DO.Task? tas1 = s_dalTask.Read(id2);
+                                DO.Task? tas1 = s_dal.Task.Read(id2);
                                 Console.WriteLine(tas1);
                                 break;
                             case 3://Display all the tasks
-                                List<DO.Task> copyTask = s_dalTask.ReadAll();
+                                List<DO.Task> copyTask = s_dal.Task.ReadAll();
                                 copyTask.ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update a task
                                 Console.WriteLine("Enter an ID number");
                                 int id3 = int.Parse(Console.ReadLine());
-                                Console.WriteLine(s_dalDependence.Read(id3));
+                                Console.WriteLine(s_dal.Dependence.Read(id3));
                                 Console.WriteLine("Enter details to update");
                                 string description1 = (Console.ReadLine());
                                 string alias1 = (Console.ReadLine());
@@ -169,13 +170,13 @@ namespace DalTest
                                 try
                                 {
                                     DO.Task tas2 = new(id3, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1);
-                                    s_dalTask.Update(tas2);
+                                    s_dal.Task.Update(tas2);
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
-                                Console.WriteLine(s_dalTask.Read(id3));
+                                Console.WriteLine(s_dal.Task.Read(id3));
                                 break;
                             case 5://Delete a task
                                 Console.WriteLine("Enter an ID number");
@@ -183,7 +184,7 @@ namespace DalTest
                                 try
                                 {
                                     int id5 = int.Parse(Console.ReadLine());
-                                    s_dalTask.Delete(id5);
+                                    s_dal.Task.Delete(id5);
                                 }
                                 catch (Exception ex)
                                 {
@@ -213,42 +214,42 @@ namespace DalTest
                                 int pendingTaskId = int.Parse(Console.ReadLine());
                                 int previousTaskId = int.Parse(Console.ReadLine());
                                 Dependence dep = new(0, pendingTaskId, previousTaskId);
-                                s_dalDependence.Create(dep);
+                                s_dal.Dependence.Create(dep);
                                 break;
                             case 2: //Display a dependence
                                 Console.WriteLine("Enter an ID number");
                                 int id2 = int.Parse(Console.ReadLine());
-                                Dependence? dep1 = s_dalDependence.Read(id2);
+                                Dependence? dep1 = s_dal.Dependence.Read(id2);
                                 Console.WriteLine(dep1);
                                 break;
                             case 3://Display all the dependences
-                                List<Dependence> copyDependence = s_dalDependence.ReadAll();
+                                List<Dependence> copyDependence = s_dal.Dependence.ReadAll();
                                 copyDependence.ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update a dependence
                                 Console.WriteLine("Enter an ID number");
                                 int id3 = int.Parse(Console.ReadLine());
-                                Console.WriteLine(s_dalDependence.Read(id3));
+                                Console.WriteLine(s_dal.Dependence.Read(id3));
                                 Console.WriteLine("Enter details to update");
                                 int pendingTaskId1 = int.Parse(Console.ReadLine());
                                 int previousTaskId1 = int.Parse(Console.ReadLine());
                                 try
                                 {
                                     Dependence dep2 = new(0, pendingTaskId1, previousTaskId1);
-                                    s_dalDependence.Update(dep2);
+                                    s_dal.Dependence.Update(dep2);
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
-                                Console.WriteLine(s_dalDependence.Read(id3));
+                                Console.WriteLine(s_dal.Dependence.Read(id3));
                                 break;
                             case 5://Delete a dependence
                                 Console.WriteLine("Enter an ID number");
                                 try
                                 {
                                     int id5 = int.Parse(Console.ReadLine());
-                                    s_dalDependence.Delete(id5);
+                                    s_dal.Dependence.Delete(id5);
                                 }
                                 catch (Exception ex)
                                 {
