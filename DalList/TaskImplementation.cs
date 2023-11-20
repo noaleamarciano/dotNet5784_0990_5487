@@ -16,14 +16,14 @@ internal class TaskImplementation : ITask
 
     public void Delete(int id) //A function that delete an exist Task.
     {
-        if (DataSource.Dependences.Find(dep => dep.previousTaskId == id) != null)
+        if (DataSource.Dependences.FirstOrDefault(dep => dep.previousTaskId == id) != null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }
         else
         {
-            Task? copyDep2 = DataSource.Tasks.Find(ta => ta.taskId == id);
-            Dependence? copyDep = DataSource.Dependences.Find(dep => dep.pendingTaskId == id);
+            Task? copyDep2 = DataSource.Tasks.FirstOrDefault(ta => ta.taskId == id);
+            Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.pendingTaskId == id);
             if (copyDep2 != null)
             {
                 DataSource.Tasks.Remove(copyDep2);
@@ -39,18 +39,20 @@ internal class TaskImplementation : ITask
 
     public Task? Read(int id) //A function that  display an exist Task with an id
     {
-        return DataSource.Tasks.Find(dep => dep.taskId == id);
+        return DataSource.Tasks.FirstOrDefault(dep => dep.taskId == id);
     }
 
-    public List<Task> ReadAll() //A function that display all the Tasks
+    public IEnumerable<Task?> ReadAll(Func<Task?, bool>? filter = null) //stage 2
     {
-        List<Task> copyTasks = DataSource.Tasks;
-        return copyTasks;
+        if (filter == null)
+            return DataSource.Tasks.Select(item => item);
+        else
+            return DataSource.Tasks.Where(filter);
     }
 
     public void Update(Task item) //A function that update an exist Task with an id
     {
-        Task? copyTa = DataSource.Tasks.Find(ta => ta.taskId == item.taskId);//לברר!!!!!!!!!!!
+        Task? copyTa = DataSource.Tasks.FirstOrDefault(ta => ta.taskId == item.taskId);
         if (copyTa != null)
         {
             DataSource.Tasks.Remove(copyTa);

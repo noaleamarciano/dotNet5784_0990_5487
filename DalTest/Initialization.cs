@@ -12,7 +12,7 @@ public static class Initialization
 {
     private static IDal? s_dal;
     private static readonly Random s_rand = new();
-    
+
     private static void createEngineers() //A function that initialize the engineers list with 10 engineers.
     {
         string[] engineerNames =
@@ -119,7 +119,7 @@ public static class Initialization
     public static void Do(IDal dal) //stage 2
     {
         s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!");
-       
+
         createEngineers();
         createTasks();
         createDependences();

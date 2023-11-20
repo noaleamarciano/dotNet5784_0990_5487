@@ -17,13 +17,13 @@ internal class DependenceImplementation : IDependence
 
     public void Delete(int id) //A function that delete an exist dependence.
     {
-        if (DataSource.Tasks.Find(ta => ta.engineerId == id) != null)
+        if (DataSource.Tasks.FirstOrDefault(ta => ta.engineerId == id) != null)
         {
             throw new Exception("לא ניתן למחוק את האובייקט");
         }
         else
         {
-            Engineer? copyEng = DataSource.Engineers.Find(eng => eng.engineerId == id);
+            Engineer? copyEng = DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
             if (copyEng != null)
             {
                 DataSource.Engineers.Remove(copyEng);
@@ -37,18 +37,20 @@ internal class DependenceImplementation : IDependence
 
     public Dependence? Read(int id) //A function that  display an exist dependence with an id
     {
-        return DataSource.Dependences.Find(dep => dep.dependenceId == id);
+        return DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
     }
 
-    public List<Dependence> ReadAll() //A function that display all the dependences
+    public IEnumerable<Dependence?> ReadAll(Func<Dependence?, bool>? filter = null) //stage 2
     {
-        List<Dependence> copyDependences = DataSource.Dependences;
-        return copyDependences;
+        if (filter == null)
+            return DataSource.Dependences.Select(item => item);
+        else
+            return DataSource.Dependences.Where(filter);
     }
 
     public void Update(Dependence item) //A function that update an exist dependence with an id
     {
-        Dependence? copyDep = DataSource.Dependences.Find(dep => dep.dependenceId == item.dependenceId);
+        Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == item.dependenceId);
         if (copyDep != null)
         {
             DataSource.Dependences.Remove(copyDep);

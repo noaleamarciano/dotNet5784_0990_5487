@@ -15,10 +15,8 @@ namespace DalTest
         static readonly IDal s_dal = new DalList();
         static void Main(string[] args)
         {
-            
-                
-                Initialization.Do(s_dal);
-                Console.WriteLine("Exit main menu 0");
+            Initialization.Do(s_dal);
+            Console.WriteLine("Exit main menu 0");
             Console.WriteLine("entity 1");
             Console.WriteLine("entity 2");
             Console.WriteLine("entity 3");
@@ -67,8 +65,10 @@ namespace DalTest
                                 Console.WriteLine(eng);
                                 break;
                             case 3://Display all the list engineers
-                                List<Engineer> copyEngineer = s_dal.Engineer.ReadAll();
-                                copyEngineer.ForEach(s => Console.WriteLine(s));
+                                s_dal.Engineer.
+                                    ReadAll()
+                                    .ToList()
+                                    .ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update an exist engineer
                                 Console.WriteLine("Enter an ID number");
@@ -96,17 +96,15 @@ namespace DalTest
                                 try
                                 {
                                     s_dal.Engineer.Delete(id5);
-                                    List<Engineer> copyEngineer1 = s_dal.Engineer.ReadAll();
-                                    copyEngineer1.ForEach(s => Console.WriteLine(s));
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
                                 break;
-                            
+
                         }
-                       
+
                     }
                     break;
                 case 2://Task entity
@@ -147,8 +145,10 @@ namespace DalTest
                                 Console.WriteLine(tas1);
                                 break;
                             case 3://Display all the tasks
-                                List<DO.Task> copyTask = s_dal.Task.ReadAll();
-                                copyTask.ForEach(s => Console.WriteLine(s));
+                                s_dal.Task.
+                                   ReadAll()
+                                   .ToList()
+                                   .ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update a task
                                 Console.WriteLine("Enter an ID number");
@@ -192,7 +192,7 @@ namespace DalTest
                                 }
                                 break;
                         }
-                        
+
                     }
                     break;
                 case 3://Dependence entity
@@ -223,8 +223,10 @@ namespace DalTest
                                 Console.WriteLine(dep1);
                                 break;
                             case 3://Display all the dependences
-                                List<Dependence> copyDependence = s_dal.Dependence.ReadAll();
-                                copyDependence.ForEach(s => Console.WriteLine(s));
+                                s_dal.Dependence
+                                   .ReadAll()
+                                   .ToList()
+                                   .ForEach(s => Console.WriteLine(s));
                                 break;
                             case 4://Update a dependence
                                 Console.WriteLine("Enter an ID number");
@@ -258,7 +260,7 @@ namespace DalTest
                                 break;
                         }
                     }
-                break;
+                    break;
             }
         }
     }
