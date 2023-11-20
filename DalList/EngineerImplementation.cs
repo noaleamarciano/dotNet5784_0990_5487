@@ -15,7 +15,7 @@ internal class EngineerImplementation : IEngineer
         }
         else
         {
-            throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
+            throw new DalAlreadyExistsException($"engineer with ID={item.engineerId} already exist");
         }
     }
 
@@ -23,7 +23,7 @@ internal class EngineerImplementation : IEngineer
     {
         if (DataSource.Tasks.FirstOrDefault(ta => ta.engineerId == id) == null)
         {
-            throw new Exception("לא ניתן למחוק את האובייקט");
+            throw new DalDeletionImpossible("Its impossible to delete this engineer");
         }
         else
         {
@@ -34,7 +34,7 @@ internal class EngineerImplementation : IEngineer
             }
             else
             {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
+                throw new DalDeletionImpossible("Can not delete the engineer");
             }
         }
     }
@@ -43,13 +43,16 @@ internal class EngineerImplementation : IEngineer
     {
         return DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
     }
-
-    public IEnumerable<Engineer?> ReadAll(Func<Engineer?, bool>? filter = null) //stage 2
+    public Engineer? Read(Func<Engineer, bool> filter)
+    {
+        return DataSource.Engineers.FirstOrDefault(d => filter(d));
+    }
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null) //stage 2
     {
         if (filter == null)
             return DataSource.Engineers.Select(item => item);
         else
-            return DataSource.Engineers.Where(filter);
+            return DataSource.Engineers.Where(item => filter(item));
     }
 
     public void Update(Engineer item) //A function that update an exist Engineer with an id
@@ -62,7 +65,7 @@ internal class EngineerImplementation : IEngineer
         }
         else
         {
-            throw new Exception("אובייקט מסוג Engineer עם ID כזה לא קיים");
+            throw new DalDoesNotExistException($"Engineer with ID={item.engineerId} does not exist");
         }
     }
 }

@@ -19,7 +19,7 @@ internal class DependenceImplementation : IDependence
     {
         if (DataSource.Tasks.FirstOrDefault(ta => ta.engineerId == id) != null)
         {
-            throw new Exception("לא ניתן למחוק את האובייקט");
+            throw new DalDeletionImpossible("Its impossible to delete this dependence");
         }
         else
         {
@@ -30,7 +30,7 @@ internal class DependenceImplementation : IDependence
             }
             else
             {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
+                throw new DalDeletionImpossible($"No dependence with ID={copyEng.engineerId}");
             }
         }
     }
@@ -40,12 +40,16 @@ internal class DependenceImplementation : IDependence
         return DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
     }
 
-    public IEnumerable<Dependence?> ReadAll(Func<Dependence?, bool>? filter = null) //stage 2
+    public Dependence? Read(Func<Dependence, bool> filter)
+    {
+        return DataSource.Dependences.FirstOrDefault(d => filter(d));
+    }
+    public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null) //stage 2
     {
         if (filter == null)
             return DataSource.Dependences.Select(item => item);
         else
-            return DataSource.Dependences.Where(filter);
+            return DataSource.Dependences.Where(item=>filter(item));
     }
 
     public void Update(Dependence item) //A function that update an exist dependence with an id
@@ -58,7 +62,7 @@ internal class DependenceImplementation : IDependence
         }
         else
         {
-            throw new Exception("אובייקט מסוג Dependence עם ID כזה לא קיים");
+            throw new DalDoesNotExistException($"Dependence with ID={item.dependenceId} does not exist");
         }
     }
 }

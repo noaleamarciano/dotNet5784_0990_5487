@@ -18,7 +18,7 @@ internal class TaskImplementation : ITask
     {
         if (DataSource.Dependences.FirstOrDefault(dep => dep.previousTaskId == id) != null)
         {
-            throw new Exception("לא ניתן למחוק את האובייקט");
+            throw new DalDeletionImpossible("Its impossible to delete this task");
         }
         else
         {
@@ -31,7 +31,7 @@ internal class TaskImplementation : ITask
             }
             else
             {
-                throw new Exception("אובייקט מסוג Engineer עם ID כזה כבר קיים");
+                throw new DalDeletionImpossible($"No task with ID={copyDep2.engineerId}");
             }
 
         }
@@ -41,13 +41,16 @@ internal class TaskImplementation : ITask
     {
         return DataSource.Tasks.FirstOrDefault(dep => dep.taskId == id);
     }
-
-    public IEnumerable<Task?> ReadAll(Func<Task?, bool>? filter = null) //stage 2
+    public Task? Read(Func<Task, bool> filter)
+    {
+        return DataSource.Tasks.FirstOrDefault(d => filter(d));
+    }
+    public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) //stage 2
     {
         if (filter == null)
             return DataSource.Tasks.Select(item => item);
         else
-            return DataSource.Tasks.Where(filter);
+            return DataSource.Tasks.Where(item=>filter(item));
     }
 
     public void Update(Task item) //A function that update an exist Task with an id
@@ -60,7 +63,7 @@ internal class TaskImplementation : ITask
         }
         else
         {
-            throw new Exception("אובייקט מסוג Tasks עם ID כזה לא קיים");
+            throw new DalDoesNotExistException($"Task with ID={item.taskId} does not exist");
         }
     }
 }

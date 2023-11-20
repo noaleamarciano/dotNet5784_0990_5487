@@ -34,9 +34,11 @@ namespace DalTest
                     Console.WriteLine("View the full list 3");
                     Console.WriteLine("Update 4");
                     Console.WriteLine("Delete 5");
-                    int choose1 = int.Parse(Console.ReadLine());
+                    int choose1 = 1;
                     while (choose1 != 0)
                     {
+                        Console.WriteLine("Enter your choice");
+                        choose1 = int.Parse(Console.ReadLine());
                         switch (choose1)
                         {
                             case 0:

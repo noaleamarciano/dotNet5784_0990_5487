@@ -77,7 +77,10 @@ public static class Initialization
 
         foreach (var _task in tasksNames)
         {
-            List<Engineer> newList = s_dal!.Engineer.ReadAll();
+            //List<Engineer> newList = s_dal!.Engineer.ReadAll();
+            var engineers = s_dal!.Engineer!.ReadAll().ToList();
+            int randomIndex = s_rand.Next(0, engineers.Count);
+            int engineerid = engineers[randomIndex]?.engineerId ?? 0;
             for (int i = 0; i < tasksNames.Length; i++)
             {
                 Random rand = new Random();
@@ -85,7 +88,7 @@ public static class Initialization
                 EngineerExperience _experience = (EngineerExperience)x;
                 Task newTask = new(
                     0,
-                    tasksNames[0],
+                    _task,
                     "",
                     true,
                     null,
@@ -95,7 +98,7 @@ public static class Initialization
                     null,
                     "",
                     "",
-                    newList[0].engineerId,
+                    engineerid,
                     _experience
                     );
                 s_dal!.Task.Create(newTask);
@@ -104,13 +107,13 @@ public static class Initialization
     }
     private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.
     {
-        List<Task> newList = s_dal!.Task.ReadAll();
-        for (int i = 1; i < newList.Count; i++)
+        var tasks = s_dal!.Task!.ReadAll().ToList();
+        for (int i = 1; i < tasks.Count; i++)
         {
             Dependence newDep = new(
                 0,
-                newList[i].taskId,
-                newList[i - 1].taskId
+                tasks[i].taskId,
+                tasks[i - 1].taskId
                 );
             s_dal!.Dependence.Create(newDep);
         }
