@@ -112,8 +112,8 @@ public static class Initialization
         {
             Dependence newDep = new(
                 0,
-                tasks[i].taskId,
-                tasks[i - 1].taskId
+                tasks[i]!.taskId,
+                tasks[i - 1]!.taskId
                 );
             s_dal!.Dependence.Create(newDep);
         }
