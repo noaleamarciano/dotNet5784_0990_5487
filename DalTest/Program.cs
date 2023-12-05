@@ -1,18 +1,12 @@
 ﻿using Dal;
 using DalApi;
 using DO;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
-using System.Reflection.Emit;
-using System.Xml.Linq;
 
 namespace DalTest
 {
     internal class Program
     {
-        static readonly IDal s_dal = new DalList();
+        static readonly IDal s_dal = new Dal.DalXml(); //stage 3
         static void Main(string[] args)
         {
             Initialization.Do(s_dal);
@@ -128,7 +122,7 @@ namespace DalTest
                                 string description = (Console.ReadLine()!);
                                 string alias = (Console.ReadLine()!);
                                 bool milestone = bool.Parse(Console.ReadLine()!);
-                                DateTime? productionDate = Convert.ToDateTime(Console.ReadLine());
+                                DateTime productionDate = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? startDate = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? estimComplete = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? finalDate = Convert.ToDateTime(Console.ReadLine());
@@ -160,7 +154,7 @@ namespace DalTest
                                 string description1 = (Console.ReadLine()!);
                                 string alias1 = (Console.ReadLine()!)    ;
                                 bool milestone1 = bool.Parse(Console.ReadLine()!);
-                                DateTime? productionDate1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime productionDate1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? startDate1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? estimComplete1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? finalDate1 = Convert.ToDateTime(Console.ReadLine());

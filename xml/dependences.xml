@@ -1,3 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDependence>
+	<Dependence>
+		<DependenceId>1026</DependenceId>
+		<PendingTaskId>1001</PendingTaskId>
+		<PreviousTaskId>1000</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1027</DependenceId>
+		<PendingTaskId>1002</PendingTaskId>
+		<PreviousTaskId>1001</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1028</DependenceId>
+		<PendingTaskId>1003</PendingTaskId>
+		<PreviousTaskId>1002</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1029</DependenceId>
+		<PendingTaskId>1004</PendingTaskId>
+		<PreviousTaskId>1003</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1030</DependenceId>
+		<PendingTaskId>1005</PendingTaskId>
+	<PreviousTaskId>1004</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1031</DependenceId>
+		<PendingTaskId>1006</PendingTaskId>
+		<PreviousTaskId>1005</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1032</DependenceId>
+		<PendingTaskId>1007</PendingTaskId>
+		<PreviousTaskId>1006</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1033</DependenceId>
+		<PendingTaskId>1008</PendingTaskId>
+		<PreviousTaskId>1007</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1034</DependenceId>
+		<PendingTaskId>1009</PendingTaskId>
+		<PreviousTaskId>1008</PreviousTaskId>
+	</Dependence>
+
+	<Dependence>
+		<DependenceId>1035</DependenceId>
+		<PendingTaskId>1010</PendingTaskId>
+		<PreviousTaskId>1009</PreviousTaskId>
+	</Dependence>
+	
+
+
 </ArrayOfDependence>

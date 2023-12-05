@@ -8,11 +8,20 @@
 /// <param name="costPerHour">cost per hour for the engineer</param>
 public record Engineer
 (
-
     int engineerId,
     string? engineerName,
     string? engineerEmail,
     int? costPerHour,
     EngineerExperience exp,
     bool isActive = true
-);
+)
+/// <summary>
+/// Default constructor for Engineer without parameters.
+/// </summary>
+/// 
+{
+public Engineer() : this(0, null, null, null, , true)
+{
+    // Additional initialization logic can be added if needed.
+}
+}

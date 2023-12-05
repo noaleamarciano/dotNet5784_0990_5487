@@ -77,6 +77,7 @@ public static class Initialization
 
         foreach (var _task in tasksNames)
         {
+            DateTime createdAt=DateTime.Now;
             //List<Engineer> newList = s_dal!.Engineer.ReadAll();
             var engineers = s_dal!.Engineer!.ReadAll().ToList();
             int randomIndex = s_rand.Next(0, engineers.Count);
@@ -91,7 +92,7 @@ public static class Initialization
                     _task,
                     "",
                     true,
-                    null,
+                    createdAt,
                     null,
                     null,
                     null,

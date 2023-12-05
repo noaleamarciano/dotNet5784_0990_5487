@@ -17,21 +17,14 @@ internal class DependenceImplementation : IDependence
 
     public void Delete(int id) //A function that delete an exist dependence.
     {
-        if (DataSource.Tasks.FirstOrDefault(ta => ta.engineerId == id) != null)
+        Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
+        if (copyDep != null)
         {
-            throw new DalDeletionImpossible("Its impossible to delete this dependence");
+            throw new DalDeletionImpossible($"No dependence with ID={copyDep.dependenceId}");
         }
         else
-        {
-            Engineer? copyEng = DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
-            if (copyEng != null)
-            {
-                DataSource.Engineers.Remove(copyEng);
-            }
-            else
-            {
-                throw new DalDeletionImpossible($"No dependence with ID={copyEng.engineerId}");
-            }
+        { 
+            DataSource.Dependences.Remove(copyDep!);
         }
     }
 

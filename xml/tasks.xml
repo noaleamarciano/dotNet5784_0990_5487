@@ -1,3 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTask>
+	<Task>
+		<TaskId>1000</TaskId>
+		<TaskDescription>איטום רצפה</TaskDescription>
+		<Alias>איטום</Alias>
+		<ProductionDate>2011-04-04T00:00:00</ProductionDate>
+		<EngineerId>123456789</EngineerId>
+		<Exp>expert</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1001</TaskId>
+		<TaskDescription>בניית קירות חיצוניים</TaskDescription>
+		<Alias>קירות</Alias>
+		<ProductionDate>2011-06-20T00:00:00</ProductionDate>
+		<EngineerId>123456789</EngineerId>
+		<Exp>expert</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1002</TaskId>
+		<TaskDescription>התקנת רצפת פרקט</TaskDescription>
+		<Alias>פרקט</Alias>
+		<ProductionDate>2012-09-15T00:00:00</ProductionDate>
+		<EngineerId>234567890</EngineerId>
+		<Exp>junior</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1003</TaskId>
+		<TaskDescription>צביעת תקרה</TaskDescription>
+		<Alias>צביעה</Alias>
+		<ProductionDate>2013-12-10T00:00:00</ProductionDate>
+		<EngineerId>345678901</EngineerId>
+		<Exp>rookie</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1004</TaskId>
+		<TaskDescription>התקנת דלתות וחלונות</TaskDescription>
+		<Alias>דלתות</Alias>
+		<ProductionDate>2014-03-25T00:00:00</ProductionDate>
+		<EngineerId>456789012</EngineerId>
+		<Exp>expert</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1005</TaskId>
+		<TaskDescription>בניית גג מחדש</TaskDescription>
+		<Alias>גג</Alias>
+		<ProductionDate>2015-07-01T00:00:00</ProductionDate>
+		<EngineerId>567890123</EngineerId>
+		<Exp>junior</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1006</TaskId>
+		<TaskDescription>התקנת מעלית בניין</TaskDescription>
+		<Alias>מעלית</Alias>
+		<ProductionDate>2016-10-05T00:00:00</ProductionDate>
+		<EngineerId>678901234</EngineerId>
+		<Exp>expert</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1007</TaskId>
+		<TaskDescription>בנייה והתקנת מערכת חשמל</TaskDescription>
+		<Alias>חשמל</Alias>
+		<ProductionDate>2017-01-12T00:00:00</ProductionDate>
+		<EngineerId>789012345</EngineerId>
+		<Exp>rookie</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1008</TaskId>
+		<TaskDescription>הקמת מטבח חדש</TaskDescription>
+		<Alias>מטבח</Alias>
+		<ProductionDate>2018-04-18T00:00:00</ProductionDate>
+		<EngineerId>890123456</EngineerId>
+		<Exp>expert</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1009</TaskId>
+		<TaskDescription>שדרוג מערכת חימום</TaskDescription>
+		<Alias>חימום</Alias>
+		<ProductionDate>2019-08-22T00:00:00</ProductionDate>
+		<EngineerId>901234567</EngineerId>
+		<Exp>junior</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
+	<Task>
+		<TaskId>1010</TaskId>
+		<TaskDescription>בניית חורף לחצר</TaskDescription>
+		<Alias>חורף</Alias>
+		<ProductionDate>2020-11-28T00:00:00</ProductionDate>
+		<EngineerId>1234567890</EngineerId>
+		<Exp>rookie</Exp>
+		<IsActive>true</IsActive>
+	</Task>
+
 </ArrayOfTask>

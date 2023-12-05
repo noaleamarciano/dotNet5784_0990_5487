@@ -17,16 +17,16 @@ namespace DO;
 public record Task
 (
     int taskId,
-    string? taskDescription,
-    string? alias,
-    bool? milestone,
-    DateTime? productionDate,
-    DateTime? startDate,
-    DateTime? estimComplete,
-    DateTime? finalDate,
+    string taskDescription,
+    string alias,
+    bool milestone,
+    DateTime productionDate,//תאריך מתוכנן לתחילת העבודה
+    DateTime? startDate,//תאריך תחילת העבודה על המשימה
+    DateTime? estimComplete,//תאריך סיום אחרון אפשרי
+    DateTime? finalDate,//תאריך סיום בפועל
     DateTime? complete,
-    string product,
-    string remarks,
+    string? product,
+    string? remarks,
     int engineerId,
     EngineerExperience exp,
     bool isActive = true
