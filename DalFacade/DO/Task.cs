@@ -28,5 +28,6 @@ public record Task
     string product,
     string remarks,
     int engineerId,
-    EngineerExperience exp
+    EngineerExperience exp,
+    bool isActive = true
 );

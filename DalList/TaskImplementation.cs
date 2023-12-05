@@ -16,25 +16,26 @@ internal class TaskImplementation : ITask
 
     public void Delete(int id) //A function that delete an exist Task.
     {
-        if (DataSource.Dependences.FirstOrDefault(dep => dep.previousTaskId == id) != null)
-        {
-            throw new DalDeletionImpossible("Its impossible to delete this task");
-        }
-        else
-        {
-            Task? copyDep2 = DataSource.Tasks.FirstOrDefault(ta => ta.taskId == id);
-            Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.pendingTaskId == id);
-            if (copyDep2 != null)
-            {
-                DataSource.Tasks.Remove(copyDep2);
-                DataSource.Dependences.Remove(copyDep);
-            }
-            else
-            {
-                throw new DalDeletionImpossible($"No task with ID={copyDep2.engineerId}");
-            }
+        throw new DalDeletionImpossible("Its impossible to delete this task");
+        //if (DataSource.Dependences.FirstOrDefault(dep => dep.previousTaskId == id) != null)
+        //{
+        //    throw new DalDeletionImpossible("Its impossible to delete this task");
+        //}
+        //else
+        //{
+        //    Task? copyDep2 = DataSource.Tasks.FirstOrDefault(ta => ta.taskId == id);
+        //    Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.pendingTaskId == id);
+        //    if (copyDep2 != null)
+        //    {
+        //        DataSource.Tasks.Remove(copyDep2);
+        //        DataSource.Dependences.Remove(copyDep);
+        //    }
+        //    else
+        //    {
+        //        throw new DalDeletionImpossible($"No task with ID={copyDep2.engineerId}");
+        //    }
 
-        }
+        //}
     }
 
     public Task? Read(int id) //A function that  display an exist Task with an id
