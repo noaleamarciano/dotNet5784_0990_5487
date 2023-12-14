@@ -30,4 +30,12 @@ public record Task
     int engineerId,
     EngineerExperience exp,
     bool isActive = true
-);
+)
+{
+public Task():this(0,"","",true,DateTime.Now,null,null,null,null,"","",0, new EngineerExperience(),true)
+{
+    // התוכן של הקונסטרקטור כאן (אם יש)
+}
+}
+
+

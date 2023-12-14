@@ -82,8 +82,7 @@ public static class Initialization
             var engineers = s_dal!.Engineer!.ReadAll().ToList();
             int randomIndex = s_rand.Next(0, engineers.Count);
             int engineerid = engineers[randomIndex]?.engineerId ?? 0;
-            for (int i = 0; i < tasksNames.Length; i++)
-            {
+            
                 Random rand = new Random();
                 int x = rand.Next(0, 3);
                 EngineerExperience _experience = (EngineerExperience)x;
@@ -103,7 +102,7 @@ public static class Initialization
                     _experience
                     );
                 s_dal!.Task.Create(newTask);
-            }
+            
         }
     }
     private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.

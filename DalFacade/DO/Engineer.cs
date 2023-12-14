@@ -20,7 +20,7 @@ public record Engineer
 /// </summary>
 /// 
 {
-public Engineer() : this(0, null, null, null, , true)
+public Engineer() : this(0, null, null, null,new EngineerExperience(), true)
 {
     // Additional initialization logic can be added if needed.
 }

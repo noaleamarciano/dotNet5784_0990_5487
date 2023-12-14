@@ -1,71 +1,107 @@
-﻿
-
-using DalApi;
+﻿using DalApi;
 using DO;
+using System.Xml.Linq;
 
 namespace Dal;
-
 internal class DependenceImplementation : IDependence
 {
+    const string dependencesFile = @"..\xml\dependences.xml";
+    XDocument dependencesDocument = XDocument.Load(dependencesFile);
     public int Create(Dependence item)
     {
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-        dependenceList.Add(item);
-        XMLTools.SaveListToXMLSerializer<Dependence>(dependenceList, "dependences");
-        return item.dependenceId;
-
-
-
-
-
+        int dependenceId = Config.NextDependenceId;
+        XElement? dependenceElement = new XElement("Dependence",
+            new XElement("DependenceId", dependenceId),
+            new XElement("PendingTaskId", item.pendingTaskId),
+            new XElement("PreviousTaskId", item.previousTaskId));
+        dependencesDocument.Root?.Add(dependenceElement);
+        dependencesDocument.Save(dependencesFile);
+        return dependenceId;
     }
 
     public void Delete(int id)
     {
+        XElement? copyDep = dependencesDocument.Root
+                ?.Elements("Dependence")
+                .FirstOrDefault(dep => (int)dep.Element("DependenceId")! == id);
 
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-        Dependence? copyDep = dependenceList.FirstOrDefault(dep => dep.dependenceId == id);
-        if (copyDep != null)
+        if (copyDep == null)
         {
-            throw new DalDeletionImpossible($"No dependence with ID={copyDep.dependenceId}");
+            throw new DalDeletionImpossible($"No dependence with this id");
         }
         else
         {
-            dependenceList.Remove(copyDep!);
-            XMLTools.SaveListToXMLSerializer<Dependence>(dependenceList, "dependences");
+            copyDep.Remove();
+            dependencesDocument.Save(dependencesFile);
         }
     }
 
     public Dependence? Read(int id)
     {
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-        return dependenceList.FirstOrDefault(dep => dep.dependenceId == id);
+        XElement? copyDep = dependencesDocument.Root
+                ?.Elements("Dependence")
+                .FirstOrDefault(d => (int)d.Element("DependenceId")! == id);
+        if (copyDep != null)
+        {
+            Dependence? dep = new Dependence((int)copyDep.Element("DependenceId")!,
+                (int)copyDep.Element("PendingTaskId")!,
+                (int)copyDep.Element("PreviousTaskId")!);
+            return dep;
+        }
+        else
+        {
+            throw new DalDeletionImpossible($"No dependence with this id");
+        }
     }
 
     public Dependence? Read(Func<Dependence, bool> filter)
     {
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-        return dependenceList.FirstOrDefault(d => filter(d));
+        Dependence? dep = dependencesDocument.Root?
+     .Elements("Dependence")
+     ?.Select(d => new Dependence(
+         (int)d.Element("DependenceId")!,
+         (int)d.Element("PendingTaskId")!,
+         (int)d.Element("PreviousTaskId")!
+     ))
+     !.FirstOrDefault(filter);
+
+        return dep;
     }
 
     public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null)
     {
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
+        XElement? dependences = XMLTools.LoadListFromXMLElement("dependences");
+
+        IEnumerable<Dependence> dependencesList = dependences
+            .Elements("Dependence")
+            .Select(e => new Dependence(
+                dependenceId: (int)e.Element("DependenceId")!,
+                pendingTaskId: (int)e.Element("PendingTaskId")!,
+                previousTaskId: (int)e.Element("PreviousTaskId")!
+            ));
         if (filter == null)
-            return dependenceList.Select(item => item);
+            return dependencesList.Select(item => item);
         else
-            return dependenceList.Where(item => filter(item));
+            return dependencesList.Where(item => filter(item));
     }
 
     public void Update(Dependence item)
     {
-        List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-        Dependence? copyDep = dependenceList.FirstOrDefault(dep => dep.dependenceId == item.dependenceId);
+        XElement? copyDep = dependencesDocument.Root
+                ?.Elements("Dependence")
+                .FirstOrDefault(dep => (int)dep.Element("DependenceId")! == item.dependenceId);
         if (copyDep != null)
         {
-            dependenceList.Remove(copyDep);
-            dependenceList.Add(item);
-            XMLTools.SaveListToXMLSerializer<Dependence>(dependenceList, "dependences");
+            //copyDep.Remove();
+            //dependencesDocument.Add(item);
+            //dependencesDocument.Save(dependencesFile);
+            copyDep.ReplaceWith(
+            new XElement("Dependence",
+            new XElement("DependenceId", item.dependenceId),
+            new XElement("PendingTaskId", item.pendingTaskId),
+            new XElement("PreviousTaskId", item.previousTaskId)));
+            dependencesDocument.Save(dependencesFile);
+
         }
         else
         {

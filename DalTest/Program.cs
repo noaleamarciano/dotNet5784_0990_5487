@@ -9,7 +9,10 @@ namespace DalTest
         static readonly IDal s_dal = new Dal.DalXml(); //stage 3
         static void Main(string[] args)
         {
-            Initialization.Do(s_dal);
+            Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
+            string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
+            if (ans == "Y") //stage 3
+                Initialization.Do(s_dal); //stage 2
             Console.WriteLine("Exit main menu 0");
             Console.WriteLine("entity 1");
             Console.WriteLine("entity 2");
@@ -110,9 +113,11 @@ namespace DalTest
                     Console.WriteLine("View the full list 3");
                     Console.WriteLine("Update 4");
                     Console.WriteLine("Delete 5");
-                    int choose2 = int.Parse(Console.ReadLine()!);
+                    int choose2 = 1;
                     while (choose2 != 0)
                     {
+                        Console.WriteLine("Enter your choice");
+                        choose2 = int.Parse(Console.ReadLine()!);
                         switch (choose2)
                         {
                             case 0:
@@ -149,7 +154,7 @@ namespace DalTest
                             case 4://Update a task
                                 Console.WriteLine("Enter an ID number");
                                 int id3 = int.Parse(Console.ReadLine()!);
-                                Console.WriteLine(s_dal.Dependence.Read(id3));
+                                Console.WriteLine(s_dal.Task.Read(id3));
                                 Console.WriteLine("Enter details to update");
                                 string description1 = (Console.ReadLine()!);
                                 string alias1 = (Console.ReadLine()!)    ;
@@ -196,17 +201,19 @@ namespace DalTest
                     Console.WriteLine("הוספה 1");
                     Console.WriteLine("תצוגה 2");
                     Console.WriteLine("תצוגת הרשימה המלאה 3");
-                    Console.WriteLine("עדכון 3");
-                    Console.WriteLine("מחיקה 4");
-                    int choose3 = int.Parse(Console.ReadLine()!);
+                    Console.WriteLine("עדכון 4");
+                    Console.WriteLine("מחיקה 5");
+                    int choose3 = 1;
                     while (choose3 != 0)
                     {
+                        Console.WriteLine("Enter your choice");
+                        choose3 = int.Parse(Console.ReadLine()!);
                         switch (choose3)
                         {
                             case 0:
                                 break;
                             case 1://Add a new dependence
-                                Console.WriteLine("Enter all engineer details");
+                                Console.WriteLine("Enter all dependenece details");
                                 int pendingTaskId = int.Parse(Console.ReadLine()!);
                                 int previousTaskId = int.Parse(Console.ReadLine()!);
                                 Dependence dep = new(0, pendingTaskId, previousTaskId);
@@ -233,7 +240,7 @@ namespace DalTest
                                 int previousTaskId1 = int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    Dependence dep2 = new(0, pendingTaskId1, previousTaskId1);
+                                    Dependence dep2 = new(id3, pendingTaskId1, previousTaskId1);
                                     s_dal.Dependence.Update(dep2);
                                 }
                                 catch (Exception ex)
