@@ -16,6 +16,7 @@ internal class DependenceImplementation : IDependence
             new XElement("PreviousTaskId", item.previousTaskId));
         dependencesDocument.Root?.Add(dependenceElement);
         dependencesDocument.Save(dependencesFile);
+        
         return dependenceId;
     }
 
@@ -107,5 +108,10 @@ internal class DependenceImplementation : IDependence
         {
             throw new DalDoesNotExistException($"Dependence with ID={item.dependenceId} does not exist");
         }
+    }
+
+    public void Reset()
+    {
+
     }
 }

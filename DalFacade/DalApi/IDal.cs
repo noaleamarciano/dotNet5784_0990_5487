@@ -13,6 +13,7 @@ namespace DalApi
         IEngineer Engineer { get; }
         ITask Task { get; }
         IDependence Dependence { get; }
+        public void Reset();
     }
 }
 

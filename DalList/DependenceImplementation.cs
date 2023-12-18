@@ -58,4 +58,9 @@ internal class DependenceImplementation : IDependence
             throw new DalDoesNotExistException($"Dependence with ID={item.dependenceId} does not exist");
         }
     }
+
+    public void Reset()
+    {
+        DataSource.Dependences.Clear();
+    }
 }

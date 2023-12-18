@@ -69,4 +69,9 @@ internal class EngineerImplementation : IEngineer
             throw new DalDoesNotExistException($"Engineer with ID={item.engineerId} does not exist");
         }
     }
+
+    public void Reset()
+    {
+        DataSource.Engineers.Clear();
+    }
 }

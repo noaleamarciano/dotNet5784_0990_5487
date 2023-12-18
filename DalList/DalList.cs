@@ -13,6 +13,13 @@ sealed public class DalList : IDal
     public ITask Task => new TaskImplementation();
 
     public IDependence Dependence =>  new DependenceImplementation();
+
+    public void Reset()
+    {
+        Task.Reset();
+        Engineer.Reset();
+        Dependence.Reset();
+    }
 }
 
 

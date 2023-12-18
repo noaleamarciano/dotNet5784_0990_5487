@@ -81,4 +81,8 @@ internal class TaskImplementation : ITask
             throw new DalDoesNotExistException($"Task with ID={item.taskId} does not exist");
         }
     }
+    public void Reset()
+    {
+
+    }
 }
