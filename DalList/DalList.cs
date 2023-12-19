@@ -8,8 +8,11 @@ namespace Dal;
 using DalApi;
 using static Dal.DataSource;
 
-sealed public class DalList : IDal
+sealed internal class DalList : IDal
 {
+    public static IDal Instance { get; } = new DalList();
+    private DalList() { }
+
     public IEngineer Engineer => new EngineerImplementation();
 
     public ITask Task => new TaskImplementation();
@@ -24,6 +27,7 @@ sealed public class DalList : IDal
         Engineer.Reset();
         Dependence.Reset();
     }
+
 }
 
 
