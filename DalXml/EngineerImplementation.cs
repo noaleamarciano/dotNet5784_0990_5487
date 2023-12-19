@@ -4,7 +4,7 @@ namespace Dal;
 
 internal class EngineerImplementation : IEngineer
 {
-    public int Create(Engineer item)
+    public int Create(Engineer item)//A function that create a new Engineer.
     {
         List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         if (engineerList.FirstOrDefault(eng => eng.engineerId == item.engineerId) == null)
@@ -19,7 +19,7 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public void Delete(int id)
+    public void Delete(int id)//A function that delete an exist Engineer.
     {
        throw new DalDeletionImpossible("Its impossible to delete this engineer");
         //List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
@@ -43,19 +43,19 @@ internal class EngineerImplementation : IEngineer
         //}
     }
 
-    public Engineer? Read(int id)
+    public Engineer? Read(int id)//A function that  display an exist Engineer with an id
     {
         List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         return engineerList.FirstOrDefault(eng => eng.engineerId == id);
     }
 
-    public Engineer? Read(Func<Engineer, bool> filter)
+    public Engineer? Read(Func<Engineer, bool> filter)//A function that update an exist dependence with an id
     {
         List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         return engineerList.FirstOrDefault(d => filter(d));
     }
 
-    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)//display all the list with a filter
     {
         List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         if (filter == null)
@@ -64,7 +64,7 @@ internal class EngineerImplementation : IEngineer
             return engineerList.Where(item => filter(item));
     }
 
-    public void Update(Engineer item)
+    public void Update(Engineer item) //A function that update an exist Engineer with an id
     {
         List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         Engineer? copyEng = engineerList.FirstOrDefault(eng => eng.engineerId == item.engineerId);
@@ -80,8 +80,13 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public void Reset()
+    public void Reset()//clear all the engineers
     {
-
+        List<Engineer> engineerList = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
+        if(engineerList.Count > 0)
+        {
+            engineerList.Clear();
+            XMLTools.SaveListToXMLSerializer<Engineer>(engineerList, "engineers");
+        }
     }
 }

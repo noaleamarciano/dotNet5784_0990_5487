@@ -1,5 +1,6 @@
 ﻿using DO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace DalApi
         IEngineer Engineer { get; }
         ITask Task { get; }
         IDependence Dependence { get; }
-        public void Reset();
+        public void Reset();//Clear the data
+
     }
 }
 

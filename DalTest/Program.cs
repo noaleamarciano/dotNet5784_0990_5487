@@ -6,6 +6,7 @@ namespace DalTest
 {
     internal class Program
     {
+        //static readonly IDal s_dal = new DalList();
         static readonly IDal s_dal = new Dal.DalXml(); //stage 3
         static void Main(string[] args)
         {
@@ -31,6 +32,7 @@ namespace DalTest
                     Console.WriteLine("View the full list 3");
                     Console.WriteLine("Update 4");
                     Console.WriteLine("Delete 5");
+                    Console.WriteLine("Reset 6");
                     int choose1 = 1;
                     while (choose1 != 0)
                     {
@@ -101,7 +103,9 @@ namespace DalTest
                                     Console.WriteLine(ex.Message);
                                 }
                                 break;
-
+                            case 6://Reset the list
+                                s_dal.Engineer.Reset();
+                                break;
                         }
 
                     }
@@ -113,6 +117,7 @@ namespace DalTest
                     Console.WriteLine("View the full list 3");
                     Console.WriteLine("Update 4");
                     Console.WriteLine("Delete 5");
+                    Console.WriteLine("Reset 6");
                     int choose2 = 1;
                     while (choose2 != 0)
                     {
@@ -192,17 +197,21 @@ namespace DalTest
                                     Console.WriteLine(ex.Message);
                                 }
                                 break;
+                            case 6://Reset the list
+                                s_dal.Task.Reset();
+                                break;
                         }
 
                     }
                     break;
                 case 3://Dependence entity
-                    Console.WriteLine("0 יציאה מתפריט ראשי");
-                    Console.WriteLine("הוספה 1");
-                    Console.WriteLine("תצוגה 2");
-                    Console.WriteLine("תצוגת הרשימה המלאה 3");
-                    Console.WriteLine("עדכון 4");
-                    Console.WriteLine("מחיקה 5");
+                    Console.WriteLine("0 Exit main menu");
+                    Console.WriteLine("Add 1");
+                    Console.WriteLine("Display 2");
+                    Console.WriteLine("View the full list 3");
+                    Console.WriteLine("Update 4");
+                    Console.WriteLine("Delete 5");
+                    Console.WriteLine("Reset 6");
                     int choose3 = 1;
                     while (choose3 != 0)
                     {
@@ -260,6 +269,9 @@ namespace DalTest
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
+                                break;
+                            case 6://Reset the list
+                                s_dal.Dependence.Reset();
                                 break;
                         }
                     }

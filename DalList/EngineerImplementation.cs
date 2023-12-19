@@ -44,11 +44,11 @@ internal class EngineerImplementation : IEngineer
     {
         return DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
     }
-    public Engineer? Read(Func<Engineer, bool> filter)
+    public Engineer? Read(Func<Engineer, bool> filter)//A function that update an exist dependence with an id
     {
         return DataSource.Engineers.FirstOrDefault(d => filter(d));
     }
-    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null) //stage 2
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)//display all the list with a filter
     {
         if (filter == null)
             return DataSource.Engineers.Select(item => item);
@@ -70,8 +70,12 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public void Reset()
+    public void Reset()//clear all the engineers
     {
-        DataSource.Engineers.Clear();
+        if (DataSource.Engineers.Count > 0)
+        {
+            DataSource.Engineers.Clear();
+        }
+       
     }
 }

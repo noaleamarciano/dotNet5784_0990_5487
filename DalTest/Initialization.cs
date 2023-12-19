@@ -77,32 +77,34 @@ public static class Initialization
 
         foreach (var _task in tasksNames)
         {
-            DateTime createdAt=DateTime.Now;
+            DateTime createdAt = DateTime.Now;
             //List<Engineer> newList = s_dal!.Engineer.ReadAll();
             var engineers = s_dal!.Engineer!.ReadAll().ToList();
             int randomIndex = s_rand.Next(0, engineers.Count);
             int engineerid = engineers[randomIndex]?.engineerId ?? 0;
-            
-                Random rand = new Random();
-                int x = rand.Next(0, 3);
-                EngineerExperience _experience = (EngineerExperience)x;
-                Task newTask = new(
-                    0,
-                    _task,
-                    "",
-                    true,
-                    createdAt,
-                    null,
-                    null,
-                    null,
-                    null,
-                    "",
-                    "",
-                    engineerid,
-                    _experience
-                    );
-                s_dal!.Task.Create(newTask);
-            
+
+            Random rand = new Random();
+            int x = rand.Next(0, 3);
+            EngineerExperience _experience = (EngineerExperience)x;
+            Task newTask = new(
+                0,
+                _task,
+                "",
+                true,
+                createdAt,
+                null,
+                null,
+                null,
+                null,
+                "",
+                "",
+                engineerid,
+                _experience
+             //TimeSpan.FromDays(5)
+
+                );
+            s_dal!.Task.Create(newTask);
+
         }
     }
     private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.

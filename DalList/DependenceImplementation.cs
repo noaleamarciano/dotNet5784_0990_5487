@@ -20,11 +20,11 @@ internal class DependenceImplementation : IDependence
         Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
         if (copyDep != null)
         {
-            throw new DalDeletionImpossible($"No dependence with ID={copyDep.dependenceId}");
+            DataSource.Dependences.Remove(copyDep!);
         }
         else
         { 
-            DataSource.Dependences.Remove(copyDep!);
+            throw new DalDeletionImpossible($"No dependence with ID={copyDep!.dependenceId}");
         }
     }
 
@@ -33,11 +33,11 @@ internal class DependenceImplementation : IDependence
         return DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
     }
 
-    public Dependence? Read(Func<Dependence, bool> filter)
+    public Dependence? Read(Func<Dependence, bool> filter)//A function that update an exist dependence with a filter
     {
         return DataSource.Dependences.FirstOrDefault(d => filter(d));
     }
-    public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null) //stage 2
+    public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null) //display all the list with a filter
     {
         if (filter == null)
             return DataSource.Dependences.Select(item => item);
@@ -59,8 +59,12 @@ internal class DependenceImplementation : IDependence
         }
     }
 
-    public void Reset()
+    public void Reset()//clear all the dependences
     {
-        DataSource.Dependences.Clear();
+        if( DataSource.Dependences.Count>0)
+        {
+            DataSource.Dependences.Clear();
+        }
+       
     }
 }

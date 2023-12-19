@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dal;
 using DalApi;
+using static Dal.DataSource;
+
 sealed public class DalList : IDal
 {
     public IEngineer Engineer => new EngineerImplementation();
@@ -14,7 +16,9 @@ sealed public class DalList : IDal
 
     public IDependence Dependence =>  new DependenceImplementation();
 
-    public void Reset()
+    public DateTime? projectBegining => Config.projectBegining; 
+    public DateTime? projectFinishing => Config.projectFinishing;
+    public void Reset() //clear all the data
     {
         Task.Reset();
         Engineer.Reset();

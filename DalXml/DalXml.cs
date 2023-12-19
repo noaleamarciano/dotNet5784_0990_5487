@@ -7,10 +7,12 @@ sealed public class DalXml : IDal
     public ITask Task => new TaskImplementation();
     public IDependence Dependence => new DependenceImplementation();
 
-    public void Reset()
+    public void Reset()//A function that clear all the data
     {
         Task.Reset();
         Dependence.Reset();
-        Engineer.Reset();   
+        Engineer.Reset();
     }
+    public DateTime? projectBegining => Config.projectBegining;
+    public DateTime? projectFinishing => Config.projectFinishing;
 }

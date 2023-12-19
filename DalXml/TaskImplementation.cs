@@ -8,7 +8,7 @@ namespace Dal;
 
 internal class TaskImplementation : ITask
 {
-    public int Create(DO.Task item)
+    public int Create(DO.Task item)//A function that create a new Task.
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         int newId = Config.NextTaskId;
@@ -18,7 +18,7 @@ internal class TaskImplementation : ITask
         return newId;
     }
 
-    public void Delete(int id)
+    public void Delete(int id)//A function that delete an exist Task.
     {
         throw new DalDeletionImpossible("Its impossible to delete this task");
         //List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
@@ -45,19 +45,19 @@ internal class TaskImplementation : ITask
         //}
     }
 
-    public DO.Task? Read(int id)
+    public DO.Task? Read(int id)//A function that  display an exist Task with an id
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         return taskList.FirstOrDefault(dep => dep.taskId == id);
     }
 
-    public DO.Task? Read(Func<DO.Task, bool> filter)
+    public DO.Task? Read(Func<DO.Task, bool> filter)//A function that update an exist dependence with a filter
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         return taskList.FirstOrDefault(d => filter(d));
     }
 
-    public IEnumerable<DO.Task?> ReadAll(Func<DO.Task, bool>? filter = null)
+    public IEnumerable<DO.Task?> ReadAll(Func<DO.Task, bool>? filter = null)//display all the list with a filter
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         if (filter == null)
@@ -66,7 +66,7 @@ internal class TaskImplementation : ITask
             return taskList.Where(item => filter(item));
     }
 
-    public void Update(DO.Task item)
+    public void Update(DO.Task item)//A function that update an exist Task with an id
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         DO.Task? copyTa = taskList.FirstOrDefault(ta => ta.taskId == item.taskId);
@@ -81,8 +81,13 @@ internal class TaskImplementation : ITask
             throw new DalDoesNotExistException($"Task with ID={item.taskId} does not exist");
         }
     }
-    public void Reset()
+    public void Reset()//clear all the tasks
     {
-
+        List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
+        if(taskList.Count > 0) 
+        {
+            taskList.Clear();
+            XMLTools.SaveListToXMLSerializer<DO.Task>(taskList, "tasks");
+        }
     }
 }

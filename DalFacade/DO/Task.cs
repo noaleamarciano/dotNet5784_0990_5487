@@ -27,14 +27,16 @@ public record Task
     DateTime? complete,
     string? product,
     string? remarks,
+
     int engineerId,
     EngineerExperience exp,
+    //TimeSpan RequiredTime,
     bool isActive = true
 )
 {
-public Task():this(0,"","",true,DateTime.Now,null,null,null,null,"","",0, new EngineerExperience(),true)
+public Task():this(0,"","",true,DateTime.Now,null,null,null,null,"","",0, new EngineerExperience()/*,TimeSpan.Zero*/,true)
 {
-    // התוכן של הקונסטרקטור כאן (אם יש)
+  
 }
 }
 

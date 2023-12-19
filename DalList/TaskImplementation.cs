@@ -42,11 +42,11 @@ internal class TaskImplementation : ITask
     {
         return DataSource.Tasks.FirstOrDefault(dep => dep.taskId == id);
     }
-    public Task? Read(Func<Task, bool> filter)
+    public Task? Read(Func<Task, bool> filter)//A function that update an exist dependence with a filter
     {
         return DataSource.Tasks.FirstOrDefault(d => filter(d));
     }
-    public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) //stage 2
+    public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) //display all the list with a filter
     {
         if (filter == null)
             return DataSource.Tasks.Select(item => item);
@@ -68,8 +68,11 @@ internal class TaskImplementation : ITask
         }
     }
 
-    public void Reset()
+    public void Reset() //clear all the tasks
     {
-        DataSource.Tasks.Clear();
+        if (DataSource.Tasks.Count > 0)
+        {
+            DataSource.Tasks.Clear();
+        }
     }
 }

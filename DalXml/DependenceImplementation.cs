@@ -6,8 +6,8 @@ namespace Dal;
 internal class DependenceImplementation : IDependence
 {
     const string dependencesFile = @"..\xml\dependences.xml";
-    XDocument dependencesDocument = XDocument.Load(dependencesFile);
-    public int Create(Dependence item)
+    XDocument dependencesDocument = XDocument.Load(dependencesFile);//bring the xml file
+    public int Create(Dependence item) //A function that create a new dependence.
     {
         int dependenceId = Config.NextDependenceId;
         XElement? dependenceElement = new XElement("Dependence",
@@ -20,7 +20,7 @@ internal class DependenceImplementation : IDependence
         return dependenceId;
     }
 
-    public void Delete(int id)
+    public void Delete(int id)//A function that delete an exist dependence.
     {
         XElement? copyDep = dependencesDocument.Root
                 ?.Elements("Dependence")
@@ -37,7 +37,7 @@ internal class DependenceImplementation : IDependence
         }
     }
 
-    public Dependence? Read(int id)
+    public Dependence? Read(int id)//A function that  display an exist dependence with an id
     {
         XElement? copyDep = dependencesDocument.Root
                 ?.Elements("Dependence")
@@ -55,7 +55,7 @@ internal class DependenceImplementation : IDependence
         }
     }
 
-    public Dependence? Read(Func<Dependence, bool> filter)
+    public Dependence? Read(Func<Dependence, bool> filter)//A function that update an exist dependence with a filter
     {
         Dependence? dep = dependencesDocument.Root?
      .Elements("Dependence")
@@ -69,7 +69,7 @@ internal class DependenceImplementation : IDependence
         return dep;
     }
 
-    public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null)
+    public IEnumerable<Dependence?> ReadAll(Func<Dependence, bool>? filter = null)//display all the list with a filter
     {
         XElement? dependences = XMLTools.LoadListFromXMLElement("dependences");
 
@@ -86,16 +86,13 @@ internal class DependenceImplementation : IDependence
             return dependencesList.Where(item => filter(item));
     }
 
-    public void Update(Dependence item)
+    public void Update(Dependence item)//A function that update an exist dependence with an id
     {
         XElement? copyDep = dependencesDocument.Root
                 ?.Elements("Dependence")
                 .FirstOrDefault(dep => (int)dep.Element("DependenceId")! == item.dependenceId);
         if (copyDep != null)
         {
-            //copyDep.Remove();
-            //dependencesDocument.Add(item);
-            //dependencesDocument.Save(dependencesFile);
             copyDep.ReplaceWith(
             new XElement("Dependence",
             new XElement("DependenceId", item.dependenceId),
@@ -110,8 +107,13 @@ internal class DependenceImplementation : IDependence
         }
     }
 
-    public void Reset()
+    public void Reset()//clear all the dependences
     {
-
+        XElement? dependencesElements = dependencesDocument.Root;
+        if(dependencesElements != null)
+        {
+            dependencesElements.Elements().Remove();
+            dependencesDocument.Save(dependencesFile);
+        }
     }
 }

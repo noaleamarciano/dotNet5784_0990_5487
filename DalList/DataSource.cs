@@ -16,5 +16,8 @@ internal static class DataSource
         internal const int startTaskId = 1000;
         private static int nextTaskId = startTaskId;
         internal static int NextTaskId { get => nextTaskId++; }
+        internal static DateTime? projectBegining = new DateTime(2023, 12, 19); //start project date
+        internal static DateTime? projectFinishing = new DateTime(2024, 12, 19); //finish project date
     }
+
 }
