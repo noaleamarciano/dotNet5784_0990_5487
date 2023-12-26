@@ -9,9 +9,9 @@
 public record Engineer
 (
     int engineerId,
-    string? engineerName,
-    string? engineerEmail,
-    int? costPerHour,
+    string engineerName,
+    string engineerEmail,
+    int costPerHour,
     EngineerExperience exp,
     bool isActive = true
 )
@@ -20,7 +20,7 @@ public record Engineer
 /// </summary>
 /// 
 {
-public Engineer() : this(0, null, null, null,new EngineerExperience(), true)
+public Engineer() : this(0, "", "", 0,new EngineerExperience())
 {
     // Additional initialization logic can be added if needed.
 }
