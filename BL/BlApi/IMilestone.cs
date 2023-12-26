@@ -8,7 +8,7 @@ namespace BlApi;
 
 public interface IMilestone
 {
-    public int Create(BO.Milestone mil)
+    public int Create(BO.Milestone mil);
     public void Update(BO.Milestone mil);
     public BO.Milestone? Read(int id);
 }

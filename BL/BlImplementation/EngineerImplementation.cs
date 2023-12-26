@@ -1,13 +1,11 @@
-﻿
-
-namespace BlImplementation;
+﻿namespace BlImplementation;
 using BlApi;
 using BO;
 using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
-    private DalApi.IDal _dal = Factory.Get;
+    private DalApi.IDal _dal =Factory.Get;
     public int Create(BO.Engineer eng)
     {
         DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
@@ -33,8 +31,7 @@ internal class EngineerImplementation : IEngineer
         DO.Engineer? doEngineer= _dal.Engineer.Read(id);
         if (doEngineer==null)
         {
-            //throw bl exception
-            throw new Exception();
+            throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
         }
         return new BO.Engineer()
         {
