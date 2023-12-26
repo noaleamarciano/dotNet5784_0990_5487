@@ -13,4 +13,5 @@ public class MilestoneInList
     public string? alias { get; set; }
     public Status status { get; set; }
     public double completionPercentage { get; set; }
+    public override string? ToString() => base.ToString();
 }

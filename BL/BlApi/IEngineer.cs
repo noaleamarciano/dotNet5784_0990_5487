@@ -1,23 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using BO;
 namespace BlApi;
 
 public interface IEngineer
 {
-    public int Create()
-    {
-
-    }
-    public void Delete(int id)
-    {
-
-    }
-    public void Update()
-    {
-
-    }
+    public int Create(BO.Engineer eng);
+    public void Delete(int id);
+    public void Update(BO.Engineer eng);
+    public BO.Engineer? Read(int id);
+    public IEnumerable<BO.Engineer> ReadAll();
 }

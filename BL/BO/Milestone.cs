@@ -19,5 +19,6 @@ public class Milestone
     public DateTime completeDate { get; set; }
     public string? remarks { get; set; }
     public double completionPercentage { get; set; }
-    //public List<TaskInList> dependences { get; set; }
+    public List<TaskInList>? Dependencies { get; set; }
+    public override string? ToString() => $"Milestone (ID:M{Id})";
 }
