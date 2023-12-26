@@ -48,11 +48,32 @@ internal class EngineerImplementation : IEngineer
 
     public IEnumerable<BO.Engineer> ReadAll()
     {
-        
-    }
-
+        return (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
+                select new BO.Engineer
+                {
+                    engineerId = doEngineer.engineerId,
+                    name = doEngineer.engineerName,
+                    email = doEngineer.engineerEmail,
+                    costPerHour = doEngineer.costPerHour,
+                    exp = (EngineerExperience)doEngineer.exp,
+                    task=new TaskInEngineer()
+                    {
+                        id = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId==doEngineer.engineerId)!.engineerId,
+                        alias = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId == doEngineer.engineerId)!.alias
+                    }
+                });
+}
     public void Update(Engineer eng)
     {
-        throw new NotImplementedException();
+        DO.Engineer doEngineer = new DO.Engineer(eng.engineerId, eng.name, eng.email, eng.costPerHour, (DO.EngineerExperience)eng.exp);
+        try
+        {
+            _dal.Engineer.Update(doEngineer);
+        }
+        catch (DO.DalAlreadyExistsException ex)
+        {
+            //throw bl exception
+            throw new Exception();
+        }
     }
 }
