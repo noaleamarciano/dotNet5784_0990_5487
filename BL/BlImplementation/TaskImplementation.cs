@@ -1,15 +1,14 @@
-﻿
-namespace BlImplementation;
-using BlApi;
+﻿using BlApi;
 using BO;
-using System.Collections.Generic;
 
+namespace BlImplementation;
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = Factory.Get;
-    public int Create(Task task)
+
+    public int Create(BO.Task task)
     {
-        throw new NotImplementedException(); 
+        
     }
 
     public void Delete(int id)
@@ -17,17 +16,17 @@ internal class TaskImplementation : ITask
         throw new NotImplementedException();
     }
 
-    public Task? Read(int id)
+    public BO.Task? Read(int id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Task> ReadAll()
+    public IEnumerable<BO.Task> ReadAll()
     {
         throw new NotImplementedException();
     }
 
-    public void Update(Task task)
+    public void Update(BO.Task task)
     {
         throw new NotImplementedException();
     }

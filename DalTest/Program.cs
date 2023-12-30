@@ -20,7 +20,6 @@ namespace DalTest
             Console.WriteLine("entity 2");
             Console.WriteLine("entity 3");
             int choose = int.Parse(Console.ReadLine()!);
-
             switch (choose)
             {
                 case 0:
