@@ -13,5 +13,5 @@ public class Engineer
     public string email { get; set; }
     public int costPerHour { get; set; }
     public EngineerExperience exp { get; set; }
-    public TaskInEngineer? task { get; set; } = null;
+    public TaskInEngineer? task { get; set; }
 }

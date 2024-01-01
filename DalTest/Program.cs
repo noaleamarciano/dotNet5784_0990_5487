@@ -14,11 +14,12 @@ namespace DalTest
             Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
             string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
             if (ans == "Y") //stage 3
-                Initialization.Do(s_dal); //stage 2
+                Initialization.Do(); //stage 2
+            Console.WriteLine("Wich entity would you like to try?");
             Console.WriteLine("Exit main menu 0");
-            Console.WriteLine("entity 1");
-            Console.WriteLine("entity 2");
-            Console.WriteLine("entity 3");
+            Console.WriteLine("For engineer press 1");
+            Console.WriteLine("For task press 2");
+            Console.WriteLine("For dependency press 3");
             int choose = int.Parse(Console.ReadLine()!);
             switch (choose)
             {
@@ -51,8 +52,8 @@ namespace DalTest
                                 EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    Engineer gth = new(id, name, email, cost, exp);
-                                    s_dal.Engineer.Create(gth);
+                                    Engineer eng1 = new(id, name, email, cost, exp);
+                                    s_dal.Engineer.Create(eng1);
                                 }
                                 catch (Exception ex)
                                 {

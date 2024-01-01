@@ -20,14 +20,13 @@ public record Task
     string taskDescription,
     string alias,
     bool milestone,
-    DateTime productionDate,//תאריך מתוכנן לתחילת העבודה
-    DateTime? startDate,//תאריך תחילת העבודה על המשימה
-    DateTime? estimComplete,//תאריך סיום אחרון אפשרי
-    DateTime? finalDate,//תאריך סיום בפועל
-    DateTime? complete,
+    DateTime createdAtDate,//תאריך מתוכנן לתחילת העבודה
+    DateTime? scheduledStartDate,//תאריך תחילת העבודה על המשימה
+    DateTime? startDate,//תאריך סיום אחרון אפשרי
+    DateTime? deadLine,//תאריך סיום בפועל
+    DateTime? completeDate,//
     string? product,
     string? remarks,
-
     int engineerId,
     EngineerExperience exp,
     //TimeSpan RequiredTime,

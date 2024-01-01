@@ -5,7 +5,7 @@ namespace BlImplementation;
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = Factory.Get;
-
+    DO.Task doTask = new DO.Task();
     public int Create(BO.Task task)
     {
         
