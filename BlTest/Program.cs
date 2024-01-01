@@ -242,6 +242,7 @@ namespace BlTest
                                 DateTime productionDate1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? startDate1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? estimComplete1 = Convert.ToDateTime(Console.ReadLine());
+                                DateTime? forecastDate=Convert.ToDateTime(Console.ReadLine());
                                 DateTime? finalDate1 = Convert.ToDateTime(Console.ReadLine());
                                 DateTime? complete1 = Convert.ToDateTime(Console.ReadLine());
                                 string product1 = (Console.ReadLine()!);
@@ -250,8 +251,40 @@ namespace BlTest
                                 BO.EngineerExperience exp1 = (BO.EngineerExperience)int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    BO.Task tas2 = new();
-                                    s_bl.Task.Update(tas2);
+                                    Console.WriteLine("Enter a list of dependencies for this task to finish press 0");
+                                    List<TaskInList>? dependencies2 = new List<TaskInList>();
+                                    int dependentId2 = 1;
+                                    while (dependentId2 != 0)
+                                    {
+                                        dependentId = int.Parse(Console.ReadLine()!);
+                                        dependencies2.Add(new BO.TaskInList()
+                                        {
+                                            status = (Status)s_bl.Task.Read(dependentId2)!.status!,
+                                            taskId = dependentId2,
+                                            description = s_bl.Task.Read(dependentId2)!.description,
+                                            alias = s_bl.Task.Read(dependentId2)!.alias,
+                                        });
+                                    }
+                                    s_bl.Task.Update(new BO.Task()
+                                    {
+                                        taskId=id3,
+                                        description = description1,
+                                        alias = alias1,
+                                        createdAtDate = productionDate1,
+                                        status = (BO.Status)0,
+                                        dependencies = dependencies2,
+                                        milestone = null,
+                                        scheduledStartDate = startDate1,
+                                        startDate = estimComplete1,
+                                        forecastDate = forecastDate,
+                                        deadLine = finalDate1,
+                                        completeDate = complete1,
+                                        deliverables = product1,
+                                        remarks = remarks1,
+                                        engineer = null,
+                                        exp = exp1,
+                                    });
+                                
                                 }
                                 catch (Exception ex)
                                 {
