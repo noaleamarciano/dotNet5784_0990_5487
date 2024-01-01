@@ -294,7 +294,11 @@ namespace BlTest
                                 int pendingTaskId = int.Parse(Console.ReadLine()!);
                                 int previousTaskId = int.Parse(Console.ReadLine()!);
                                 BO.Milestone dep = new();
-                                s_bl.Milestone.Create(dep);
+                                s_bl.Milestone.Create(new BO.Milestone()
+                                {
+                                    
+                                    
+                                });
                                 break;
                             case 2: //Display a dependence
                                 Console.WriteLine("Enter an ID number");
