@@ -23,7 +23,7 @@ public class Task
     public DateTime? completeDate { get; set; }//
     public string? deliverables { get; set; }
     public string? remarks { get; set; }
-    public EngineerInTask? engineer { get; set; }
-    public EngineerExperience ?exp { get; set; }
+    public EngineerInTask engineer { get; set; }
+    public EngineerExperience exp { get; set; }
     public override string? ToString() => base.ToString();
 }
