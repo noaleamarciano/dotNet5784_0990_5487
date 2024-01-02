@@ -8,7 +8,6 @@ internal class MilestoneImplementation : IMilestone
     private DalApi.IDal _dal = Factory.Get;
     public int Create(Milestone mil)
     {
-
         throw new NotImplementedException();
     }
 
