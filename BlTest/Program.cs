@@ -12,7 +12,7 @@ namespace BlTest
 {
     internal class Program
     {
-        static void menuEngineer()
+        static void menuEngineer() //Display the menu of the functions on engineer
         {
             Console.WriteLine("Return to the main menu press 0");
             Console.WriteLine("For adding an engineer press 1");
@@ -22,7 +22,7 @@ namespace BlTest
             Console.WriteLine("For deleting an engineer press 5");
             Console.WriteLine("Reset the all list press 6");
         }
-        static void menuTask()
+        static void menuTask() //Display the menu of the functions on task
         {
             Console.WriteLine("Return to the main menu press 0");
             Console.WriteLine("For adding a task press 1");
@@ -32,7 +32,7 @@ namespace BlTest
             Console.WriteLine("For deleting a task press 5");
             Console.WriteLine("Reset the all list press 6");
         }
-        static void menuMilestone()
+        static void menuMilestone() //Display the menu of the functions on a milestone
         {
             Console.WriteLine("Return to the main menu press 0");
             Console.WriteLine("For adding a task press 1");
@@ -57,7 +57,7 @@ namespace BlTest
             {
                 case 0:
                     break;
-                case 1:
+                case 1://The engineer entity
                     menuEngineer();
                     int choose1;
                     choose1 = int.Parse(Console.ReadLine()!);
@@ -161,7 +161,7 @@ namespace BlTest
 
                     }
                     break;
-                case 2:
+                case 2: //The task entity
                     menuTask();
                     int choose2 = 1;
                     while (choose2 != 0)
@@ -178,11 +178,6 @@ namespace BlTest
                                 string alias = (Console.ReadLine()!);
                                 bool milestone = bool.Parse(Console.ReadLine()!);
                                 DateTime productionDate = Convert.ToDateTime(Console.ReadLine());
-                                //DateTime? startDate = Convert.ToDateTime(Console.ReadLine());
-                                //DateTime? estimComplete = Convert.ToDateTime(Console.ReadLine());
-                                //DateTime? finalDate = Convert.ToDateTime(Console.ReadLine());
-                                //DateTime? complete = Convert.ToDateTime(Console.ReadLine());
-                                //DateTime? forecastDate=Convert.ToDateTime(Console.ReadLine());
                                 string product = (Console.ReadLine()!);
                                 string remarks = (Console.ReadLine()!);
                                 BO.EngineerExperience exp = (BO.EngineerExperience)int.Parse(Console.ReadLine()!);
@@ -311,7 +306,7 @@ namespace BlTest
                         }
                     }
                     break;
-                case 3:
+                case 3: //The milestone entity
                     menuMilestone();
                     int choose3 = 1;
                     while (choose3 != 0)
@@ -322,24 +317,23 @@ namespace BlTest
                         {
                             case 0:
                                 break;
-                            case 1://Add a new dependence
-                                Console.WriteLine("Enter all dependenece details");
+                            case 1://Add a new milestone
+                                Console.WriteLine("Enter all milestone details");
                                 int pendingTaskId = int.Parse(Console.ReadLine()!);
                                 int previousTaskId = int.Parse(Console.ReadLine()!);
-                                BO.Milestone dep = new();
                                 s_bl.Milestone.Create(new BO.Milestone()
                                 {
                                     
                                     
                                 });
                                 break;
-                            case 2: //Display a dependence
+                            case 2: //Display a milestone
                                 Console.WriteLine("Enter an ID number");
                                 int id2 = int.Parse(Console.ReadLine()!);
-                                BO.Milestone? dep1 = s_bl.Milestone.Read(id2);
-                                Console.WriteLine(dep1);
+                                BO.Milestone? mil1 = s_bl.Milestone.Read(id2);
+                                Console.WriteLine(mil1);
                                 break;
-                            case 4://Update a dependence
+                            case 4://Update a milestone
                                 Console.WriteLine("Enter an ID number");
                                 int id3 = int.Parse(Console.ReadLine()!);
                                 Console.WriteLine(s_bl.Milestone.Read(id3));
@@ -348,18 +342,20 @@ namespace BlTest
                                 int previousTaskId1 = int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    BO.Milestone dep2 = new();
-                                    s_bl.Milestone.Update(dep2);
+                                    s_bl.Milestone.Update(new BO.Milestone()
+                                    {
+
+                                    });
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.Message);
                                 }
                                 Console.WriteLine(s_bl.Milestone.Read(id3));
-                                break;
+                            break;
                         }
                     }
-                    break;
+                break;
             }
         }
     }

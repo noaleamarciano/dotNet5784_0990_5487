@@ -8,7 +8,7 @@ namespace BlImplementation;
 internal class EngineerImplementation : IEngineer
 {
     private DalApi.IDal _dal = Factory.Get;
-    public int Create(BO.Engineer eng)
+    public int Create(BO.Engineer eng)//A function that create a new Engineer.
     {
         DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
         try
@@ -23,12 +23,12 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public void Delete(int id)
+    public void Delete(int id)//A function that delete an exist Engineer.
     {
         throw new NotImplementedException();
     }
 
-    public BO.Engineer? Read(int id)
+    public BO.Engineer? Read(int id)//A function that  display an exist Engineer with an id
     {
         DO.Engineer? doEngineer= _dal.Engineer.Read(id);
         if (doEngineer==null)
@@ -45,7 +45,7 @@ internal class EngineerImplementation : IEngineer
         };
     }
 
-    public IEnumerable<BO.Engineer> ReadAll()
+    public IEnumerable<BO.Engineer> ReadAll()//display all the list of engineers
     {
         return (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
                 select new BO.Engineer
@@ -62,7 +62,7 @@ internal class EngineerImplementation : IEngineer
                     }
                 });
 }
-    public void Update(Engineer eng)
+    public void Update(Engineer eng) //A function that update an exist Engineer with an id
     {
         DO.Engineer doEngineer = new DO.Engineer(eng.engineerId, eng.name, eng.email, eng.costPerHour, (DO.EngineerExperience)eng.exp);
         try

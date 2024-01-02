@@ -1,6 +1,6 @@
 ﻿namespace BlApi;
 
-public interface ITask
+public interface ITask //statements for the crud functions
 {
     public int Create(BO.Task task);
     public void Delete(int id);

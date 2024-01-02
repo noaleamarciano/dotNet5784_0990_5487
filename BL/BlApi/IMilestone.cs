@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
-public interface IMilestone
+public interface IMilestone //statements for the crud functions
 {
     public int Create(BO.Milestone mil);
     public void Update(BO.Milestone mil);

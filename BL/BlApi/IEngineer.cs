@@ -1,7 +1,7 @@
 ﻿using BO;
 namespace BlApi;
 
-public interface IEngineer
+public interface IEngineer //statements for the crud functions
 {
     public int Create(BO.Engineer eng);
     public void Delete(int id);

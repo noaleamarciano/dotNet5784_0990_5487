@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace BO;
+/// <summary>
+/// 
+/// </summary>
+/// <param name="taskId">Personal unique key of task.</param>
+/// <param name="alias">an alias for the task</param>
 
 public class TaskInEngineer
 {

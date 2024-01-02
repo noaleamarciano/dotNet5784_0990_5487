@@ -6,7 +6,7 @@ internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = Factory.Get;
     
-    public int Create(BO.Task task)
+    public int Create(BO.Task task)//A function that create a new Task.
     {
       DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, /*task.milestone,*/ task.createdAtDate, task.scheduledStartDate, 
           task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer, DO.EngineerExperience.expert);
@@ -22,12 +22,12 @@ internal class TaskImplementation : ITask
         }
     }
 
-    public void Delete(int id)
+    public void Delete(int id) //A function that delete an exist Task.
     {
         throw new NotImplementedException();
     }
 
-    public BO.Task? Read(int id)
+    public BO.Task? Read(int id) //A function that  display an exist Task with an id
     {
         DO.Task? doTask = _dal.Task.Read(id);
         if (doTask == null)
@@ -52,7 +52,7 @@ internal class TaskImplementation : ITask
         };
     }
 
-    public IEnumerable<BO.Task> ReadAll()
+    public IEnumerable<BO.Task> ReadAll() //display all the list of tasks
     {
         return (from DO.Task doTask in _dal.Engineer.ReadAll()
                 select new BO.Task
@@ -78,7 +78,7 @@ internal class TaskImplementation : ITask
                 });
     }
 
-    public void Update(BO.Task task)
+    public void Update(BO.Task task) //A function that update an exist Task with an id
     {
         DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, /*task.milestone,*/ task.createdAtDate, task.scheduledStartDate,
           task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer, DO.EngineerExperience.expert);

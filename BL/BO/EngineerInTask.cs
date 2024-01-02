@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿///<summary>
+///Represents an engineer handling some task
+///</summary>
+/// <param name="engineerId">personal unique id for the  engineer</param>
+/// <param name="name">the name of the engineer</param>
 namespace BO;
 
 public class EngineerInTask
