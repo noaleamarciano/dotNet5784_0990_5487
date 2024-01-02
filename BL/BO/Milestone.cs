@@ -17,16 +17,16 @@
 public class Milestone
 {
     public int milestoneId { get; init; }
-    public string? description { get; set; }
-    public string? alias { get; set; }
-    public DateTime createdAtDate { get; set; }
-    public Status status { get; set; }
-    public DateTime startDate { get; set; }
-    public DateTime forecastDate { get; set; }
-    public DateTime deadLine { get; set; }
-    public DateTime completeDate { get; set; }
+    public required string description { get; set; }
+    public required string alias { get; set; }
+    public DateTime? createdAtDate { get; set; }
+    public Status? status { get; set; }
+    public DateTime? startDate { get; set; }
+    public DateTime? forecastDate { get; set; }
+    public DateTime? deadLine { get; set; }
+    public DateTime? completeDate { get; set; }
     public string? remarks { get; set; }
-    public double completionPercentage { get; set; }
+    public double? completionPercentage { get; set; }
     public List<TaskInList>? dependencies { get; set; }
     public override string? ToString() => $"Milestone (ID:M{milestoneId})";
 }

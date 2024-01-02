@@ -31,11 +31,11 @@ public record Task
     string? remarks,
     int engineerId,
     EngineerExperience exp,
-    //TimeSpan RequiredTime,
+    TimeSpan RequiredTime,
     bool isActive = true
 )
 {
-public Task():this(0,"","",true,DateTime.Now,null,null,null,null,"","",0, new EngineerExperience()/*,TimeSpan.Zero*/,true)
+public Task():this(0,"","",true,DateTime.Now,null,null,null,null,"","",0, new EngineerExperience(), TimeSpan.Zero, true)
 {
   
 }

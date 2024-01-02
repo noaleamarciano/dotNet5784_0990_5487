@@ -268,7 +268,7 @@ namespace BlTest
                                         createdAtDate = productionDate1,
                                         status = (BO.Status)0,
                                         dependencies = dependencies2,
-                                        milestone = null,
+                                        milestone = s_bl.Task.Read(id3)!.milestone,
                                         scheduledStartDate = startDate1,
                                         startDate = estimComplete1,
                                         forecastDate = forecastDate,
