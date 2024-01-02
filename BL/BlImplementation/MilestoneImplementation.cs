@@ -40,6 +40,9 @@ internal class MilestoneImplementation : IMilestone
     public int Create(List<Task> dependences)
     {
         
+
+
+
     }
 
     public Milestone? Read(int id)
@@ -81,6 +84,26 @@ internal class MilestoneImplementation : IMilestone
 
     public void Update(Milestone mil)
     {
-        throw new NotImplementedException();
+        if(Read(mil.milestoneId) == null)
+            throw new BO.BlDoesNotExistException($"Milestone with ID{mil.milestoneId} does not exist");
+        DO.Task? doTask = _dal.Task.Read(mil.milestoneId);
+        DO.Task task = new DO.Task()
+        {
+            taskId = doTask!.taskId,
+            taskDescription = mil.description,
+            alias = mil.alias,
+            milestone = doTask.milestone,
+            createdAtDate = doTask.createdAtDate,
+            scheduledStartDate = doTask.scheduledStartDate,
+            startDate = doTask.startDate,
+            deadLine = doTask.deadLine,
+            completeDate = doTask.completeDate,
+            product = doTask.product,
+            remarks = mil.remarks,
+            engineerId = doTask.engineerId,
+            exp = doTask.exp,
+            RequiredTime = doTask.RequiredTime,
+        };
+        _dal.Task.Update(task);
     }
 }

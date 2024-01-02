@@ -19,7 +19,7 @@ public class Milestone
     public int milestoneId { get; init; }
     public required string description { get; set; }
     public required string alias { get; set; }
-    public DateTime? createdAtDate { get; set; }
+    public DateTime createdAtDate { get; set; }
     public Status? status { get; set; }
     public DateTime? startDate { get; set; }
     public DateTime? forecastDate { get; set; }
