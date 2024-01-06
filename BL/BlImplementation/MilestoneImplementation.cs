@@ -37,12 +37,13 @@ internal class MilestoneImplementation : IMilestone
         // סטטוס ברירת מחדל - אם לא נכנסנו לאף אחת מהתנאים הקודמים
         return Status.unscheduled;
     }
-    public int Create(List<Task> dependences)
+    //public int Create(List<Task> dependences)
+    //{
+    //}
+
+    public int Create(Milestone mil)
     {
-        
-
-
-
+        throw new NotImplementedException();
     }
 
     public Milestone? Read(int id)
