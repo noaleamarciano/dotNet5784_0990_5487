@@ -5,11 +5,6 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stage0", "Stage0\Stage0.csproj", "{4E4E5BEB-AD76-4953-87FB-11DC7D55BD12}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B826445-274D-4C8C-8541-641950606A2E}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalFacade", "DalFacade\DalFacade.csproj", "{16D32C46-A563-4A8E-B71C-1A7910B3CA1C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalList", "DalList\DalList.csproj", "{39B590AB-D250-48F0-90CE-D5DF6969F0F3}"
@@ -31,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{97C6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlTest", "BlTest\BlTest.csproj", "{B90EF7FA-7DFC-4B7D-A170-7B88E427F8FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "WpfApp1\PL.csproj", "{8F67D223-525E-4D2A-82B6-C0E79BDA1C65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL", "WpfApp1\PL.csproj", "{8F67D223-525E-4D2A-82B6-C0E79BDA1C65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,11 +69,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{1DB518B9-E88A-4ECD-8716-E76522144014} = {5B826445-274D-4C8C-8541-641950606A2E}
-		{7DD2B190-5ECD-43D3-90D6-5BD18EDE393E} = {5B826445-274D-4C8C-8541-641950606A2E}
-		{8F67D223-525E-4D2A-82B6-C0E79BDA1C65} = {5B826445-274D-4C8C-8541-641950606A2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C4EC2EC-79A8-4DAD-8F82-93B8C6035C6C}
