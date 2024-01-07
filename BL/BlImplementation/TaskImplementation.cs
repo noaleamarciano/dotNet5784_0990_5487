@@ -47,7 +47,7 @@ internal class TaskImplementation : ITask
             isMilestone = false;
         }
         DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, isMilestone, task.createdAtDate, task.scheduledStartDate,
-          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert);
+          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert, TimeSpan.Zero);
         try
         {
             int idTask = _dal.Task.Create(doTask);
@@ -153,7 +153,7 @@ internal class TaskImplementation : ITask
             isMilestone = false;
         }
         DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, isMilestone, task.createdAtDate, task.scheduledStartDate,
-          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert);
+          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert, TimeSpan.Zero);
         try
         {
             _dal.Task.Update(doTask);

@@ -142,7 +142,8 @@ namespace DalTest
                                 string remarks = (Console.ReadLine()!);
                                 int engineerId = int.Parse(Console.ReadLine()!);
                                 EngineerExperience exp = (EngineerExperience)int.Parse(Console.ReadLine()!);
-                                DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp);
+                                TimeSpan time= TimeSpan.FromSeconds(1);
+                                DO.Task tas = new(0, description, alias, milestone, productionDate, startDate, estimComplete, finalDate, complete, product, remarks, engineerId, exp,time);
                                 s_dal.Task.Create(tas);
                                 break;
                             case 2://Display an exist task
@@ -176,7 +177,7 @@ namespace DalTest
                                 EngineerExperience exp1 = (EngineerExperience)int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    DO.Task tas2 = new(id3, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1);
+                                    DO.Task tas2 = new(id3, description1, alias1, milestone1, productionDate1, startDate1, estimComplete1, finalDate1, complete1, product1, remarks1, engineerId1, exp1, TimeSpan.Zero);
                                     s_dal.Task.Update(tas2);
                                 }
                                 catch (Exception ex)

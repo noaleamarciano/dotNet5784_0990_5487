@@ -60,7 +60,7 @@ namespace BlTest
                 case 1://The engineer entity
                     menuEngineer();
                     int choose1;
-                    choose1 = int.Parse(Console.ReadLine()!);
+                    choose1 = 1;
                     while (choose1 != 0)
                     {
                         Console.WriteLine("Enter your choice");
@@ -321,11 +321,11 @@ namespace BlTest
                                 Console.WriteLine("Enter all milestone details");
                                 int pendingTaskId = int.Parse(Console.ReadLine()!);
                                 int previousTaskId = int.Parse(Console.ReadLine()!);
-                                s_bl.Milestone.Create(new BO.Milestone()
-                                {
+                                //s_bl.Milestone.Create(new BO.Milestone()
+                                //{
                                     
                                     
-                                });
+                                //});
                                 break;
                             case 2: //Display a milestone
                                 Console.WriteLine("Enter an ID number");
@@ -342,10 +342,10 @@ namespace BlTest
                                 int previousTaskId1 = int.Parse(Console.ReadLine()!);
                                 try
                                 {
-                                    s_bl.Milestone.Update(new BO.Milestone()
-                                    {
+                                    //s_bl.Milestone.Update(new BO.Milestone()
+                                    //{
 
-                                    });
+                                    //});
                                 }
                                 catch (Exception ex)
                                 {
