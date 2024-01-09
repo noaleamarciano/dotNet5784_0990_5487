@@ -91,10 +91,12 @@ internal class TaskImplementation : ITask
             description = doTask.taskDescription,
             alias = doTask.alias,
             createdAtDate = doTask.createdAtDate,
+            status = CalculateStatus(doTask),
+            dependencies = null,
             milestone = mil,
-            
             scheduledStartDate = doTask.scheduledStartDate,
             startDate = doTask.startDate,
+            forecastDate = doTask.startDate + doTask.RequiredTime,
             deadLine = doTask.deadLine,
             completeDate = doTask.completeDate,
             deliverables = doTask.product,

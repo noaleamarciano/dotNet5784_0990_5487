@@ -12,6 +12,7 @@ namespace BlTest
 {
     internal class Program
     {
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         static void menuEngineer() //Display the menu of the functions on engineer
         {
             Console.WriteLine("Return to the main menu press 0");
@@ -39,7 +40,7 @@ namespace BlTest
             Console.WriteLine("For displaying a task press 2");
             Console.WriteLine("For updating a task press 3");
         }
-        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        
         static void Main(string[] args)
         {
             Console.Write("Would you like to create Initial data? (Y/N)");
