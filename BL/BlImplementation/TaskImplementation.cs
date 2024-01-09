@@ -1,5 +1,6 @@
 ﻿using BlApi;
 using BO;
+using DO;
 
 namespace BlImplementation;
 internal class TaskImplementation : ITask
@@ -68,6 +69,12 @@ internal class TaskImplementation : ITask
     public BO.Task? Read(int id) //A function that  display an exist Task with an id
     {
         DO.Task? doTask = _dal.Task.Read(id);
+        DO.Engineer? doEngineer = _dal.Engineer.Read(doTask!.engineerId);
+        EngineerInTask engineer1 = new BO.EngineerInTask()
+        {
+            engineerId = doTask!.engineerId,
+            name = doEngineer!.engineerName,
+        };
         BO.MilestoneInTask? mil = null;
         if (doTask == null)
         {
@@ -101,12 +108,8 @@ internal class TaskImplementation : ITask
             completeDate = doTask.completeDate,
             deliverables = doTask.product,
             remarks = doTask.remarks,
-            engineer = new BO.EngineerInTask()
-            {
-                engineerId = doTask.engineerId,
-                name = _dal.Engineer.Read(doTask.engineerId)!.engineerName,
-            },
-            exp = (EngineerExperience)doTask.exp,
+            engineer =engineer1,
+            exp = (BO.EngineerExperience)doTask.exp,
         };
     }
     public IEnumerable<BO.Task> ReadAll()//display all the list of tasks
