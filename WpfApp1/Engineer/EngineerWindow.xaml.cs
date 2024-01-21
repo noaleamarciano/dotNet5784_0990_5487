@@ -22,6 +22,7 @@ namespace PL.Engineer
         public EngineerWindow()
         {
             InitializeComponent();
+          
         }
     }
 }

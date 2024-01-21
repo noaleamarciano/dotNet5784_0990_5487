@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.Engineer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,28 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+          
+        }
+
+       
+        private void btnEngineers_Click(object sender, RoutedEventArgs e)
+        {
+            new EngineerListWindow().Show();
+        }
+
+        private void btnInitializeDatabase_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("האם אתה בטוח שברצונך לאתחל את בסיס הנתונים?", "אישור אתחול", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                DalTest.Initialization.Do();
+                MessageBox.Show("בסיס הנתונים אותחל בהצלחה.", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("האתחול בוטל.", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
