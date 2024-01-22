@@ -7,5 +7,6 @@ public enum EngineerExperience
 {
     expert,
     junior,
-    rookie
+    rookie,
+    None
 };

@@ -1,1889 +1,563 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Task>
-    <taskId>1950</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7370034+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>363429673</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1951</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7376656+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>341731868</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1952</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias>hello</alias>
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7376805+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>283584247</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1953</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7376897+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>271594369</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1954</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7376978+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>350991914</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1955</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.737707+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>340107261</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1956</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.737715+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>306097329</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1957</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7377274+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>368194165</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1958</taskId>
+    <taskId>2078</taskId>
     <taskDescription>משטחים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7377674+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:16:50.565616+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>217508432</engineerId>
+    <engineerId>256098779</engineerId>
     <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1959</taskId>
+    <taskId>2079</taskId>
     <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7377763+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:16:50.572046+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>376650356</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>322698634</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1960</taskId>
+    <taskId>2090</taskId>
     <taskDescription>שלד והכנות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7377845+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.3873751+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>355454353</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>342483478</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1961</taskId>
+    <taskId>2091</taskId>
     <taskDescription>בניית מעטפת בלוקים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7377922+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.3947073+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>347059167</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>271098074</engineerId>
+    <exp>junior</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1962</taskId>
+    <taskId>2092</taskId>
     <taskDescription>בניית קומת קרקע</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378001+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4012821+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>333362733</engineerId>
+    <engineerId>248329531</engineerId>
     <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1963</taskId>
+    <taskId>2093</taskId>
     <taskDescription>טייח פנים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378079+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4028698+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>333362733</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>342483478</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1964</taskId>
+    <taskId>2094</taskId>
     <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378156+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4044056+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>232659330</engineerId>
+    <engineerId>322689983</engineerId>
     <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1965</taskId>
+    <taskId>2095</taskId>
     <taskDescription>יציקת קירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378233+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4062143+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>255101403</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>248329531</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1966</taskId>
+    <taskId>2096</taskId>
     <taskDescription>יציקת ריצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378369+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4078958+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>255101403</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>271098074</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1967</taskId>
+    <taskId>2097</taskId>
     <taskDescription>איטום רצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378455+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4095262+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>328180228</engineerId>
+    <engineerId>384169428</engineerId>
     <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1968</taskId>
+    <taskId>2098</taskId>
     <taskDescription>משטחים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378534+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4112134+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>347059167</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>327060664</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1969</taskId>
+    <taskId>2099</taskId>
     <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378611+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:54:07.4131626+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>255101403</engineerId>
+    <engineerId>271098074</engineerId>
     <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1970</taskId>
+    <taskId>2101</taskId>
     <taskDescription>שלד והכנות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378691+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:55:11.3291105+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>292162805</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>271098074</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1971</taskId>
+    <taskId>2102</taskId>
     <taskDescription>בניית מעטפת בלוקים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378768+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:04.6074018+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>386295940</engineerId>
+    <engineerId>343990453</engineerId>
     <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1972</taskId>
+    <taskId>2103</taskId>
     <taskDescription>בניית קומת קרקע</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378845+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:25.2321478+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>304203093</engineerId>
+    <engineerId>384112054</engineerId>
     <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1973</taskId>
+    <taskId>2104</taskId>
     <taskDescription>טייח פנים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378923+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:30.3197006+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>328180228</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>317126326</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1974</taskId>
+    <taskId>2105</taskId>
     <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7378999+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:33.0462653+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>355454353</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>317126326</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1975</taskId>
+    <taskId>2106</taskId>
     <taskDescription>יציקת קירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7379138+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:36.0294416+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>295049009</engineerId>
+    <engineerId>365403781</engineerId>
     <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1976</taskId>
+    <taskId>2107</taskId>
     <taskDescription>יציקת ריצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7379247+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:39.2452577+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>201021561</engineerId>
+    <engineerId>286394567</engineerId>
     <exp>rookie</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1977</taskId>
+    <taskId>2108</taskId>
     <taskDescription>איטום רצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.737933+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T12:59:49.2237162+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>304203093</engineerId>
+    <engineerId>266350281</engineerId>
     <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1978</taskId>
+    <taskId>2109</taskId>
     <taskDescription>משטחים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7379408+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:00:08.3583092+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>328180228</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>286394567</engineerId>
+    <exp>junior</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1979</taskId>
+    <taskId>2110</taskId>
     <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7379486+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:00:11.6090763+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>386295940</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>PT0S</RequiredTime>
+    <engineerId>205635620</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1980</taskId>
+    <taskId>2111</taskId>
     <taskDescription>שלד והכנות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7041454+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:14:54.4131981+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>386295940</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1981</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7442714+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>281204926</engineerId>
+    <engineerId>204082848</engineerId>
     <exp>expert</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1982</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7480034+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>394268981</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1983</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7509198+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>328180228</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1984</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7539106+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>394268981</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1985</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7576566+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>261650272</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1986</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7612958+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>295049009</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1987</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7653444+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>201021561</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1988</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7691498+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>296754493</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1989</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:38:21.7721595+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>292162805</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>1990</taskId>
+    <taskId>2112</taskId>
     <taskDescription>שלד והכנות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.482871+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5260766+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>266234104</engineerId>
-    <exp>junior</exp>
+    <engineerId>298637390</engineerId>
+    <exp>rookie</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1991</taskId>
+    <taskId>2113</taskId>
     <taskDescription>בניית מעטפת בלוקים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5209304+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.568537+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>281204926</engineerId>
-    <exp>junior</exp>
+    <engineerId>266350281</engineerId>
+    <exp>rookie</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1992</taskId>
+    <taskId>2114</taskId>
     <taskDescription>בניית קומת קרקע</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5249821+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5712839+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>336371130</engineerId>
+    <engineerId>315760162</engineerId>
     <exp>rookie</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1993</taskId>
+    <taskId>2115</taskId>
     <taskDescription>טייח פנים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5284983+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5735329+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>304203093</engineerId>
-    <exp>expert</exp>
+    <engineerId>317928272</engineerId>
+    <exp>rookie</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1994</taskId>
+    <taskId>2116</taskId>
     <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5320873+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5757276+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>296754493</engineerId>
-    <exp>expert</exp>
+    <engineerId>256098779</engineerId>
+    <exp>junior</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1995</taskId>
+    <taskId>2117</taskId>
     <taskDescription>יציקת קירות</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.535933+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.578445+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>285981376</engineerId>
+    <engineerId>326476869</engineerId>
     <exp>junior</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1996</taskId>
+    <taskId>2118</taskId>
     <taskDescription>יציקת ריצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5401944+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5810111+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>315851104</engineerId>
+    <engineerId>330844232</engineerId>
     <exp>expert</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1997</taskId>
+    <taskId>2119</taskId>
     <taskDescription>איטום רצפה</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5433747+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5834259+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>358104947</engineerId>
+    <engineerId>263754139</engineerId>
     <exp>junior</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1998</taskId>
+    <taskId>2120</taskId>
     <taskDescription>משטחים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5860252+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5858478+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>292162805</engineerId>
-    <exp>junior</exp>
+    <engineerId>240799259</engineerId>
+    <exp>expert</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>1999</taskId>
+    <taskId>2121</taskId>
     <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
     <alias />
     <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:42:54.5906266+02:00</createdAtDate>
+    <createdAtDate>2024-01-22T13:15:07.5896808+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
     <startDate xsi:nil="true" />
     <deadLine xsi:nil="true" />
     <completeDate xsi:nil="true" />
     <product />
     <remarks />
-    <engineerId>394268981</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2000</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.293853+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>253412184</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2001</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3303183+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218391725</engineerId>
+    <engineerId>317126326</engineerId>
     <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2002</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3342152+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>316978556</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2003</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3374696+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>281353748</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2004</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3408588+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218494955</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2005</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3442767+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>261650272</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2006</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3477309+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>254873242</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2007</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3594537+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>399142520</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2008</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3645793+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>285237247</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2009</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:45:03.3693703+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>344552849</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2010</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.071094+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>370545435</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2011</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.110898+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>241117997</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2012</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1150975+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>394268981</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2013</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1191396+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218391725</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2014</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.123156+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>262216707</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2015</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1277726+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>298451362</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2016</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1392734+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>344552849</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2017</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1431781+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>358104947</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2018</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1474387+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>301842648</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2019</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:46:16.1513856+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>315851104</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2020</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.087127+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>261650272</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2021</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1260366+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218391725</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2022</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1309929+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>304203093</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2023</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1352893+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>208583309</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2024</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1394788+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>201138235</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2025</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1507691+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>262216707</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2026</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1554988+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>281353748</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2027</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1597516+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>255101403</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2028</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1640495+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>344552849</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2029</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:49:48.1685212+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>268977882</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2030</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.585463+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>260025652</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2031</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6287111+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>210866323</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2032</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6334678+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>328180228</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2033</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6377435+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>288229502</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2034</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6496058+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218391725</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2035</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6540712+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>281368933</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2036</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6584534+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>345006163</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2037</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6627159+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>345006163</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2038</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6668756+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>210866323</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2039</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6710672+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>355750020</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2039</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T15:58:30.6710672+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>283584247</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2040</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.74252+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>286074188</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2041</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.7789381+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>208583309</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2042</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.7843024+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>340663014</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2043</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.7892487+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>328180228</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2044</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.8014565+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>298494502</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2045</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.806394+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>263234504</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2046</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.8112926+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>285237247</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2047</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.8164103+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>239454260</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2048</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.8218738+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>208583309</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2049</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:03:21.8269502+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>281353748</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2050</taskId>
-    <taskDescription>שלד והכנות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.3888766+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>244527890</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2051</taskId>
-    <taskDescription>בניית מעטפת בלוקים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4289906+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>307272548</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2052</taskId>
-    <taskDescription>בניית קומת קרקע</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4346787+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>254873242</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2053</taskId>
-    <taskDescription>טייח פנים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4496101+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>313421941</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2054</taskId>
-    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4582534+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>394268981</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2055</taskId>
-    <taskDescription>יציקת קירות</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4647664+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>218546467</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2056</taskId>
-    <taskDescription>יציקת ריצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4700426+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>333362733</engineerId>
-    <exp>rookie</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2057</taskId>
-    <taskDescription>איטום רצפה</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4763219+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>296754493</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2058</taskId>
-    <taskDescription>משטחים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4829601+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>210866323</engineerId>
-    <exp>junior</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
-    <taskId>2059</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-09T16:04:15.4886978+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>321763891</engineerId>
-    <exp>junior</exp>
     <RequiredTime>P5D</RequiredTime>
     <isActive>true</isActive>
   </Task>

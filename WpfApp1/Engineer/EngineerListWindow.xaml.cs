@@ -19,8 +19,11 @@ namespace PL.Engineer
     /// <summary>
     /// Interaction logic for EngineerListWindow.xaml
     /// </summary>
+    
     public partial class EngineerListWindow : Window
     {
+        public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
+
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         public EngineerListWindow()
         {
@@ -39,6 +42,12 @@ namespace PL.Engineer
         public static readonly DependencyProperty EngineerListProperty =
         DependencyProperty.Register("EngineerList", typeof(IEnumerable<BO.Engineer>),
         typeof(EngineerListWindow), new PropertyMetadata(null));
-     
+
+        private void ComboBox_FilterByExperience(object sender, SelectionChangedEventArgs e)
+        {
+
+            EngineerList = (Experience == BO.EngineerExperience.None) ?
+            s_bl?.Engineer.ReadAll()! : s_bl?.Engineer.ReadAll(item => item.exp == Experience)!;
+        }
     }
 }

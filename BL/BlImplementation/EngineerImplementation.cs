@@ -5,10 +5,25 @@ using System.Collections.Generic;
 
 namespace BlImplementation;
 
+
 internal class EngineerImplementation : IEngineer
 {
     private DalApi.IDal _dal = Factory.Get;
-    public int Create(BO.Engineer eng)//A function that create a new Engineer.
+    public TaskInEngineer checkIsExist(DO.Engineer eng)
+    {
+        var x = _dal.Task.ReadAll().FirstOrDefault(task => task?.engineerId == eng.engineerId);
+        if (x == null)
+            return null;
+        else
+        {
+            return new TaskInEngineer()
+            {
+                id = x.engineerId,
+                //    alias = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId == doEngineer.engineerId)!.alias
+            };
+        }
+    }
+        public int Create(BO.Engineer eng)//A function that create a new Engineer.
     {
         DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
         try
@@ -46,9 +61,10 @@ internal class EngineerImplementation : IEngineer
         };
     }
 
-    public IEnumerable<BO.Engineer> ReadAll()//display all the list of engineers
+    public IEnumerable<BO.Engineer> ReadAll(Func<Engineer, bool>? filter = null)//display all the list of engineers
     {
-        return (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
+        
+        IEnumerable<BO.Engineer>engineers= (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
                 select new BO.Engineer
                 {
                     engineerId = doEngineer.engineerId,
@@ -56,13 +72,14 @@ internal class EngineerImplementation : IEngineer
                     email = doEngineer.engineerEmail,
                     costPerHour = doEngineer.costPerHour,
                     exp = (EngineerExperience)doEngineer.exp,
-                    task=new TaskInEngineer()
-                    {
-                        id = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId==doEngineer.engineerId)!.engineerId,
-                        alias = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId == doEngineer.engineerId)!.alias
-                    }
+                    task=checkIsExist(doEngineer)
                 });
+        if(filter == null)
+          return engineers;
+        else
+            return engineers.Where(filter!);
 }
+  
     public void Update(Engineer eng) //A function that update an exist Engineer with an id
     {
         DO.Engineer doEngineer = new DO.Engineer(eng.engineerId, eng.name, eng.email, eng.costPerHour, (DO.EngineerExperience)eng.exp);

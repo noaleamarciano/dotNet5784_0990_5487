@@ -1,7 +1,7 @@
 ﻿
 namespace BO;
 
-public static class Tools
+internal static class Tools
 {
 
     public static string GenericToString(this object p)
@@ -10,7 +10,7 @@ public static class Tools
         string str = "";
         foreach (var property in prop)
         {
-            str += property.Name + ":" + property.GetValue(p);
+            str += property.Name + ":  " + property.GetValue(p) + " ";
         }
         return str;
     }

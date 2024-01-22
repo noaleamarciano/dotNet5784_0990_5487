@@ -22,7 +22,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Label" Grid.Column="0" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+            <ComboBox Grid.Column="1" SelectedValue="{Binding Path=Experience, Mode=TwoWay}"
+                 ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBox_FilterByExperience"/>
+
         </Grid>
         <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" >
             <ListView.View>

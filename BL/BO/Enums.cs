@@ -6,7 +6,8 @@ public enum EngineerExperience
 {
     expert,
     junior,
-    rookie
+    rookie,
+    None
 };
 /// <summary>
 /// An enum that contains all the status that can be to a task
