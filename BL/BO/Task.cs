@@ -22,8 +22,8 @@ namespace BO;
 public class Task
 {
     public int taskId { get; init; }
-    public required  string description { get; set; }
-    public required string alias { get; set; }
+    public  string? description { get; set; }
+    public  string ?alias { get; set; }
     public DateTime createdAtDate { get; set; }
     public Status ?status { get; set; }
     public List<TaskInList>? dependencies { get; set; }
@@ -35,7 +35,7 @@ public class Task
     public DateTime? completeDate { get; set; }
     public string? deliverables { get; set; }
     public string? remarks { get; set; }
-    public EngineerInTask engineer { get; set; }
+    public EngineerInTask? engineer { get; set; }
     public EngineerExperience exp { get; set; }
     public override string? ToString() => base.ToString();
 }

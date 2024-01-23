@@ -3,7 +3,7 @@
   <Task>
     <taskId>2078</taskId>
     <taskDescription>משטחים</taskDescription>
-    <alias />
+    <alias -/>
     <milestone>true</milestone>
     <createdAtDate>2024-01-22T12:16:50.565616+02:00</createdAtDate>
     <scheduledStartDate xsi:nil="true" />
