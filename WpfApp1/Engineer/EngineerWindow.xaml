@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
         Title="EngineerWindow" Height="450" Width="800"
-        DataContext="{Binding Engineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
+        DataContext="{Binding CurrentEngineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Grid>
         <Label Content="מייל" HorizontalAlignment="Left" Margin="537,154,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
         <Label Content="ת.ז" HorizontalAlignment="Left" Margin="537,43,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
@@ -33,9 +33,9 @@
          Text="{Binding costPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
 
         <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="258,348,0,0" TextWrapping="Wrap" 
-         Text="{Binding task.id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
-        <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="258,305,0,0" TextWrapping="Wrap" 
          Text="{Binding task.alias, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="258,305,0,0" TextWrapping="Wrap" 
+         Text="{Binding task.id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
         <Button Margin="59,314,646,77" Width="95"
                         Click="btnAddUpdateEngineer_Click"
                         Content="{Binding engineerId, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" />

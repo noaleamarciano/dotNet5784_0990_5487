@@ -19,9 +19,29 @@ namespace PL.Task
     /// </summary>
     public partial class TaskListWindow : Window
     {
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
+
+        public IEnumerable<BO.Task> TaskList
+        {
+            get { return (IEnumerable<BO.Task>)GetValue(TaskListProperty); }
+            set { SetValue(TaskListProperty, value); }
+        }
+
+        public static readonly DependencyProperty TaskListProperty =
+            DependencyProperty.Register("TaskList", typeof(IEnumerable<BO.Task>), typeof(TaskListWindow), new PropertyMetadata(null));
+
+
         public TaskListWindow()
         {
             InitializeComponent();
+            TaskList = s_bl?.Task.ReadAll()!;
+        }
+
+        private void ComboBoxFilterTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TaskList = (Experience == BO.EngineerExperience.None) ?
+            s_bl?.Task.ReadAll()! : s_bl?.Task.ReadAll(item => item.exp == Experience)!;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PL.Engineer;
+using PL.Task;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,11 @@ namespace WpfApp1
             {
                 MessageBox.Show("האתחול בוטל.", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        private void ButtonOpenListEngineers_Click(object sender, RoutedEventArgs e)
+        {
+            new TaskListWindow().Show();
         }
     }
 }

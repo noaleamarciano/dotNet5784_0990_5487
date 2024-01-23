@@ -9,5 +9,6 @@
     <Grid>
         <Button Content="פתיחת רשימת מהנדסים" HorizontalAlignment="Left" Margin="558,0,0,0" VerticalAlignment="Center" Click="btnEngineers_Click"/>
         <Button Content="אתחול בסיס נתונים" HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Center" Click="btnInitializeDatabase_Click"/>
+        <Button Content="פתיחת רשימת משימות" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Center" Click="ButtonOpenListEngineers_Click" />
     </Grid>
 </Window>

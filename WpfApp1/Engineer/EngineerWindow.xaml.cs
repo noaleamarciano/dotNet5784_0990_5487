@@ -22,27 +22,30 @@ namespace PL.Engineer
     {
         int updateOrAdd;
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        public ObservableCollection<BO.Engineer> Engineer
+        public BO.Engineer? CurrentEngineer
         {
-            get { return (ObservableCollection<BO.Engineer>)GetValue(EngineerProperty); }
-            set { SetValue(EngineerProperty, value); }
+            get { return (BO.Engineer?)GetValue(CurrentEngineerProperty); }
+            set { SetValue(CurrentEngineerProperty, value); }
         }
-        public static readonly DependencyProperty EngineerProperty =
-        DependencyProperty.Register("Engineer", typeof(ObservableCollection<BO.Engineer>),
-        typeof(EngineerWindow), new PropertyMetadata(null));
+
+        // Using a DependencyProperty as the backing store for CurrentCourse.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CurrentEngineerProperty =
+            DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
+
         public EngineerWindow(int idWindow = 0)
         {
-            BO.Engineer? engineer;
+        
             InitializeComponent();
+             
             if (idWindow == 0)
             {
                 updateOrAdd = 0;
-                engineer = new BO.Engineer();
+                CurrentEngineer = new BO.Engineer() { engineerId = 0, name = "", email = "", exp = BO.EngineerExperience.None };
             }
             else
             {
                 updateOrAdd = idWindow;
-                engineer = s_bl.Engineer.Read(idWindow);
+                CurrentEngineer = s_bl.Engineer.Read(idWindow);
             }
 
         }
@@ -54,7 +57,7 @@ namespace PL.Engineer
             {
                 try
                 {
-                    s_bl.Engineer.Create(Engineer[0]);
+                    s_bl.Engineer.Create(CurrentEngineer!);
                     MessageBox.Show("מהנדס נוסף בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
                     new EngineerWindow().Close();
                 }
@@ -66,7 +69,7 @@ namespace PL.Engineer
             {
                 try
                 {
-                    s_bl.Engineer.Update(Engineer[0]);
+                    s_bl.Engineer.Update(CurrentEngineer!);
                     MessageBox.Show("מהנדס עודכן בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
                     new EngineerWindow().Close();
                 }
