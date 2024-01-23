@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.Task"
         mc:Ignorable="d"
         Title="TaskWindow" Height="450" Width="800"
-    DataContext="{Binding Task, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
+    DataContext="{Binding CurrentTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Grid>
         <Label Content="תיאור המשימה" HorizontalAlignment="Left" Margin="537,154,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
         <Label Content="ת.ז" HorizontalAlignment="Left" Margin="537,43,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
@@ -14,9 +14,8 @@
         <Label Content="הערות" HorizontalAlignment="Left" Margin="537,98,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
         <Label Content="אבן  דרך" HorizontalAlignment="Left" Margin="537,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="71" Height="30"/>
         <Label Content="מוצר " HorizontalAlignment="Left" Margin="537,0,0,0" VerticalAlignment="Center" Height="30" Width="149"/>
-
         <Label Content="כינוי משימה" HorizontalAlignment="Left" Margin="520,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
-        <Label Content="פעיל" HorizontalAlignment="Left" Margin="537,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
+        <Label Content="סטטוס" HorizontalAlignment="Left" Margin="537,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
         <Label Content="הזמן שנדרש למשימה" HorizontalAlignment="Left" Margin="520,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="134" Height="31"/>
         <Label Content="דרגת קושי המשימה" HorizontalAlignment="Left" Margin="520,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="121" Height="31"/>
         <Label Content="תאריך תחילת העבודה על המשימה" HorizontalAlignment="Left" Margin="123,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="-2.417,-0.292" Width="192" Height="31"/>
@@ -27,7 +26,7 @@
 
         <!-- TextBox for taskDescription -->
         <TextBox HorizontalAlignment="Left" Margin="320,154,0,0" TextWrapping="Wrap" 
-         Text="{Binding taskDescription, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+         Text="{Binding description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
 
         <!-- TextBox for ת.ז -->
         <TextBox HorizontalAlignment="Left" Margin="320,43,0,0" TextWrapping="Wrap" 
@@ -35,7 +34,7 @@
 
         <!-- TextBox for ת.ז מהנדס -->
         <TextBox HorizontalAlignment="Left" Margin="320,247,0,0" TextWrapping="Wrap" 
-         Text="{Binding engineerID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+         Text="{Binding engineer, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
 
         <!-- TextBox for remarks -->
         <TextBox HorizontalAlignment="Left" Margin="320,98,0,0" TextWrapping="Wrap" 
@@ -55,18 +54,17 @@
 
         <!-- CheckBox for פעיל -->
         <CheckBox HorizontalAlignment="Left" Margin="320,128,0,0" VerticalAlignment="Top"
-          IsChecked="{Binding isActive, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Content=""/>
+          IsChecked="{Binding status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Content=""/>
 
         <!-- TextBox for הזמן שנדרש למשימה -->
         <TextBox HorizontalAlignment="Left" Margin="320,73,0,0" TextWrapping="Wrap" 
          Text="{Binding RequiredTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
         <!-- TextBox for דרגת קושי המשימה -->
-        <ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3"
-ItemsSource="{Binding Source={StaticResource YearsCollectionKey}}"
-SelectedValue="{Binding exp, Mode=TwoWay, NotifyOnValidationError=true,
-ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        
+        <!--<ComboBox HorizontalAlignment="Left" Height="NaN" Margin="320,386,0,0" ItemsSource="{Binding Source={StaticResource CurrentTaskProperty}}" SelectedValue="{Binding taskId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>-->
+
         <!-- DatePicker for תאריך תחילת העבודה על המשימה -->
-        <DatePicker HorizontalAlignment="Left" Margin="0,202,0,0" VerticalAlignment="Top" 
+        <DatePicker HorizontalAlignment="Left" Margin="-2,200,0,0" VerticalAlignment="Top" 
             SelectedDate="{Binding startDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
 
         <!-- DatePicker for תאריך סיום אחרון אפשרי -->
@@ -85,8 +83,6 @@ ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         <DatePicker HorizontalAlignment="Left" Margin="0,92,0,0" VerticalAlignment="Top" 
             SelectedDate="{Binding createdAtDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
 
-        <Button Margin="80,368,625,23" Width="95"
-                 Click="btnAddUpdateEngineer_Click"
-                 Content="{Binding engineerId, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" />
+        <Button Margin="72,381,633,10" Width="95" Click="btnAddUpdateTask_Click" Content="{Binding taskId,Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" />
     </Grid>
 </Window>

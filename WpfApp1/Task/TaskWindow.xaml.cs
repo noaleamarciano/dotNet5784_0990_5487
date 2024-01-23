@@ -22,31 +22,63 @@ namespace PL.Task
    
     public partial class TaskWindow : Window
     {
-        int updateOrAdd;
+          int updateOrAdd;
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-
-        public ObservableCollection<BO.Task> Task
+        public BO.Task? CurrentTask
         {
-            get { return (ObservableCollection<BO.Task>)GetValue(TaskProperty); }
-            set { SetValue(TaskProperty, value); }
+            get { return (BO.Task?)GetValue(CurrentTaskProperty); }
+            set { SetValue(CurrentTaskProperty, value); }
         }
-        public static readonly DependencyProperty TaskProperty =
-        DependencyProperty.Register("Task", typeof(ObservableCollection<BO.Task>),
-        typeof(TaskWindow), new PropertyMetadata(null));
+
+        // Using a DependencyProperty as the backing store for CurrentCourse.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CurrentTaskProperty =
+            DependencyProperty.Register("CurrentTask", typeof(BO.Task), typeof(TaskWindow), new PropertyMetadata(null));
         public TaskWindow(int idWindow=0)
         {
-            BO.Task? task;
+           
             InitializeComponent();
             if (idWindow == 0)
             {
                 updateOrAdd = 0;
-                task = new BO.Task();
+                CurrentTask = new BO.Task() { };
             }
             else
             {
                 updateOrAdd = idWindow;
-                task = s_bl.Task.Read(idWindow);
+                CurrentTask = s_bl.Task.Read(idWindow);
+            }
+        }
+
+        private void btnAddUpdateTask_Click(object sender, RoutedEventArgs e)
+        {
+            if (updateOrAdd == 0)
+            {
+                try
+                {
+                    s_bl.Task.Create(CurrentTask!);
+                    MessageBox.Show("משימה נוסף בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+                    new TaskWindow().Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception();
+                }
+            }
+            else
+            {
+                try
+                {
+                    s_bl.Task.Update(CurrentTask!);
+                    MessageBox.Show("משימה עודכן בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+                    new TaskWindow().Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception();
+                }
+
             }
         }
     }
+   
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.Engineer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,16 @@ namespace PL.Task
         {
             TaskList = (Experience == BO.EngineerExperience.None) ?
             s_bl?.Task.ReadAll()! : s_bl?.Task.ReadAll(item => item.exp == Experience)!;
+        }
+        private void ButtonAddTask_Click(object sender, RoutedEventArgs e)
+        {
+            new TaskWindow().ShowDialog();
+        }
+
+        private void openTaskUpdate(object sender, MouseButtonEventArgs e)
+        {
+            BO.Task? taskInList = (sender as ListView)?.SelectedItem as BO.Task;
+            new TaskWindow(taskInList!.taskId).ShowDialog();
         }
     }
 }

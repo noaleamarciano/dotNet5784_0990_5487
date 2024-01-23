@@ -24,14 +24,14 @@
             <ComboBox Grid.Column="1" SelectedValue="{Binding Path=Experience, Mode=TwoWay}"
        ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBoxFilterTasks_SelectionChanged" />
         </Grid>
-        <ListView Grid.Row="1" ItemsSource="{Binding Path=TaskList}">
+        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=TaskList}" MouseDoubleClick="openTaskUpdate" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
-        </ListView>
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        </ListView >
+        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="ButtonAddTask_Click"/>
     </Grid>
 
 </Window>
