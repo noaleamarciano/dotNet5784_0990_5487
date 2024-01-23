@@ -26,14 +26,14 @@
                  ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBox_FilterByExperience"/>
 
         </Grid>
-        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" >
+        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" MouseDoubleClick="openEngineerUpdate" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="ButtonAddEngineer_Click"/>
 
     </Grid>
 </Window>

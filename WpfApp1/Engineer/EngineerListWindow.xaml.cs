@@ -45,9 +45,19 @@ namespace PL.Engineer
 
         private void ComboBox_FilterByExperience(object sender, SelectionChangedEventArgs e)
         {
-
             EngineerList = (Experience == BO.EngineerExperience.None) ?
             s_bl?.Engineer.ReadAll()! : s_bl?.Engineer.ReadAll(item => item.exp == Experience)!;
+        }
+
+        private void ButtonAddEngineer_Click(object sender, RoutedEventArgs e)
+        {
+            new EngineerWindow().ShowDialog();
+        }
+
+        private void openEngineerUpdate(object sender, MouseButtonEventArgs e)
+        {
+            BO.Engineer? engineerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
+            new EngineerWindow(engineerInList!.engineerId).ShowDialog();
         }
     }
 }
