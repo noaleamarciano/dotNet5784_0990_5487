@@ -32,16 +32,20 @@ namespace PL.Engineer
         {
             BO.Engineer? engineer;
             InitializeComponent();
-            if(idWindow == 0)
+            if (idWindow == 0)
             {
-                engineer=new BO.Engineer();
+                engineer = new BO.Engineer();
             }
             else
             {
-                engineer= s_bl.Engineer.Read(idWindow);
+                engineer = s_bl.Engineer.Read(idWindow);
             }
 
         }
 
+        private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
