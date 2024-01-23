@@ -336,4 +336,12 @@
     <exp>rookie</exp>
     <isActive>true</isActive>
   </Engineer>
+  <Engineer>
+    <engineerId>1234567</engineerId>
+    <engineerName>trs</engineerName>
+    <engineerEmail>srh</engineerEmail>
+    <costPerHour>0</costPerHour>
+    <exp>expert</exp>
+    <isActive>true</isActive>
+  </Engineer>
 </ArrayOfEngineer>

@@ -37,5 +37,5 @@ public class Task
     public string? remarks { get; set; }
     public EngineerInTask? engineer { get; set; }
     public EngineerExperience exp { get; set; }
-    public override string? ToString() => base.ToString();
+    public override string? ToString() => this.GenericToString();
 }

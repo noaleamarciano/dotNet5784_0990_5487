@@ -18,8 +18,8 @@ internal class EngineerImplementation : IEngineer
         {
             return new TaskInEngineer()
             {
-                id = x.engineerId,
-                //    alias = _dal.Task.ReadAll().FirstOrDefault(task=>task?.taskId == doEngineer.engineerId)!.alias
+                id = x.taskId,
+                alias = _dal.Task.ReadAll().FirstOrDefault(task=>task?.engineerId == eng.engineerId)!.alias
             };
         }
     }
@@ -57,7 +57,8 @@ internal class EngineerImplementation : IEngineer
             name = doEngineer.engineerName,
             email = doEngineer.engineerEmail,
             costPerHour = doEngineer.costPerHour,
-            exp = (EngineerExperience)doEngineer.exp
+            exp = (EngineerExperience)doEngineer.exp,
+            task = checkIsExist(doEngineer)
         };
     }
 

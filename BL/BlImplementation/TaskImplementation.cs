@@ -1,9 +1,12 @@
 ﻿using BlApi;
 using BO;
+using DalApi;
 using DO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BlImplementation;
-internal class TaskImplementation : ITask
+internal class TaskImplementation : BlApi.ITask
 {
     private DalApi.IDal _dal = Factory.Get;
     public Status CalculateStatus(DO.Task task)
@@ -112,9 +115,13 @@ internal class TaskImplementation : ITask
             exp = (BO.EngineerExperience)doTask.exp,
         };
     }
-    public IEnumerable<BO.Task> ReadAll()//display all the list of tasks
+    public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null)//display all the list of tasks
     {
-        return _dal.Task.ReadAll().Select(doTask => Read(doTask!.taskId)!).ToList();
+        IEnumerable<BO.Task>tasks = _dal.Task.ReadAll().Select(doTask => Read(doTask!.taskId)!).ToList(); ;
+        if (filter == null)
+            return tasks;
+        else
+            return tasks.Where(filter!);
     }
 
     //public IEnumerable<BO.Task> ReadAll() 
