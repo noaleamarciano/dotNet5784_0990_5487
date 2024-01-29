@@ -21,12 +21,12 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Label" Grid.Column="0" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center"/>
+            <Label Content="Laחיפוש לפי רמת מהנדס:" Grid.Column="0" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center" Background="#FF08FFF0" Foreground="White"/>
             <ComboBox Grid.Column="1" SelectedValue="{Binding Path=Experience, Mode=TwoWay}"
                  ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBox_FilterByExperience"/>
 
         </Grid>
-        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" MouseDoubleClick="openEngineerUpdate" >
+        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" MouseDoubleClick="openEngineerUpdate" Background="#FFF4F7F7" BorderBrush="#FF08FFF0" Foreground="#FF030303" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

@@ -18,23 +18,6 @@
     <isActive>true</isActive>
   </Task>
   <Task>
-    <taskId>2079</taskId>
-    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
-    <alias />
-    <milestone>true</milestone>
-    <createdAtDate>2024-01-22T12:16:50.572046+02:00</createdAtDate>
-    <scheduledStartDate xsi:nil="true" />
-    <startDate xsi:nil="true" />
-    <deadLine xsi:nil="true" />
-    <completeDate xsi:nil="true" />
-    <product />
-    <remarks />
-    <engineerId>322698634</engineerId>
-    <exp>expert</exp>
-    <RequiredTime>P5D</RequiredTime>
-    <isActive>true</isActive>
-  </Task>
-  <Task>
     <taskId>2090</taskId>
     <taskDescription>שלד והכנות</taskDescription>
     <alias />
@@ -559,6 +542,23 @@
     <engineerId>317126326</engineerId>
     <exp>expert</exp>
     <RequiredTime>P5D</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>2079</taskId>
+    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
+    <alias />
+    <milestone>true</milestone>
+    <createdAtDate>2024-01-22T12:16:50.572046+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product />
+    <remarks />
+    <engineerId>322698634</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>PT0S</RequiredTime>
     <isActive>true</isActive>
   </Task>
 </ArrayOfTask>
