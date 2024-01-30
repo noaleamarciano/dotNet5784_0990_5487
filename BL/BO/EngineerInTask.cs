@@ -9,4 +9,6 @@ public class EngineerInTask
 {
     public int engineerId { get; init; }
     public string? name { get; set; }
+    public override string? ToString() => this.GenericToString();
+
 }

@@ -9,4 +9,6 @@ public class MilestoneInTask
 {
     public int id { get; init; }
     public string? alias { get; set; }
+    public override string? ToString() => this.GenericToString();
+
 }

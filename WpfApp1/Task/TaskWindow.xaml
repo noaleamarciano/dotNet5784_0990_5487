@@ -8,81 +8,98 @@
         Title="TaskWindow" Height="450" Width="800"
     DataContext="{Binding CurrentTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Grid>
-        <Label Content="תיאור המשימה" HorizontalAlignment="Left" Margin="537,154,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
-        <Label Content="ת.ז" HorizontalAlignment="Left" Margin="537,43,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
-        <Label Content=" ת.ז מהנדס" HorizontalAlignment="Left" Margin="537,247,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
-        <Label Content="הערות" HorizontalAlignment="Left" Margin="537,98,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
-        <Label Content="אבן  דרך" HorizontalAlignment="Left" Margin="537,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="71" Height="30"/>
-        <Label Content="מוצר " HorizontalAlignment="Left" Margin="537,0,0,0" VerticalAlignment="Center" Height="30" Width="149"/>
-        <Label Content="כינוי משימה" HorizontalAlignment="Left" Margin="520,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
-        <Label Content="סטטוס" HorizontalAlignment="Left" Margin="537,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
-        <Label Content="הזמן שנדרש למשימה" HorizontalAlignment="Left" Margin="520,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="134" Height="31"/>
-        <Label Content="דרגת קושי המשימה" HorizontalAlignment="Left" Margin="520,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="121" Height="31"/>
-        <Label Content="תאריך תחילת העבודה על המשימה" HorizontalAlignment="Left" Margin="123,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="-2.417,-0.292" Width="192" Height="31"/>
-        <Label Content="תאריך סיום אחרון אפשרי" HorizontalAlignment="Left" Margin="157,329,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
-        <Label Content="תאריך סיום בפועל" HorizontalAlignment="Left" Margin="171,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
-        <Label Content="תאריך מתוכנן לתחילת העבודה" HorizontalAlignment="Left" Margin="125,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="168" Height="31"/>
-        <Label Content="תאריך יצירת הפרוייקט" HorizontalAlignment="Left" Margin="171,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="134" Height="31"/>
+        <Label Content="תיאור המשימה" HorizontalAlignment="Left" Margin="612,172,0,0" VerticalAlignment="Top" Height="30" Width="148"/>
+        <Label Content="ת.ז" HorizontalAlignment="Left" Margin="612,31,0,0" VerticalAlignment="Top" Height="30" Width="148"/>
+        <Label Content=" ת.ז מהנדס" HorizontalAlignment="Left" Margin="612,248,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
+        <Label Content="הערות" HorizontalAlignment="Left" Margin="612,102,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
+        <Label Content="מזהה אבן  דרך" HorizontalAlignment="Left" Margin="612,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="85" Height="30"/>
+        <Label Content="מוצר " HorizontalAlignment="Left" Margin="612,212,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
+        <Label Content="כינוי משימה" HorizontalAlignment="Left" Margin="331,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
+        <Label Content="סטטוס" HorizontalAlignment="Left" Margin="612,136,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
+        <Label Content="הזמן שנדרש למשימה" HorizontalAlignment="Left" Margin="612,67,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="134" Height="31"/>
+        <Label Content="דרגת קושי המשימה" HorizontalAlignment="Left" Margin="612,393,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="121" Height="31"/>
+        <Label Content="תאריך תחילת העבודה על המשימה" HorizontalAlignment="Left" Margin="243,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="192" Height="31"/>
+        <Label Content="תאריך סיום בפועל" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="138" Height="31"/>
+        <Label Content="תאריך מתוכנן לתחילת העבודה" HorizontalAlignment="Left" Margin="267,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="168" Height="30"/>
 
         <!-- TextBox for taskDescription -->
-        <TextBox HorizontalAlignment="Left" Margin="320,154,0,0" TextWrapping="Wrap" 
-         Text="{Binding description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,175,0,0" TextWrapping="Wrap" 
+         Text="{Binding description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="22"/>
 
         <!-- TextBox for ת.ז -->
-        <TextBox HorizontalAlignment="Left" Margin="320,43,0,0" TextWrapping="Wrap" 
-         Text="{Binding taskId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,31,0,0" TextWrapping="Wrap" 
+         Text="{Binding taskId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
         <!-- TextBox for ת.ז מהנדס -->
-        <TextBox HorizontalAlignment="Left" Margin="320,247,0,0" TextWrapping="Wrap" 
-         Text="{Binding engineer, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,246,0,0" TextWrapping="Wrap" 
+         Text="{Binding engineer.engineerId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
         <!-- TextBox for remarks -->
-        <TextBox HorizontalAlignment="Left" Margin="320,98,0,0" TextWrapping="Wrap" 
-         Text="{Binding remarks, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,102,0,0" TextWrapping="Wrap" 
+         Text="{Binding remarks, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
         <!-- TextBox for אבן דרך -->
-        <TextBox HorizontalAlignment="Left" Margin="320,293,0,0" TextWrapping="Wrap" 
-         Text="{Binding milestone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="453,324,0,0" TextWrapping="Wrap" 
+         Text="{Binding milestone.id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
         <!-- TextBox for מוצר -->
-        <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="320,0,0,0" TextWrapping="Wrap" 
-         Text="{Binding product, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="453,212,0,0" TextWrapping="Wrap" 
+         Text="{Binding deliverables, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
         <!-- TextBox for כינוי משימה -->
-        <TextBox HorizontalAlignment="Left" Margin="320,344,0,0" TextWrapping="Wrap" 
-         Text="{Binding alias, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="453,363,0,0" TextWrapping="Wrap" 
+         Text="{Binding milestone.alias, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
 
-        <!-- CheckBox for פעיל -->
-        <CheckBox HorizontalAlignment="Left" Margin="320,128,0,0" VerticalAlignment="Top"
-          IsChecked="{Binding status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Content=""/>
 
         <!-- TextBox for הזמן שנדרש למשימה -->
-        <TextBox HorizontalAlignment="Left" Margin="320,73,0,0" TextWrapping="Wrap" 
-         Text="{Binding RequiredTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,67,0,0" TextWrapping="Wrap" 
+         Text="{Binding RequiredTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
         <!-- TextBox for דרגת קושי המשימה -->
-        
+
         <!--<ComboBox HorizontalAlignment="Left" Height="NaN" Margin="320,386,0,0" ItemsSource="{Binding Source={StaticResource CurrentTaskProperty}}" SelectedValue="{Binding taskId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>-->
 
         <!-- DatePicker for תאריך תחילת העבודה על המשימה -->
-        <DatePicker HorizontalAlignment="Left" Margin="-2,200,0,0" VerticalAlignment="Top" 
-            SelectedDate="{Binding startDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="66,251,0,0" VerticalAlignment="Top" 
+            SelectedDate="{Binding forecastDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="153"/>
 
         <!-- DatePicker for תאריך סיום אחרון אפשרי -->
-        <DatePicker HorizontalAlignment="Left" Margin="0,332,0,0" VerticalAlignment="Top" 
-            SelectedDate="{Binding deadLine, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="66,320,0,0" VerticalAlignment="Top" 
+            SelectedDate="{Binding completeDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="153"/>
 
         <!-- DatePicker for תאריך סיום בפועל -->
-        <DatePicker HorizontalAlignment="Left" Margin="0,262,0,0" VerticalAlignment="Top" 
-            SelectedDate="{Binding completeDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="66,286,0,0" VerticalAlignment="Top" 
+            SelectedDate="{Binding deadLine, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="153"/>
 
         <!-- DatePicker for תאריך מתוכנן לתחילת העבודה -->
-        <DatePicker HorizontalAlignment="Left" Margin="0,144,0,0" VerticalAlignment="Top" 
-            SelectedDate="{Binding scheduledStartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="66,215,0,0" VerticalAlignment="Top" 
+            SelectedDate="{Binding startDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="153" RenderTransformOrigin="1.444,3.418"/>
 
         <!-- TextBox for תאריך יצירת הפרוייקט -->
-        <DatePicker HorizontalAlignment="Left" Margin="0,92,0,0" VerticalAlignment="Top" 
-            SelectedDate="{Binding createdAtDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="66,178,0,0" VerticalAlignment="Top" 
+            SelectedDate="{Binding scheduledStartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="153"/>
 
-        <Button Margin="72,381,633,10" Width="95" Click="btnAddUpdateTask_Click" Content="{Binding taskId,Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" />
+        <Button Margin="12,365,680,14" Click="btnAddUpdateTask_Click" Content="{Binding taskId,Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" />
+        <ComboBox ItemsSource="{Binding Source={StaticResource StatusKey}}" 
+   HorizontalAlignment="Left" Margin="453,136,0,0" VerticalAlignment="Top" Width="119" 
+   SelectedValue="{Binding status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" BorderBrush="#FF12F2CF" Height="24" />
+        <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="453,284,0,0" TextWrapping="Wrap" 
+            Text="{Binding engineer.name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Label Content=" שם מהנדס" HorizontalAlignment="Left" Margin="612,284,0,0" VerticalAlignment="Top" Height="30" Width="149"/>
+        <Label Content="שם אבן דרך" HorizontalAlignment="Left" Margin="612,358,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="85" Height="30"/>
+        <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" 
+   HorizontalAlignment="Left" Margin="453,400,0,0" VerticalAlignment="Top" Width="120" 
+   SelectedValue="{Binding exp, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" BorderBrush="#FF12F2CF" Height="24" />
+        <TextBox HorizontalAlignment="Left" Margin="185,31,0,0" TextWrapping="Wrap" 
+            Text="{Binding alias, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Label Content="תלויות" HorizontalAlignment="Left" Margin="331,67,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="104" Height="31"/>
+        <Label Content="תאריך סיום אחרון אפשרי" HorizontalAlignment="Left" Margin="296,283,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="139" Height="31"/>
+        <Label Content="תאריך משוער לסיום" HorizontalAlignment="Left" Margin="319,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="138" Height="31"/>
+        <ListView ItemsSource="{Binding Path=dependencies}" Margin="28,63,474,261">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
