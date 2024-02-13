@@ -75,8 +75,22 @@ public static class Initialization
             "אלומיניום, התקנת משקופים עיוורים"
         };
 
+        string[] tasksAliases =
+       {
+            "הכנות",
+            "בניה",
+            "קרקע",
+            "טייח",
+            "אינסטלאציה",
+            "קירות",
+            "ריצפה",
+            "איטום",
+            "משטחים",
+            "אלומיניום"
+        };
         foreach (var _task in tasksNames)
         {
+            int i = 0;
             DateTime createdAt = DateTime.Now;
             //List<Engineer> newList = s_dal!.Engineer.ReadAll();
             var engineers = s_dal!.Engineer!.ReadAll().ToList();
@@ -89,22 +103,22 @@ public static class Initialization
             Task newTask = new(
                 0,
                 _task,
-                "",
+                tasksAliases[i],
                 true,
                 createdAt,
                 null,
                 null,
                 null,
                 null,
-                "",
-                "",
+                $"{i}",
+                "אין הערות",
                 engineerid,
                 _experience,
                TimeSpan.FromDays(5)
 
                 );
             s_dal!.Task.Create(newTask);
-
+            i++;
         }
     }
     private static void createDependences() //A function that initialize the dependences list with the help of the tasks list.
