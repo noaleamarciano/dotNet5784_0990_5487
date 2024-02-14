@@ -170,4 +170,174 @@
     <RequiredTime>PT0S</RequiredTime>
     <isActive>true</isActive>
   </Task>
+  <Task>
+    <taskId>110</taskId>
+    <taskDescription>שלד והכנות</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.8761591+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>275220870</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>111</taskId>
+    <taskDescription>בניית מעטפת בלוקים</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9374331+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>326043538</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>112</taskId>
+    <taskDescription>בניית קומת קרקע</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9446701+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>224037701</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>113</taskId>
+    <taskDescription>טייח פנים</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9485772+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>358548057</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>114</taskId>
+    <taskDescription>הכנות אינסטלאציה בקירות</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9515656+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>266350281</engineerId>
+    <exp>junior</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>115</taskId>
+    <taskDescription>יציקת קירות</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9545974+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>255230437</engineerId>
+    <exp>junior</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>116</taskId>
+    <taskDescription>יציקת ריצפה</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9590378+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>251371983</engineerId>
+    <exp>junior</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>117</taskId>
+    <taskDescription>איטום רצפה</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9622043+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>304858640</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>118</taskId>
+    <taskDescription>משטחים</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.9653382+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>236218981</engineerId>
+    <exp>expert</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
+  <Task>
+    <taskId>119</taskId>
+    <taskDescription>אלומיניום, התקנת משקופים עיוורים</taskDescription>
+    <alias>הכנות</alias>
+    <milestone>true</milestone>
+    <createdAtDate>2024-02-14T19:35:48.96826+02:00</createdAtDate>
+    <scheduledStartDate xsi:nil="true" />
+    <startDate xsi:nil="true" />
+    <deadLine xsi:nil="true" />
+    <completeDate xsi:nil="true" />
+    <product>0</product>
+    <remarks>אין הערות</remarks>
+    <engineerId>270446717</engineerId>
+    <exp>rookie</exp>
+    <RequiredTime>PT0S</RequiredTime>
+    <isActive>true</isActive>
+  </Task>
 </ArrayOfTask>

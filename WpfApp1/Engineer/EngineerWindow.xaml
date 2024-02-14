@@ -8,16 +8,75 @@
         Title="EngineerWindow" Height="450" Width="800"
         DataContext="{Binding CurrentEngineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Grid Margin="0,-10,0,10">
-        <Label Content="מייל" HorizontalAlignment="Left" Margin="537,124,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="ת.ז" HorizontalAlignment="Left" Margin="537,43,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="נסיון" HorizontalAlignment="Left" Margin="537,201,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="שם" HorizontalAlignment="Left" Margin="537,84,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content=":משימה" HorizontalAlignment="Left" Margin="615,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="71" Height="30" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="מחיר לשעה" HorizontalAlignment="Left" Margin="537,162,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="מזהה משימה" HorizontalAlignment="Left" Margin="537,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="117" Height="31" Background="#FF12F2CF" Foreground="White"/>
-        <Label Content="כינוי משימה" HorizontalAlignment="Left" Margin="537,314,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="117" Height="31" Background="#FF12F2CF" Foreground="White"/>
+        <Label Content="מייל" HorizontalAlignment="Left" Margin="537,124,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="ת.ז" HorizontalAlignment="Left" Margin="537,43,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="נסיון" HorizontalAlignment="Left" Margin="537,201,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="שם" HorizontalAlignment="Left" Margin="537,84,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content=":משימה" HorizontalAlignment="Left" Margin="615,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="71" Height="30" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="מחיר לשעה" HorizontalAlignment="Left" Margin="537,162,0,0" VerticalAlignment="Top" Height="30" Width="149" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+
+        <Label Content="מזהה משימה" HorizontalAlignment="Left" Margin="537,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="117" Height="31" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+       
+
+        <Label Content="כינוי משימה" HorizontalAlignment="Left" Margin="537,314,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.417,-0.292" Width="117" Height="31" Background="#FF08FFF0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
         <TextBox IsEnabled="{Binding engineerId, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"  HorizontalAlignment="Left" Margin="227,50,0,0" TextWrapping="Wrap" 
-         Text="{Binding engineerId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="151" BorderBrush="#FF12F2CF" Height="23"/>
+         Text="{Binding engineerId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="151" BorderBrush="#FF12F2CF" Background="White" Height="23"/>
 
         <TextBox HorizontalAlignment="Left" Margin="227,90,0,0" TextWrapping="Wrap" 
          Text="{Binding name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="151" BorderBrush="#FF12F2CF" Background="White" Height="24"/>
@@ -27,7 +86,14 @@
 
         <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" 
           HorizontalAlignment="Left" Margin="227,0,0,0" VerticalAlignment="Center" Width="151" 
-          SelectedValue="{Binding exp, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" BorderBrush="#FF12F2CF" Height="28" />
+          SelectedValue="{Binding exp, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" BorderBrush="#FF12F2CF" Height="28" >
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+        </ComboBox>
 
         <TextBox IsEnabled="False" HorizontalAlignment="Left" Margin="227,168,0,0" TextWrapping="Wrap" 
          Text="{Binding costPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="151" BorderBrush="#FF0EE6C5" Height="24"/>
@@ -38,6 +104,13 @@
          Text="{Binding task.id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="151" BorderBrush="#FF12F2CF" Height="24"/>
         <Button Margin="59,345,602,30"
                         Click="btnAddUpdateEngineer_Click"
-                        Content="{Binding engineerId, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" BorderBrush="White" Background="#FF12F2CF" Foreground="White" />
+                        Content="{Binding engineerId, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" BorderBrush="White" Background="#FF08FFF0" >
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
         Title="EngineerListWindow" Height="640" Width="800"
-        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}" Activated="Window_activity">
 
     <!--Extrnal Grid-->
     <Grid>
@@ -18,12 +18,29 @@
         <!--Internal, Upper Grid-->
         <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="302*"/>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="400*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Laחיפוש לפי רמת מהנדס:" Grid.Column="0" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center" Background="#FF08FFF0" Foreground="White"/>
-            <ComboBox Grid.Column="1" SelectedValue="{Binding Path=Experience, Mode=TwoWay}"
-                 ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBox_FilterByExperience"/>
+            <Label Content=":חיפוש לפי רמת מהנדס" Grid.Column="1" HorizontalAlignment="Left" Margin="49,5,0,0" VerticalAlignment="Top" Background="#FF08FFF0" Grid.ColumnSpan="2">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE40D0D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <ComboBox SelectedValue="{Binding Path=Experience, Mode=TwoWay}"
+                 ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectionChanged="ComboBox_FilterByExperience" Margin="10,2,67,0" Grid.ColumnSpan="2">
+                <ComboBox.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE40D0D" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Foreground>
+
+
+            </ComboBox>
 
         </Grid>
         <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding Path=EngineerList}" MouseDoubleClick="openEngineerUpdate" Background="#FFF4F7F7" BorderBrush="#FF08FFF0" Foreground="#FF030303" >
@@ -33,7 +50,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="ButtonAddEngineer_Click"/>
+        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="ButtonAddEngineer_Click" Background="#FF08FFF0">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
 
     </Grid>
 </Window>
