@@ -30,8 +30,11 @@ namespace PL.Engineer
             InitializeComponent();
             EngineerList = s_bl?.Engineer.ReadAll()!;
         }
-      
 
+        private void Window_activity(object sender, EventArgs e)
+        {
+            EngineerList = s_bl?.Engineer.ReadAll()!;
+        }
         //private BO.EngineerExperience EngineerLevel { get; set; } = BO.EngineerExperience.None;
 
         public IEnumerable<BO.Engineer> EngineerList

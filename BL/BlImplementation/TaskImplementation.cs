@@ -65,8 +65,8 @@ internal class TaskImplementation : BlApi.ITask
         {
             isMilestone = false;
         }
-        DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, isMilestone, task.createdAtDate, task.scheduledStartDate,
-          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert,task.RequiredTime);
+        DO.Task doTask = new DO.Task(task.taskId, task.description!, task.alias!, isMilestone, task.createdAtDate, task.scheduledStartDate,
+          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer!.engineerId, DO.EngineerExperience.expert,task.RequiredTime);
         try
         {
             int idTask = _dal.Task.Create(doTask);

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,7 +33,10 @@ namespace PL.Task
         public static readonly DependencyProperty TaskListProperty =
             DependencyProperty.Register("TaskList", typeof(IEnumerable<BO.Task>), typeof(TaskListWindow), new PropertyMetadata(null));
 
-
+        private void Window_activity(object sender, EventArgs e)
+        {
+            TaskList=s_bl?.Task.ReadAll()!;
+        }
         public TaskListWindow()
         {
             InitializeComponent();

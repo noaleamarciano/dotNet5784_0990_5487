@@ -25,6 +25,19 @@ internal class EngineerImplementation : IEngineer
     }
         public int Create(BO.Engineer eng)//A function that create a new Engineer.
     {
+   
+        switch (eng.exp)
+        {
+            case EngineerExperience.expert:
+                eng.costPerHour = 400;
+                break;
+            case EngineerExperience.junior:
+                eng.costPerHour = 230;
+                break;
+            case EngineerExperience.rookie:
+                eng.costPerHour = 101;
+                break;
+        }
         DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
         try
         {
@@ -49,7 +62,7 @@ internal class EngineerImplementation : IEngineer
         DO.Engineer? doEngineer= _dal.Engineer.Read(id);
         if (doEngineer==null)
         {
-            throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
+            throw new BO.BlDoesNotExistException($"Engineer with ID={id} does Not exist");
         }
         return new BO.Engineer()
         {

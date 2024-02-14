@@ -6,9 +6,32 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="פתיחת רשימת מהנדסים" HorizontalAlignment="Left" Margin="558,0,0,0" VerticalAlignment="Center" Click="btnEngineers_Click"/>
-        <Button Content="אתחול בסיס נתונים" HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Center" Click="btnInitializeDatabase_Click"/>
-        <Button Content="פתיחת רשימת משימות" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Center" Click="ButtonOpenListEngineers_Click" />
+    <Grid Background="#FFF4D0C4">
+        <Button Content="פתיחת רשימת מהנדסים" HorizontalAlignment="Left" Margin="525,0,0,0" VerticalAlignment="Center" Click="btnEngineers_Click" Width="197" Background="#FF00FFEC">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button Content="פתיחת רשימת משימות" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonOpenListEngineers_Click" Background="#FF00FFEC">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button Content="אתחול בסיס נתונים" HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Center" Click="btnInitializeDatabase_Click" Background="#FF00FFEC" Width="167">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+
+        </Button>
+
     </Grid>
 </Window>
