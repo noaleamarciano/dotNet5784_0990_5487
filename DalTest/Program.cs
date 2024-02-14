@@ -95,14 +95,7 @@ namespace DalTest
                             case 5://Delete an exist engineer
                                 Console.WriteLine("Enter an ID number");
                                 int id5 = int.Parse(Console.ReadLine()!);
-                                try
-                                {
-                                    s_dal.Engineer.Delete(id5);
-                                }
-                                catch (Exception ex)
-                                {
-                                    Console.WriteLine(ex.Message);
-                                }
+                               
                                 break;
                             case 6://Reset the list
                                 s_dal.Engineer.Reset();
@@ -192,7 +185,7 @@ namespace DalTest
                                 try
                                 {
                                     int id5 = int.Parse(Console.ReadLine()!);
-                                    s_dal.Task.Delete(id5);
+                                  
                                 }
                                 catch (Exception ex)
                                 {
@@ -265,7 +258,6 @@ namespace DalTest
                                 try
                                 {
                                     int id5 = int.Parse(Console.ReadLine()!);
-                                    s_dal.Dependence.Delete(id5);
                                 }
                                 catch (Exception ex)
                                 {

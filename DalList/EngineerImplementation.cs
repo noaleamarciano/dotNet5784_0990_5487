@@ -19,32 +19,11 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public void Delete(int id) //A function that delete an exist Engineer.
-    {
-        throw new DalDeletionImpossible("Its impossible to delete this engineer");
-        //if (DataSource.Tasks.FirstOrDefault(ta => ta.engineerId == id) == null)
-        //{
-        //    throw new DalDeletionImpossible("Its impossible to delete this engineer");
-        //}
-        //else
-        //{
-        //    Engineer? copyEng = DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
-        //    if (copyEng != null)
-        //    {
-        //        DataSource.Engineers.Remove(copyEng);
-        //    }
-        //    else
-        //    {
-        //        throw new DalDeletionImpossible("Can not delete the engineer");
-        //    }
-        //}
-    }
-
     public Engineer? Read(int id) //A function that  display an exist Engineer with an id
     {
         return DataSource.Engineers.FirstOrDefault(eng => eng.engineerId == id);
     }
-    public Engineer? Read(Func<Engineer, bool> filter)//A function that update an exist dependence with an id
+    public Engineer? Read(Func<Engineer, bool> filter)//A function that display an exist dependence with a filter
     {
         return DataSource.Engineers.FirstOrDefault(d => filter(d));
     }

@@ -11,7 +11,7 @@ namespace BlImplementation;
 internal class TaskImplementation : BlApi.ITask
 {
     private DalApi.IDal _dal = Factory.Get;
-    public List<TaskInList> calculateDependenciesList(int id)
+    public List<TaskInList> calculateDependenciesList(int id) //Calculate all the dependenciesof the current task
     {
         List<BO.TaskInList> taskInList = new List<BO.TaskInList>();
         foreach(var dep in _dal.Dependence.ReadAll()) {
@@ -24,33 +24,28 @@ internal class TaskImplementation : BlApi.ITask
         }
         return taskInList;
     }
-    public Status CalculateStatus(DO.Task task)
+    public Status CalculateStatus(DO.Task task) //Calculate the status of the current task
     {
-        // משימה שלא הוזמנה לביצוע
         if (task.scheduledStartDate==null && task.startDate == null && task.deadLine == null && task.completeDate == null)
         {
             return Status.unscheduled;
         }
 
-        // משימה שהוזמנה לביצוע אך עדיין לא התחילה
         if (task.startDate == null && DateTime.Now < task.scheduledStartDate)
         {
             return Status.scheduled;
         }
 
-        // משימה שהוזמנה לביצוע וכבר התחילה
         if (task.startDate == null && DateTime.Now >= task.scheduledStartDate)
         {
             return Status.onTrack;
         }
 
-        // משימה שהושלמה
         if (task.completeDate!=null)
         {
             return Status.completed;
         }
 
-        // סטטוס ברירת מחדל - אם לא נכנסנו לאף אחת מהתנאים הקודמים
         return Status.unscheduled;
     }
 
@@ -88,17 +83,12 @@ internal class TaskImplementation : BlApi.ITask
             }
             return idTask;
         }
-        catch (DO.DalAlreadyExistsException ex)
+        catch (BO.BlAlreadyExistsException ex)
         {
-            //throw bl exception
-            throw new Exception();
+            throw new BO.BlAlreadyExistsException("This task is already exception");
         }
     }
 
-    public void Delete(int id) //A function that delete an exist Task.
-    {
-        throw new NotImplementedException();
-    }
 
     public BO.Task? Read(int id) //A function that  display an exist Task with an id
     {
@@ -156,35 +146,6 @@ internal class TaskImplementation : BlApi.ITask
             return tasks.Where(filter!);
     }
 
-    //public IEnumerable<BO.Task> ReadAll() 
-    //{
-    //    List<BO.Task> tasksList = new List<BO.Task>();
-
-    //    tasksList = from DO.Task doTask in _dal.Task.ReadAll()
-    //                select new BO.Task
-    //                {
-
-    //                    taskId = doTask.taskId,
-    //                    description = doTask.taskDescription,
-    //                    alias = doTask.alias,
-    //                    milestone = { doTask.milestone ? new BO.MilestoneInTask() { id = doTask.taskId, alias = doTask.alias } : null },
-    //                    createdAtDate = doTask.createdAtDate,
-    //                    scheduledStartDate = doTask.scheduledStartDate,
-    //                    startDate = doTask.startDate,
-    //                    deadLine = doTask.deadLine,
-    //                    completeDate = doTask.completeDate,
-    //                    deliverables = doTask.product,
-    //                    remarks = doTask.remarks,
-    //                    engineer = new BO.EngineerInTask()
-    //                    {
-    //                        engineerId = doTask.engineerId,
-    //                        name = _dal.Engineer.Read(doTask.engineerId)!.engineerName,
-    //                    },
-    //                    exp = (EngineerExperience)doTask.exp,
-    //                };
-    //    return tasksList;
-    //}
-
     public void Update(BO.Task task) //A function that update an exist Task with an id
     {
         bool isMilestone;
@@ -208,10 +169,9 @@ internal class TaskImplementation : BlApi.ITask
                         _dal.Dependence.Create(new DO.Dependence(0, task.taskId, dep.taskId));
                 }
         }
-        catch (DO.DalAlreadyExistsException ex)
+        catch (BO.BlDoesNotExistException ex)
         {
-            //throw bl exception
-            throw new Exception();
+            throw new BO.BlDoesNotExistException("The task you want to update is not exist");
         }
     }
 }

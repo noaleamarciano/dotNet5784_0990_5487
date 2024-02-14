@@ -25,7 +25,7 @@ namespace PL.Engineer
         public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        public EngineerListWindow()
+        public EngineerListWindow() //Ctot of the engineer list window
         {
             InitializeComponent();
             EngineerList = s_bl?.Engineer.ReadAll()!;
@@ -35,7 +35,6 @@ namespace PL.Engineer
         {
             EngineerList = s_bl?.Engineer.ReadAll()!;
         }
-        //private BO.EngineerExperience EngineerLevel { get; set; } = BO.EngineerExperience.None;
 
         public IEnumerable<BO.Engineer> EngineerList
         {
@@ -46,18 +45,18 @@ namespace PL.Engineer
         DependencyProperty.Register("EngineerList", typeof(IEnumerable<BO.Engineer>),
         typeof(EngineerListWindow), new PropertyMetadata(null));
 
-        private void ComboBox_FilterByExperience(object sender, SelectionChangedEventArgs e)
+        private void ComboBox_FilterByExperience(object sender, SelectionChangedEventArgs e) //Filter the engineers
         {
             EngineerList = (Experience == BO.EngineerExperience.None) ?
             s_bl?.Engineer.ReadAll()! : s_bl?.Engineer.ReadAll(item => item.exp == Experience)!;
         }
 
-        private void ButtonAddEngineer_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddEngineer_Click(object sender, RoutedEventArgs e) //For adding a new engineer
         {
             new EngineerWindow().ShowDialog();
         }
 
-        private void openEngineerUpdate(object sender, MouseButtonEventArgs e)
+        private void openEngineerUpdate(object sender, MouseButtonEventArgs e) //Open an engineer in update mode
         {
             BO.Engineer? engineerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
             new EngineerWindow(engineerInList!.engineerId).ShowDialog();

@@ -37,23 +37,23 @@ namespace PL.Task
         {
             TaskList=s_bl?.Task.ReadAll()!;
         }
-        public TaskListWindow()
+        public TaskListWindow() //Ctor of the task list window
         {
             InitializeComponent();
             TaskList = s_bl?.Task.ReadAll()!;
         }
 
-        private void ComboBoxFilterTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBoxFilterTasks_SelectionChanged(object sender, SelectionChangedEventArgs e) //Filter the tasks
         {
             TaskList = (Experience == BO.EngineerExperience.None) ?
             s_bl?.Task.ReadAll()! : s_bl?.Task.ReadAll(item => item.exp == Experience)!;
         }
-        private void ButtonAddTask_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddTask_Click(object sender, RoutedEventArgs e) //Add a new task
         {
-            new TaskWindow().ShowDialog();
+            new TaskWindow().ShowDialog(); //Open a task in add mode
         }
 
-        private void openTaskUpdate(object sender, MouseButtonEventArgs e)
+        private void openTaskUpdate(object sender, MouseButtonEventArgs e) //Open a task in update mode
         {
             BO.Task? taskInList = (sender as ListView)?.SelectedItem as BO.Task;
             new TaskWindow(taskInList!.taskId).ShowDialog();

@@ -9,7 +9,7 @@ namespace BlImplementation;
 internal class EngineerImplementation : IEngineer
 {
     private DalApi.IDal _dal = Factory.Get;
-    public TaskInEngineer checkIsExist(DO.Engineer eng)
+    public TaskInEngineer checkIsExist(DO.Engineer eng) //check if the engineer is exist and return the task of the engineer
     {
         var x = _dal.Task.ReadAll().FirstOrDefault(task => task?.engineerId == eng.engineerId);
         if (x == null)
@@ -23,39 +23,32 @@ internal class EngineerImplementation : IEngineer
             };
         }
     }
-        public int Create(BO.Engineer eng)//A function that create a new Engineer.
-    {
-   
-        switch (eng.exp)
-        {
-            case EngineerExperience.expert:
-                eng.costPerHour = 400;
-                break;
-            case EngineerExperience.junior:
-                eng.costPerHour = 230;
-                break;
-            case EngineerExperience.rookie:
-                eng.costPerHour = 101;
-                break;
-        }
-        DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
-        try
-        {
-           
-            int idEng = _dal.Engineer.Create(doEngineer);
-            return idEng;
-        }
-        catch (DO.DalAlreadyExistsException ex)
-        {
-            //throw bl exception
-            throw new Exception();
-        }
+    public int Create(BO.Engineer eng)//A function that create a new Engineer.
+    { 
+       switch (eng.exp)
+       {
+           case EngineerExperience.expert:
+               eng.costPerHour = 400;
+               break;
+           case EngineerExperience.junior:
+               eng.costPerHour = 230;
+               break;
+           case EngineerExperience.rookie:
+               eng.costPerHour = 101;
+               break;
+       }
+       DO.Engineer doEngineer= new DO.Engineer(eng.engineerId,eng.name,eng.email,eng.costPerHour,(DO.EngineerExperience)eng.exp);
+       try
+       {
+          
+           int idEng = _dal.Engineer.Create(doEngineer);
+           return idEng;
+       }
+       catch (BO.BlAlreadyExistsException ex)
+       {
+           throw new BO.BlAlreadyExistsException("The engineer you want to add already exist");
+       }
     } 
-
-    public void Delete(int id)//A function that delete an exist Engineer.
-    {
-        throw new NotImplementedException();
-    }
 
     public BO.Engineer? Read(int id)//A function that  display an exist Engineer with an id
     {
@@ -76,8 +69,7 @@ internal class EngineerImplementation : IEngineer
     }
 
     public IEnumerable<BO.Engineer> ReadAll(Func<Engineer, bool>? filter = null)//display all the list of engineers
-    {
-        
+    {        
         IEnumerable<BO.Engineer>engineers= (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
                 select new BO.Engineer
                 {
@@ -92,7 +84,7 @@ internal class EngineerImplementation : IEngineer
           return engineers;
         else
             return engineers.Where(filter!);
-}
+    }
   
     public void Update(Engineer eng) //A function that update an exist Engineer with an id
     {
@@ -101,10 +93,9 @@ internal class EngineerImplementation : IEngineer
         {
             _dal.Engineer.Update(doEngineer);
         }
-        catch (DO.DalAlreadyExistsException ex)
+        catch (BO.BlDoesNotExistException ex)
         {
-            //throw bl exception
-            throw new Exception();
+            throw new BO.BlDoesNotExistException("The engineer you want to update is not exist");
         }
     }
 }

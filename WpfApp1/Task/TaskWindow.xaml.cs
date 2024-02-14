@@ -38,9 +38,8 @@ namespace PL.Task
         public static readonly DependencyProperty CurrentTaskProperty =
         DependencyProperty.Register("CurrentTask", typeof(BO.Task), typeof(TaskWindow), new PropertyMetadata(null));
 
-        public TaskWindow(int idWindow = 0)
+        public TaskWindow(int idWindow = 0) //Ctor of the task window
         {
-
             InitializeComponent();
             if (idWindow == 0)
             {
@@ -55,10 +54,9 @@ namespace PL.Task
             }
         }
 
-        private void btnAddUpdateTask_Click(object sender, RoutedEventArgs e)
+        private void btnAddUpdateTask_Click(object sender, RoutedEventArgs e)//Add or update a task
         {
-
-            if (updateOrAdd == 0)
+            if (updateOrAdd == 0)//Add mode
             {
                 try
                 {
@@ -72,7 +70,7 @@ namespace PL.Task
                     throw new Exception();
                 }
             }
-            else
+            else //Update mode
             {
                 try
                 {
@@ -89,7 +87,7 @@ namespace PL.Task
             }
         }
 
-        private void AddDependence_Click(object sender, RoutedEventArgs e)
+        private void AddDependence_Click(object sender, RoutedEventArgs e)//Add a new dependence
         {
             int dependenceNum = int.Parse(dependenceId.Text); 
             BO.Task? task = s_bl.Task.Read(dependenceNum);

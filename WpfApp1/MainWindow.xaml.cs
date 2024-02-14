@@ -22,19 +22,19 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() //Ctor of the main window
         {
             InitializeComponent();
           
         }
 
 
-        private void btnEngineers_Click(object sender, RoutedEventArgs e)
+        private void btnEngineers_Click(object sender, RoutedEventArgs e) //Open the list of engineers window
         {
             new EngineerListWindow().Show();
         }
 
-        private void btnInitializeDatabase_Click(object sender, RoutedEventArgs e)
+        private void btnInitializeDatabase_Click(object sender, RoutedEventArgs e) //initoalize the data base
         {
             MessageBoxResult result = MessageBox.Show("האם אתה בטוח שברצונך לאתחל את בסיס הנתונים?", "אישור אתחול", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -49,7 +49,7 @@ namespace WpfApp1
             }
         }
 
-        private void ButtonOpenListEngineers_Click(object sender, RoutedEventArgs e)
+        private void ButtonOpenListEngineers_Click(object sender, RoutedEventArgs e) //Open the list of engineers
         {
             new TaskListWindow().Show();
         }

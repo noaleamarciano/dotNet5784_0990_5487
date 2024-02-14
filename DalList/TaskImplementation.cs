@@ -14,35 +14,11 @@ internal class TaskImplementation : ITask
         return newId;
     }
 
-    public void Delete(int id) //A function that delete an exist Task.
-    {
-        throw new DalDeletionImpossible("Its impossible to delete this task");
-        //if (DataSource.Dependences.FirstOrDefault(dep => dep.previousTaskId == id) != null)
-        //{
-        //    throw new DalDeletionImpossible("Its impossible to delete this task");
-        //}
-        //else
-        //{
-        //    Task? copyDep2 = DataSource.Tasks.FirstOrDefault(ta => ta.taskId == id);
-        //    Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.pendingTaskId == id);
-        //    if (copyDep2 != null)
-        //    {
-        //        DataSource.Tasks.Remove(copyDep2);
-        //        DataSource.Dependences.Remove(copyDep);
-        //    }
-        //    else
-        //    {
-        //        throw new DalDeletionImpossible($"No task with ID={copyDep2.engineerId}");
-        //    }
-
-        //}
-    }
-
     public Task? Read(int id) //A function that  display an exist Task with an id
     {
         return DataSource.Tasks.FirstOrDefault(dep => dep.taskId == id);
     }
-    public Task? Read(Func<Task, bool> filter)//A function that update an exist dependence with a filter
+    public Task? Read(Func<Task, bool> filter)//A function that display an exist dependence with a filter
     {
         return DataSource.Tasks.FirstOrDefault(d => filter(d));
     }

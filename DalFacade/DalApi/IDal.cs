@@ -15,7 +15,6 @@ namespace DalApi
         ITask Task { get; }
         IDependence Dependence { get; }
         public void Reset();//Clear the data
-
     }
 }
 

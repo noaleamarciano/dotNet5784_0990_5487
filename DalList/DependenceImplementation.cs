@@ -15,19 +15,7 @@ internal class DependenceImplementation : IDependence
         return newId;
     }
 
-    public void Delete(int id) //A function that delete an exist dependence.
-    {
-        Dependence? copyDep = DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
-        if (copyDep != null)
-        {
-            DataSource.Dependences.Remove(copyDep!);
-        }
-        else
-        { 
-            throw new DalDeletionImpossible($"No dependence with ID={copyDep!.dependenceId}");
-        }
-    }
-
+   
     public Dependence? Read(int id) //A function that  display an exist dependence with an id
     {
         return DataSource.Dependences.FirstOrDefault(dep => dep.dependenceId == id);
@@ -65,6 +53,5 @@ internal class DependenceImplementation : IDependence
         {
             DataSource.Dependences.Clear();
         }
-       
     }
 }

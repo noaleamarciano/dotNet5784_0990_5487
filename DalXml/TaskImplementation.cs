@@ -18,40 +18,13 @@ internal class TaskImplementation : ITask
         return newId;
     }
 
-    public void Delete(int id)//A function that delete an exist Task.
-    {
-        throw new DalDeletionImpossible("Its impossible to delete this task");
-        //List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
-        //List<Dependence> dependenceList = XMLTools.LoadListFromXMLSerializer<Dependence>("dependences");
-
-        //if (dependenceList.FirstOrDefault(dep => dep.previousTaskId == id) != null)
-        //{
-        //    throw new DalDeletionImpossible("Its impossible to delete this task");
-        //}
-        //else
-        //{
-        //    DO.Task? copyTask = taskList.FirstOrDefault(ta => ta.taskId == id);
-        //    Dependence? copyDep = dependenceList.FirstOrDefault(dep => dep.pendingTaskId == id);
-        //    if (copyTask != null)
-        //    {
-        //        taskList.Remove(copyTask);
-        //        XMLTools.SaveListToXMLSerializer<DO.Task>(taskList, "tasks");
-        //    }
-        //    else
-        //    {
-        //        throw new DalDeletionImpossible($"No task with ID={copyTask?.engineerId}");
-        //    }
-
-        //}
-    }
-
     public DO.Task? Read(int id)//A function that  display an exist Task with an id
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         return taskList.FirstOrDefault(dep => dep.taskId == id);
     }
 
-    public DO.Task? Read(Func<DO.Task, bool> filter)//A function that update an exist dependence with a filter
+    public DO.Task? Read(Func<DO.Task, bool> filter)//A function that display an exist task with a filter
     {
         List<DO.Task> taskList = XMLTools.LoadListFromXMLSerializer<DO.Task>("tasks");
         return taskList.FirstOrDefault(d => filter(d));

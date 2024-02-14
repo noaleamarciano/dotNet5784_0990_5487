@@ -14,3 +14,11 @@ public class BlNullPropertyException : Exception //Exception an attribute with a
 {
     public BlNullPropertyException(string? message) : base(message) { }
 }
+
+[Serializable]
+public class BlAlreadyExistsException : Exception //Exception of an object that is already exist
+{
+    public BlAlreadyExistsException(string? message) : base(message) { }
+    public BlAlreadyExistsException(string message, Exception innerException)
+    : base(message, innerException) { }
+}

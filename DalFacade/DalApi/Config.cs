@@ -18,13 +18,15 @@ static class Config
     static Config()
     {
         XElement dalConfig = XElement.Load(@"..\xml\dal-config.xml") ??
-  throw new DalConfigException("dal-config.xml file is not found");
+         throw new DalConfigException("dal-config.xml file is not found");
 
+        // Parsing the dal element
         s_dalName =
            dalConfig.Element("dal")?.Value ?? throw new DalConfigException("<dal> element is missing");
-
+        
+        // Parsing the dal-packages element
         var packages = dalConfig.Element("dal-packages")?.Elements() ??
-  throw new DalConfigException("<dal-packages> element is missing");
+          throw new DalConfigException("<dal-packages> element is missing");
         s_dalPackages = (from item in packages
                          let pkg = item.Value
                          let ns = item.Attribute("namespace")?.Value ?? "Dal"

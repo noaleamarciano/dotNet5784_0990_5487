@@ -92,7 +92,6 @@ public static class Initialization
         {
             int i = 0;
             DateTime createdAt = DateTime.Now;
-            //List<Engineer> newList = s_dal!.Engineer.ReadAll();
             var engineers = s_dal!.Engineer!.ReadAll().ToList();
             int randomIndex = s_rand.Next(0, engineers.Count);
             int engineerid = engineers[randomIndex]?.engineerId ?? 0;

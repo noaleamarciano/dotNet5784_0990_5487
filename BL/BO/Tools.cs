@@ -1,18 +1,36 @@
-﻿
+﻿using System.Reflection;
+using System.Collections;
+using System.Reflection;
 namespace BO;
 
 internal static class Tools
 {
 
-    public static string GenericToString(this object p)
+    public static string GenericToString<T>(this T obj)
     {
-        var prop = p.GetType().GetProperties();
-        string str = "";
-        foreach (var property in prop)
-        {
-            str += property.Name + ":  " + property.GetValue(p) + " ";
-        }
-        return str;
-    }
+        PropertyInfo[] propertiesArr = typeof(T).GetProperties();
 
+        return string.Join(", ", propertiesArr.Select(property =>
+        {
+            object? propertyValue = property.GetValue(obj);
+            string? str;
+            if (propertyValue == null)
+            {
+                str = "null";
+            }
+            else if (propertyValue is IEnumerable enumerableValue)
+            {
+                str = string.Join("", enumerableValue.Cast<object>().Select(item => item.ToString()));
+            }
+            else
+            {
+                str = propertyValue.ToString()!;
+            }
+
+            return property.Name + ": " + str;
+        }));
+
+
+    }
 }
+

@@ -22,7 +22,7 @@ namespace PL.Engineer
     {
         int updateOrAdd;
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        public BO.Engineer? CurrentEngineer
+        public BO.Engineer? CurrentEngineer //The current engineer that we opened
         {
             get { return (BO.Engineer?)GetValue(CurrentEngineerProperty); }
             set { SetValue(CurrentEngineerProperty, value); }
@@ -32,15 +32,14 @@ namespace PL.Engineer
         public static readonly DependencyProperty CurrentEngineerProperty =
         DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
 
-        public EngineerWindow(int idWindow = 0)
+        public EngineerWindow(int idWindow = 0) //Ctor of the engineer window
         {
-        
             InitializeComponent();
-             
             if (idWindow == 0)
             {
                 updateOrAdd = 0;
                 CurrentEngineer = new BO.Engineer() { engineerId =0, name = "", email = "", exp = BO.EngineerExperience.None };
+                CurrentEngineer.task = new BO.TaskInEngineer();
             }
             else
             {
@@ -50,10 +49,9 @@ namespace PL.Engineer
 
         }
 
-        private void btnAddUpdateEngineer_Click(object sender, RoutedEventArgs e)
+        private void btnAddUpdateEngineer_Click(object sender, RoutedEventArgs e) //Add or update an engineer
         {
-           
-            if (updateOrAdd==0)
+            if (updateOrAdd==0) //Add mode
             {
                 try
                 {
@@ -65,7 +63,7 @@ namespace PL.Engineer
                     throw new Exception();
                 }
             }
-            else
+            else //Update mode
             {
                 try
                 {
