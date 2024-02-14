@@ -5,6 +5,7 @@ using DO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Intrinsics.Arm;
+using System.Threading.Tasks;
 
 namespace BlImplementation;
 internal class TaskImplementation : BlApi.ITask
@@ -16,7 +17,7 @@ internal class TaskImplementation : BlApi.ITask
         foreach(var dep in _dal.Dependence.ReadAll()) {
             if(dep!.pendingTaskId==id)
             {
-                BO.Task task=Read(dep.dependenceId)!;
+                BO.Task task=Read(dep.previousTaskId)!;
                 BO.TaskInList t = new BO.TaskInList() { status = (Status)task.status!,taskId = task.taskId,description = task.description,alias = task.alias };
                 taskInList.Add(t);
             }
@@ -76,14 +77,14 @@ internal class TaskImplementation : BlApi.ITask
                     try
                     {
                         _dal.Task.Read(dependency.taskId);
-                        _dal.Dependence.Create(new DO.Dependence(0, task.taskId, dependency.taskId));
+                        _dal.Dependence.Create(new DO.Dependence(0, idTask, dependency.taskId));
                     }
                     catch (DO.DalDoesNotExistException ex)
                     {
                         throw new BO.BlDoesNotExistException("you cant add dependency when the depandsOnTask does not exist", ex);
                     }
                 
-            }
+                }
             }
             return idTask;
         }
@@ -200,6 +201,12 @@ internal class TaskImplementation : BlApi.ITask
         try
         {
             _dal.Task.Update(doTask);
+            if (task.dependencies != null)
+                foreach (var dep in task.dependencies!)
+                {
+                    if (dep != null)
+                        _dal.Dependence.Create(new DO.Dependence(0, task.taskId, dep.taskId));
+                }
         }
         catch (DO.DalAlreadyExistsException ex)
         {
