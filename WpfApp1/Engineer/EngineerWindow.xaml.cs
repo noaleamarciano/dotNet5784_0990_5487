@@ -30,7 +30,7 @@ namespace PL.Engineer
 
         // Using a DependencyProperty as the backing store for CurrentCourse.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CurrentEngineerProperty =
-            DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
+        DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
 
         public EngineerWindow(int idWindow = 0)
         {
@@ -40,7 +40,7 @@ namespace PL.Engineer
             if (idWindow == 0)
             {
                 updateOrAdd = 0;
-                CurrentEngineer = new BO.Engineer() { engineerId = 0, name = "", email = "", exp = BO.EngineerExperience.None };
+                CurrentEngineer = new BO.Engineer() { engineerId =0, name = "", email = "", exp = BO.EngineerExperience.None };
             }
             else
             {

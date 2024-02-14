@@ -24,7 +24,7 @@ namespace PL.Task
     {
           int updateOrAdd;
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        public BO.Task? CurrentTask
+        public  BO.Task? CurrentTask
         {
             get { return (BO.Task?)GetValue(CurrentTaskProperty); }
             set { SetValue(CurrentTaskProperty, value); }
@@ -41,6 +41,7 @@ namespace PL.Task
             {
                 updateOrAdd = 0;
                 CurrentTask = new BO.Task() { };
+                CurrentTask.engineer=new BO.EngineerInTask();   
             }
             else
             {
@@ -51,12 +52,13 @@ namespace PL.Task
 
         private void btnAddUpdateTask_Click(object sender, RoutedEventArgs e)
         {
+
             if (updateOrAdd == 0)
             {
                 try
                 {
                     s_bl.Task.Create(CurrentTask!);
-                    MessageBox.Show("משימה נוסף בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("משימה נוספה בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
                     new TaskWindow().Close();
                 }
                 catch (Exception ex)
@@ -69,7 +71,7 @@ namespace PL.Task
                 try
                 {
                     s_bl.Task.Update(CurrentTask!);
-                    MessageBox.Show("משימה עודכן בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("משימה עודכנה בהצלחה", "הודעה", MessageBoxButton.OK, MessageBoxImage.Information);
                     new TaskWindow().Close();
                 }
                 catch (Exception ex)
@@ -80,10 +82,7 @@ namespace PL.Task
             }
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+      
     }
    
 }

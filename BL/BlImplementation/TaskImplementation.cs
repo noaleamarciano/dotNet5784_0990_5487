@@ -4,11 +4,25 @@ using DalApi;
 using DO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 
 namespace BlImplementation;
 internal class TaskImplementation : BlApi.ITask
 {
     private DalApi.IDal _dal = Factory.Get;
+    public List<TaskInList> calculateDependenciesList(int id)
+    {
+        List<BO.TaskInList> taskInList = new List<BO.TaskInList>();
+        foreach(var dep in _dal.Dependence.ReadAll()) {
+            if(dep!.pendingTaskId==id)
+            {
+                BO.Task task=Read(dep.dependenceId)!;
+                BO.TaskInList t = new BO.TaskInList() { status = (Status)task.status!,taskId = task.taskId,description = task.description,alias = task.alias };
+                taskInList.Add(t);
+            }
+        }
+        return taskInList;
+    }
     public Status CalculateStatus(DO.Task task)
     {
         // משימה שלא הוזמנה לביצוע
@@ -51,10 +65,26 @@ internal class TaskImplementation : BlApi.ITask
             isMilestone = false;
         }
         DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, isMilestone, task.createdAtDate, task.scheduledStartDate,
-          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert, TimeSpan.Zero);
+          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert,task.RequiredTime);
         try
         {
             int idTask = _dal.Task.Create(doTask);
+            if(task.dependencies != null)
+            {
+                foreach (var dependency in task.dependencies)
+                {
+                    try
+                    {
+                        _dal.Task.Read(dependency.taskId);
+                        _dal.Dependence.Create(new DO.Dependence(0, task.taskId, dependency.taskId));
+                    }
+                    catch (DO.DalDoesNotExistException ex)
+                    {
+                        throw new BO.BlDoesNotExistException("you cant add dependency when the depandsOnTask does not exist", ex);
+                    }
+                
+            }
+            }
             return idTask;
         }
         catch (DO.DalAlreadyExistsException ex)
@@ -102,7 +132,7 @@ internal class TaskImplementation : BlApi.ITask
             alias = doTask.alias,
             createdAtDate = doTask.createdAtDate,
             status = CalculateStatus(doTask),
-            dependencies = null,
+            dependencies = calculateDependenciesList(doTask.taskId),
             milestone = mil,
             scheduledStartDate = doTask.scheduledStartDate,
             startDate = doTask.startDate,
@@ -113,6 +143,7 @@ internal class TaskImplementation : BlApi.ITask
             remarks = doTask.remarks,
             engineer =engineer1,
             exp = (BO.EngineerExperience)doTask.exp,
+            RequiredTime = doTask.RequiredTime,
         };
     }
     public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null)//display all the list of tasks
@@ -165,7 +196,7 @@ internal class TaskImplementation : BlApi.ITask
             isMilestone = false;
         }
         DO.Task doTask = new DO.Task(task.taskId, task.description, task.alias, isMilestone, task.createdAtDate, task.scheduledStartDate,
-          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert, TimeSpan.Zero);
+          task.startDate, task.deadLine, task.completeDate, task.deliverables, task.remarks, task.engineer.engineerId, DO.EngineerExperience.expert, task.RequiredTime);
         try
         {
             _dal.Task.Update(doTask);

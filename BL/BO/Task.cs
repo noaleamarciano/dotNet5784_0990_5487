@@ -37,5 +37,6 @@ public class Task
     public string? remarks { get; set; }
     public EngineerInTask? engineer { get; set; }
     public EngineerExperience exp { get; set; }
+    public TimeSpan RequiredTime { get; set; }  
     public override string? ToString() => this.GenericToString();
 }

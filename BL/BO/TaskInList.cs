@@ -13,5 +13,6 @@ public class TaskInList
     public int taskId { get; init; }
     public string? description { get; set; }
     public string? alias { get; set; }
-   
+    public override string? ToString() => this.GenericToString();
+
 }
